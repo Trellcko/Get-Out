@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8817515664448613146}
   - component: {fileID: 7636685843429024440}
   - component: {fileID: 1492553207927619938}
+  - component: {fileID: 4979149382288406385}
   m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fa40fab44497d49974a7c2bd9d9c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 4979149382288406385}
   _goCollider: {fileID: 9121661182487420765}
   _interactAudio: {fileID: 8817515664448613146}
   <InteractableOutline>k__BackingField: {fileID: 4588615092078191117}
@@ -514,6 +516,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.019999672, y: 0.0005384665, z: 0.02}
   m_Center: {x: -0.009999836, y: -0.00009443824, z: 0}
+--- !u!54 &4979149382288406385
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2528777895486501959}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4768196593758971429
 GameObject:
   m_ObjectHideFlags: 0

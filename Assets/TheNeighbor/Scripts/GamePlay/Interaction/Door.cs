@@ -9,6 +9,7 @@ namespace Trellcko.Gameplay.Interactable
 {
     public class Door : MonoBehaviour, IInteractable
     {
+        [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _goCollider;
         [SerializeField] private AudioSource _interactAudio;
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
@@ -43,13 +44,24 @@ namespace Trellcko.Gameplay.Interactable
                 targetAngel.y = -115f;
                 _interactAudio.Play();
                 Interacted?.Invoke();
-                transform.DOLocalRotate(targetAngel, OpenTime)
-                    .OnComplete(() => { _goCollider.enabled = false; });
-
+                Open(targetAngel);
                 return true;
             }
 
             return false;
+        }
+
+        private  void Open(Vector3 targetAngel)
+        {
+            transform.DOLocalRotate(targetAngel, OpenTime, RotateMode.FastBeyond360)
+                .OnUpdate(() =>
+                {
+                    _rigidbody.MoveRotation(transform.rotation);
+                })
+                .OnComplete(() =>
+                {
+                    _goCollider.enabled = false;
+                });
         }
 
         public void ReturnToInitImmediately()

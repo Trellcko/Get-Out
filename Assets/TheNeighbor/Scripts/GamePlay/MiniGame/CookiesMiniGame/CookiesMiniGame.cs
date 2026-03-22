@@ -126,17 +126,10 @@ namespace Trellcko.Gameplay.MiniGame
         private void OnCookieGot(bool isGood)
         {
             if (isGood)
-                GoodImpact();
-            else
-                BadImapact();
+                HandleGoodCookie();
         }
 
-        private void BadImapact()
-        {
-            
-        }
-
-        private void GoodImpact()
+        private void HandleGoodCookie()
         {
             _currentCookies++;
             UpdateText();
