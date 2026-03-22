@@ -12,19 +12,18 @@ namespace Trellcko.Gameplay.MiniGame
 {
     public class ClothesInteractable : MonoBehaviour, IInteractable
     {
-        [SerializeField] private Volume volume;
-
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
+
         [SerializeField] private ClothesDraggable _clothesPrefab;
         [SerializeField] private ClothesSpriteData _clothesSpriteData;
-        [SerializeField] private AudioSource _corpseAudioEffect;
-        
+
+        [SerializeField] private Volume volume;
         public bool IsInteractable { get; private set; }
 
         private int _currentCorpses;
         private int _currentClothes;
         
-        private Sequence _corpseEffectSequence;
+        private MiniGameBadEffect _miniGameBadEffect;
         
         private DiContainer _container;
 
@@ -32,17 +31,12 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action Reseted;
         public event Action ClothesRunOut;
         public event Action Interacted;
-        private Vignette _vignette;
 
         [Inject]
-        private void Construct(DiContainer container)
+        private void Construct(DiContainer container, MiniGameBadEffect miniGameBadEffect)
         {
+            _miniGameBadEffect = miniGameBadEffect;
             _container = container;
-        }
-
-        private void Awake()
-        {
-            volume.profile.TryGet(out _vignette);
         }
 
         public void SetMiniGameData(ClosetMiniGameData closetMiniGameData)
@@ -63,43 +57,11 @@ namespace Trellcko.Gameplay.MiniGame
             clothesInstance.UpdateSprite(TakeRandomSprite(out bool isCorpse));
             if (isCorpse)
             {
-                PlayCorpseEffect();
+                _miniGameBadEffect.PlayCorpseEffect(volume);
             }
             ClothesGenerated?.Invoke(isCorpse);
             IsInteractable = false;
             return true;
-        }
-
-        private void PlayCorpseEffect()
-        {
-            _corpseAudioEffect.Play();
-            _corpseEffectSequence?.Kill();
-            _vignette.color.value = Color.black;
-            _vignette.intensity.value = 0.402f;
-            _corpseEffectSequence = DOTween.Sequence();
-            _corpseEffectSequence
-                .Append(DOTween.To(
-                () => _vignette.color.value,
-                x => _vignette.color.value = x,
-                Color.red,
-                0.5f
-            )).Join(
-                DOTween.To(
-                    () => _vignette.intensity.value,
-                    x => _vignette.intensity.value = x,
-                    0.652f,
-                    0.5f))
-                .AppendInterval(0.25f)
-                .Append(DOTween.To(
-                    () => _vignette.color.value,
-                    x => _vignette.color.value = x,
-                    Color.black,
-                    0.5f))
-                .Join( DOTween.To(
-                    () => _vignette.intensity.value,
-                    x => _vignette.intensity.value = x,
-                    0.402f,
-                    0.5f));
         }
 
         private void OnPutted(ClothesDraggable obj)
@@ -122,16 +84,12 @@ namespace Trellcko.Gameplay.MiniGame
 
             if (_currentClothes <= 0)
                 takeFirst = false;
-            else
-            {
-                takeFirst = true;
-            }
-            /*
+          
             else if (_currentCorpses <= 0)
                 takeFirst = true;
             else
-                takeFirst = UnityEngine.Random.Range(0, 1f) > 0.5f;
-            */
+                takeFirst = Random.Range(0, 1f) > 0.5f;
+            
             if (takeFirst)
             {
                 _currentClothes--;

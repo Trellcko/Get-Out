@@ -3,12 +3,16 @@ using System.Collections;
 using Trellcko.Constants;
 using Trellcko.Core.Input;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using Zenject;
 
 namespace Trellcko.Gameplay.MiniGame
 {
     public class HandController : MonoBehaviour
     {
+        [SerializeField] private Volume _volume;
+        
         [SerializeField] private Vector3 _handStartPosition;
         [SerializeField] private float _sensitivity = 40;
         [SerializeField] private Vector2 _zLocalBounds;
@@ -20,10 +24,12 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool> CookieGot;
         
         private IInputHandler _inputHandler;
+        private MiniGameBadEffect _miniGameBadEffect;
 
         [Inject]
-        private void Construct(IInputHandler inputHandler)
+        private void Construct(IInputHandler inputHandler, MiniGameBadEffect miniGameBadEffect)
         {
+            _miniGameBadEffect = miniGameBadEffect;
             _inputHandler = inputHandler;
         }
 
@@ -53,6 +59,10 @@ namespace Trellcko.Gameplay.MiniGame
             {
                 StopAllCoroutines();
                 StartCoroutine(ChangeHandCorun());
+                
+                if(!cookie.IsGood)
+                    _miniGameBadEffect.PlayCorpseEffect(_volume);
+                
                 CookieGot?.Invoke(cookie.IsGood);
                 Destroy(cookie.gameObject);
             }

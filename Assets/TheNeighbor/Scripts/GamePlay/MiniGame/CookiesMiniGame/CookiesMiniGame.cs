@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using NUnit.Framework;
+using TMPro;
 using Trellcko.Gameplay.Player;
-using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -17,6 +16,10 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private HandController _handController;
         [SerializeField] private CinemachineCamera _cinemachineCamera;
         [SerializeField] private List<CookiesMiniGameData> _cookiesMiniGameData;
+       
+        [SerializeField] private GameObject _ui;
+        [SerializeField] private GameObject _miniGameUI;
+        [SerializeField] private TextMeshProUGUI _countText;
 
         [SerializeField] private float _spawnTime = 1f;
         [SerializeField] private float _minDistanceBetweenCookies = 1f;
@@ -29,13 +32,16 @@ namespace Trellcko.Gameplay.MiniGame
         private float _totalDistance;
         private float _minStep;
         private float _currentT;
+        private int _currentCookies;
+        private List<Cookie> _cookies;
+        
+            public bool IsPlaying { get; private set; }
+
 
         private PlayerFacade _playerFacade;
+
         private Coroutine _spawningCoroutine;
 
-        private int _currentCookies;
-        
-        public bool IsPlaying { get; private set; }
         public MiniGameType MinigameType => MiniGameType.CookiesMiniGame;
         public event Action<bool, IMiniGame> Finished;
 
@@ -63,6 +69,9 @@ namespace Trellcko.Gameplay.MiniGame
 
         public void StartGame()
         {
+            _ui.SetActive(false);
+            _miniGameUI.SetActive(true);
+            UpdateText();
             _currentCookies = 0;
             IsPlaying = true;
             _handController.transform.localPosition = _handStartPosition;
@@ -72,6 +81,11 @@ namespace Trellcko.Gameplay.MiniGame
             _handController.enabled = true;
             _cinemachineCamera.enabled = true;
             _spawningCoroutine = StartCoroutine(SpawningCorun());
+        }
+
+        private void UpdateText()
+        {
+            _countText.SetText($"Cookies {_currentCookies}/{_cookiesMiniGameData[0].needCookies}");
         }
 
         private IEnumerator SpawningCorun()
@@ -125,7 +139,7 @@ namespace Trellcko.Gameplay.MiniGame
         private void GoodImpact()
         {
             _currentCookies++;
-
+            UpdateText();
             if (_currentCookies >= _cookiesMiniGameData[0].needCookies)
             {
                 FinishGame(true);
@@ -134,6 +148,8 @@ namespace Trellcko.Gameplay.MiniGame
 
         public void ExitGame()
         {
+            _ui.SetActive(true);
+            _miniGameUI.SetActive(false);
             _cinemachineCamera.enabled = false;
             _handController.enabled = false;
             _playerFacade.PlayerMovement.IsEnabled = true;

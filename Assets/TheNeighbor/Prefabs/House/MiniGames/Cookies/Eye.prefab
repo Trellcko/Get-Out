@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 310a38e2f58f59442bf795bb3b8cab16, type: 2}
+    - target: {fileID: -5185436221550476149, guid: 8157c08046c769547a28aed9cdea97e5, type: 3}
+      propertyPath: <IsGood>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6137995774591705211, guid: 8157c08046c769547a28aed9cdea97e5, type: 3}
       propertyPath: m_Name
       value: Eye
