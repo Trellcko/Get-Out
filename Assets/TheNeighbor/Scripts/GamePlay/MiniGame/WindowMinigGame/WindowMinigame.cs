@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Trellcko.Core.Audio;
 using Trellcko.Core.Input;
 using Trellcko.Gameplay.Player;
 using Trellcko.Gameplay.QuestLogic;
@@ -27,14 +28,18 @@ namespace Trellcko.Gameplay.MiniGame
         private IInputHandler _inputHandler;
         private Coroutine _miniGameCoroutine;
         private PlayerFacade _playerFacade;
+        private ISoundController _soundController;
 
+        private int _lastIndex;
+        
         public event Action<bool, IMiniGame> Finished;
 
         public MiniGameType MinigameType => MiniGameType.WindowMiniGame;
 
         [Inject]
-        private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler)
+        private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler, ISoundController soundController)
         {
+            _soundController = soundController;
             _inputHandler = inputHandler;
             _playerFacade = playerFacade;
         }
@@ -42,7 +47,7 @@ namespace Trellcko.Gameplay.MiniGame
         public void StartGame()
         {
             _slider.fillAmount = 0;
-            
+            _soundController.PlayPlayerSound(PlayerSound.Crying);
             IsPlaying = true;
             _UI.SetActive(true);
             _playerFacade.PlayerMovement.IsEnabled = false;
@@ -111,6 +116,25 @@ namespace Trellcko.Gameplay.MiniGame
             int index = Mathf.FloorToInt((_slider.fillAmount*100) / (100f / _playerMaterials.Length));
             index = Mathf.Clamp(index, 0,  _playerMaterials.Length - 1);
             _playerMeshRenderer.sharedMaterial = _playerMaterials[index];
+            if (_lastIndex != index)
+            {
+                _lastIndex = index;
+                switch (index)
+                {
+                    case 0:
+                        _soundController.PlayPlayerSound(PlayerSound.Crying);
+                        break;
+                    case 1:
+                        _soundController.PlayPlayerSound(PlayerSound.Whimper);
+                        break;
+                    case 2:
+                        _soundController.PlayPlayerSound(PlayerSound.Breathing);
+                        break;
+                    case 3:
+                        _soundController.PlayPlayerSound(PlayerSound.Chuckle);
+                        break;
+                }
+            }
         }
     }
 }
