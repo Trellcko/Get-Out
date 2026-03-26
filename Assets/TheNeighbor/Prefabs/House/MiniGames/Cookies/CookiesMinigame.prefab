@@ -1258,6 +1258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handStartPosition: {x: 0, y: -0.74, z: -5.91}
+  _volume: {fileID: 2826536192064194637}
   _handController: {fileID: 8190470880641126771}
   _cinemachineCamera: {fileID: 2273506346553546235}
   _cookiesMiniGameData:

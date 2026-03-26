@@ -2,6 +2,10 @@
 {
     public enum OtherSound
     {
-        Press
+        Press,
+        Eating,
+        ThrowingUp,
+        Pick,
+        Put,
     }
 }

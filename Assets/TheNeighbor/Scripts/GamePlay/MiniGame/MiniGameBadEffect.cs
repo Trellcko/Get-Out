@@ -1,21 +1,29 @@
 using DG.Tweening;
+using Trellcko.Core.Audio;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using Zenject;
 
 namespace Trellcko.Gameplay.MiniGame
 {
     public class MiniGameBadEffect : MonoBehaviour
     {
-        [SerializeField] private AudioSource _corpseAudioEffect;
         private Sequence _corpseEffectSequence;
         private Vignette _vignette;
 
+        private ISoundController _soundController;
 
+        [Inject]
+        private void Construct(ISoundController soundController)
+        {
+            _soundController = soundController;
+        }
+        
         public void PlayCorpseEffect(Volume volume)
         {
+            _soundController.PlayOtherSound(OtherSound.ThrowingUp);
             volume.profile.TryGet(out _vignette);
-            _corpseAudioEffect.Play();
             _corpseEffectSequence?.Kill();
             _vignette.color.value = Color.black;
             _vignette.intensity.value = 0.402f;

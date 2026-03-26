@@ -1,6 +1,7 @@
 ﻿using System;
 using TheNeighbor.Scripts.Constants;
 using Trellcko.Constants;
+using Trellcko.Core.Audio;
 using Trellcko.Core.Input;
 using UnityEngine;
 using Zenject;
@@ -13,11 +14,13 @@ namespace Trellcko.Gameplay.MiniGame
         
         private Camera _camera;
         private IInputHandler _inputHandler;
+        private ISoundController _soundController;
         public event Action<ClothesDraggable> Putted;
 
         [Inject]
-        private void Construct(IInputHandler handler)
+        private void Construct(IInputHandler handler, ISoundController soundController)
         {
+            _soundController = soundController;
             _inputHandler = handler;
         }
         
@@ -51,6 +54,7 @@ namespace Trellcko.Gameplay.MiniGame
         {
             if (other.TryGetComponent(out ClosetTag _))
             {
+                _soundController.PlayOtherSound(OtherSound.Put);
                 Putted?.Invoke(this);
                 Destroy(gameObject);
             }

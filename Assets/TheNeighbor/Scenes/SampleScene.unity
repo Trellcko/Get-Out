@@ -1844,6 +1844,14 @@ MonoBehaviour:
   _otherSounds:
   - Sound: 0
     Clip: {fileID: 8300000, guid: ef66a042df41fbb4d825284820118ef9, type: 3}
+  - Sound: 1
+    Clip: {fileID: 8300000, guid: 111ddb3bb88106644b3667ec49099f3a, type: 3}
+  - Sound: 2
+    Clip: {fileID: 8300000, guid: c714e983a82a3c44c87022d1541bfddd, type: 3}
+  - Sound: 3
+    Clip: {fileID: 8300000, guid: 1a64b31322e95a74cbe254fe2fb27271, type: 3}
+  - Sound: 4
+    Clip: {fileID: 8300000, guid: 66c7498f7b6405b4da834acce86bd34b, type: 3}
   _playerSounds:
   - Sound: 0
     Clip: {fileID: 8300000, guid: 3c9140707af73324b9ab35e6c46a1224, type: 3}

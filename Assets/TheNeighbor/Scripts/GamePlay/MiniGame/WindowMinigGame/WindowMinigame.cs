@@ -9,6 +9,7 @@ using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
+using Trellcko.Core.Audio;
 using Zenject;
 
 namespace Trellcko.Gameplay.MiniGame

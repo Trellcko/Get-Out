@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Trellcko.Core.Audio;
 using Trellcko.Gameplay.Interactable;
 using Trellcko.Gameplay.QuestLogic;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace Trellcko.Gameplay.MiniGame
         private MiniGameBadEffect _miniGameBadEffect;
         
         private DiContainer _container;
+        private ISoundController _soundController;
 
         public event Action<bool> ClothesGenerated;
         public event Action Reseted;
@@ -33,8 +35,9 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action Interacted;
 
         [Inject]
-        private void Construct(DiContainer container, MiniGameBadEffect miniGameBadEffect)
+        private void Construct(DiContainer container, MiniGameBadEffect miniGameBadEffect, ISoundController soundController)
         {
+            _soundController = soundController;
             _miniGameBadEffect = miniGameBadEffect;
             _container = container;
         }
@@ -58,6 +61,10 @@ namespace Trellcko.Gameplay.MiniGame
             if (isCorpse)
             {
                 _miniGameBadEffect.PlayCorpseEffect(volume);
+            }
+            else
+            {
+                _soundController.PlayOtherSound(OtherSound.Pick);
             }
             ClothesGenerated?.Invoke(isCorpse);
             IsInteractable = false;

@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Trellcko.Core.Audio;
 using Trellcko.Gameplay.Player;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Zenject;
 using Random = UnityEngine.Random;
 
@@ -13,6 +15,7 @@ namespace Trellcko.Gameplay.MiniGame
     public class CookiesMiniGame : MonoBehaviour, IMiniGame
     {
         [SerializeField] private Vector3 _handStartPosition;
+        [SerializeField] private Volume _volume;
         [SerializeField] private HandController _handController;
         [SerializeField] private CinemachineCamera _cinemachineCamera;
         [SerializeField] private List<CookiesMiniGameData> _cookiesMiniGameData;
@@ -28,26 +31,29 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private Transform _startPoint;
         [SerializeField] private Transform _endPoint;
 
+        public bool IsPlaying { get; private set; }
+        
         private Vector3 _previousSpawnPoint;
         private float _totalDistance;
         private float _minStep;
         private float _currentT;
         private int _currentCookies;
         private List<Cookie> _cookies;
-        
-            public bool IsPlaying { get; private set; }
 
 
         private PlayerFacade _playerFacade;
 
         private Coroutine _spawningCoroutine;
-
+        private ISoundController _soundController;
+        private MiniGameBadEffect _miniGameBadEffect;
         public MiniGameType MinigameType => MiniGameType.CookiesMiniGame;
         public event Action<bool, IMiniGame> Finished;
 
         [Inject]
-        private void Construct(PlayerFacade playerFacade)
+        private void Construct(PlayerFacade playerFacade, ISoundController soundController, MiniGameBadEffect miniGameBadEffect)
         {
+            _miniGameBadEffect = miniGameBadEffect;
+            _soundController = soundController;
             _playerFacade = playerFacade;
         }
 
@@ -127,11 +133,17 @@ namespace Trellcko.Gameplay.MiniGame
         {
             if (isGood)
                 HandleGoodCookie();
+            else
+            {
+                
+                _miniGameBadEffect.PlayCorpseEffect(_volume);
+            }
         }
 
         private void HandleGoodCookie()
         {
             _currentCookies++;
+            _soundController.PlayOtherSound(OtherSound.Eating);
             UpdateText();
             if (_currentCookies >= _cookiesMiniGameData[0].needCookies)
             {
