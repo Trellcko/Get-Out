@@ -18,8 +18,6 @@ namespace Trellcko.Gameplay.QuestLogic
         [ShowIf("_showAnimationNameProperty")]
         [SerializeField] private string _animationName;
         
-        
-        
         private bool _showAnimationNameProperty => _afterInteractionAction == AfterInteractionAction.PlayAnimation;
         
         public event Action Interacted;

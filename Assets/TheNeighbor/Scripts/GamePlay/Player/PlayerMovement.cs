@@ -44,6 +44,7 @@ namespace Trellcko.Gameplay.Player
         {
             if(IsEnabled)
                 Move(_inputHandler.GetMoveVector());
+			_rb.linearVelocity = Vector3.zero;
         }
 
         private void OnSprintCanceled()

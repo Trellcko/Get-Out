@@ -33,7 +33,7 @@ namespace Trellcko.Gameplay.MiniGame
         private void Update()
         {
             Vector3 mouseDelta = _inputHandler.GetMouseDelta();
-            mouseDelta *= _sensitivity * Time.deltaTime * 1;
+            mouseDelta *= _sensitivity * Time.deltaTime;
             mouseDelta.y = 0;
             
             Vector3 newPosition = transform.position + mouseDelta;
