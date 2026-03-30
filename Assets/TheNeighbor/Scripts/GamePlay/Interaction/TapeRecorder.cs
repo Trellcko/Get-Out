@@ -15,19 +15,22 @@ namespace Trellcko.Gameplay.Interactable
         
         
         public bool IsInteractable => true;
-        public event Action Interacted;
+        public event Action InteractionStarted;
 
         private ISoundController _soundController;
-        
+
+        public event Action InteractionFinished;
+
         [Inject]
         private void Construct(ISoundController soundController)
         {
             _soundController = soundController;
         }
-        
+
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
             getItem = neededItem;
+            InteractionStarted?.Invoke();
             if (_soundController.IsAmbiencPlaying)
             {
                 _audioSource.clip = _getClip;
@@ -40,6 +43,7 @@ namespace Trellcko.Gameplay.Interactable
             }
 
             _audioSource.Play();
+            InteractionFinished?.Invoke();
             return true;
         }
     }

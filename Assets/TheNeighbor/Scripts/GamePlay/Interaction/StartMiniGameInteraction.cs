@@ -10,7 +10,7 @@ namespace Trellcko.Gameplay.Interactable
     public class StartMiniGameInteraction : MonoBehaviour
     {
         [SerializeField] private MiniGameType _minigameType;
-        private IInteractable _interactable;
+        private QuestInteractable _interactable;
         private MiniGamesController _minigameController;
 
         [Inject]
@@ -21,22 +21,23 @@ namespace Trellcko.Gameplay.Interactable
         
         private void Awake()
         {
-            _interactable = GetComponent<IInteractable>();
+            _interactable = GetComponent<QuestInteractable>();
+            _interactable.SetIsMiniGameInteraction();
         }
 
         private void OnEnable()
         {
-            _interactable.Interacted += OnInteracted;
+            _interactable.InteractionStarted += OnInteractionStarted;
         }
 
         private void OnDisable()
         {
-            _interactable.Interacted -= OnInteracted;
+            _interactable.InteractionStarted -= OnInteractionStarted;
         }
 
-        private void OnInteracted()
+        private void OnInteractionStarted()
         {
-            _minigameController.StartMiniGame(_minigameType);
+            _minigameController.StartMiniGame(_minigameType, _interactable.FinishInteraction);
         }
     }
 }

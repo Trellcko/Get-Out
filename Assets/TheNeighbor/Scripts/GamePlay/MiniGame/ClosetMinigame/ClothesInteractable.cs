@@ -32,7 +32,9 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool> ClothesGenerated;
         public event Action Reseted;
         public event Action ClothesRunOut;
-        public event Action Interacted;
+        public event Action InteractionStarted;
+
+        public event Action InteractionFinished;
 
         [Inject]
         private void Construct(DiContainer container, MiniGameBadEffect miniGameBadEffect, ISoundController soundController)
@@ -54,6 +56,7 @@ namespace Trellcko.Gameplay.MiniGame
         {
             getItem = neededItem;
             if (!IsInteractable) return false;
+            InteractionStarted?.Invoke();
             ClothesDraggable clothesInstance = _container.InstantiatePrefab(_clothesPrefab).GetComponent<ClothesDraggable>();
             clothesInstance.transform.position = transform.position;
             clothesInstance.Putted += OnPutted;
@@ -68,6 +71,7 @@ namespace Trellcko.Gameplay.MiniGame
             }
             ClothesGenerated?.Invoke(isCorpse);
             IsInteractable = false;
+            InteractionFinished?.Invoke();
             return true;
         }
 

@@ -12,17 +12,17 @@ namespace Trellcko.Gameplay.QuestLogic
         public void Activate()
         {
             QuestInteractable.EnableInteraction();
-            QuestInteractable.Interacted += OnInteracted;
+            QuestInteractable.InteractionStarted += OnInteractionStarted;
         }
 
         public void ForceCompleteQuest()
         {
-            OnInteracted();
+            OnInteractionStarted();
         }
         
-        private void OnInteracted()
+        private void OnInteractionStarted()
         {
-            QuestInteractable.Interacted -= OnInteracted;
+            QuestInteractable.InteractionStarted -= OnInteractionStarted;
             Completed?.Invoke();
         }
     }

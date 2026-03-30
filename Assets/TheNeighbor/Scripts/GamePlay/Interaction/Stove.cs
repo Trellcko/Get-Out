@@ -11,13 +11,16 @@ namespace Trellcko.Gameplay.Interactable
         [SerializeField] private GameObject _fire;
         public bool IsInteractable => true;
         
-        public event Action Interacted;
+        public event Action InteractionStarted;
+        public event Action InteractionFinished;
+
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
+            InteractionStarted?.Invoke();
             getItem = neededItem;
             _interactAudio.Play();
             _fire.gameObject.SetActive(!_fire.activeSelf);
-            Interacted?.Invoke();
+            InteractionFinished?.Invoke();
             return true;
         }
     }

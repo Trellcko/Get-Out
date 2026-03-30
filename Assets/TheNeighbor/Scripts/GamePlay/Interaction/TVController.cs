@@ -16,15 +16,18 @@ namespace Trellcko.Gameplay
 
         public bool IsWorked { get; private set; } = false;
 
-        public event Action Interacted;
+        public event Action InteractionStarted;
+        public event Action InteractionFinished;
 
         public bool IsInteractable => true;
+
 
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
             getItem = neededItem;
             if (!IsInteractable)
                 return false;
+            InteractionStarted?.Invoke();
             if (IsWorked)
             {
                 TurnOff();
@@ -33,7 +36,7 @@ namespace Trellcko.Gameplay
             {
                 TurnOn();
             }
-            Interacted?.Invoke();
+            InteractionFinished?.Invoke();
             return true;
         }
 

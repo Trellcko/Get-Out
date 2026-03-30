@@ -12,13 +12,13 @@ public class BedRoomTiktokEvent : MonoBehaviour
    private void Awake()
    {
       _alarm.Activate();
-      _alarm.Interacted += OnInteracted;
+      _alarm.InteractionStarted += OnInteracted;
    }
 
    private void OnInteracted()
    {
       _TVController.TryInteract(out _, QuestItem.None);
-      _TVController.Interacted += OnInteractedTv;
+      _TVController.InteractionStarted += OnInteractedTv;
    }
 
    private void OnInteractedTv()

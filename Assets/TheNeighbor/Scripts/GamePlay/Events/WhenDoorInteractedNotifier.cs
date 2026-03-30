@@ -12,14 +12,14 @@ namespace TheNeighbor.Scripts.GamePlay.Triggers
         {
             
             Debug.Log("Subscribed");
-            _door.Interacted += OnInteracted;
+            _door.InteractionStarted += OnInteracted;
         }
 
         private void OnInteracted()
         {
             Debug.Log("Interacted");
             InvokeNotified();
-            _door.Interacted -= OnInteracted;
+            _door.InteractionStarted -= OnInteracted;
         }
     }
 }

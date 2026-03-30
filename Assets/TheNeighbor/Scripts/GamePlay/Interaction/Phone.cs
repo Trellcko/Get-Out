@@ -15,7 +15,9 @@ namespace Trellcko.Gameplay.Interactable
         [SerializeField] private float _speekingTime;
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
         public bool IsInteractable { get; private set; }
-        public event Action Interacted;
+        public event Action InteractionStarted;
+        public event Action InteractionFinished;
+
 
         public void Activate()
         {
@@ -24,17 +26,19 @@ namespace Trellcko.Gameplay.Interactable
             _audioSource.Play();
             _audioSource.loop = true;
         }
-        
+
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
             getItem = neededItem;
             if (!IsInteractable) return false;
+            InteractionStarted?.Invoke();
             IsInteractable = false;
             _audioSource.clip = _hangUpPhoneClip;
             _audioSource.Play();
             _audioSource.loop = false;
             StartCoroutine(PlaySound());
             InteractableOutline.Disable();
+            InteractionFinished?.Invoke();
             return true;
         }
 

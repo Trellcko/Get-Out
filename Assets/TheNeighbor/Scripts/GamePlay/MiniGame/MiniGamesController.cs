@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Trellcko.UI;
@@ -12,6 +13,7 @@ namespace Trellcko.Gameplay.MiniGame
 
       private TransitionUI _transitionUI;
       private readonly List<IMiniGame> _minigames = new();
+      private Action _onFinished;
 
       [Inject]
       private void Construct(TransitionUI transitionUI)
@@ -34,10 +36,11 @@ namespace Trellcko.Gameplay.MiniGame
          }
       }
 
-      public void StartMiniGame(MiniGameType miniGameType)
+      public void StartMiniGame(MiniGameType miniGameType, Action onFinished)
       {
          foreach (IMiniGame minigame in _minigames.Where(minigame => minigame.MinigameType == miniGameType))
          {
+            _onFinished = onFinished;
             _transitionUI.ShowAndHideUI(-1, minigame.StartGame);
             minigame.Finished += OnFinished;
             return;
@@ -49,7 +52,12 @@ namespace Trellcko.Gameplay.MiniGame
       private void OnFinished(bool success, IMiniGame minigame)
       {
          minigame.Finished -= OnFinished;
-         _transitionUI.ShowAndHideUI(-1, minigame.ExitGame);
+         _transitionUI.ShowAndHideUI(-1, ()=>
+         {
+            minigame.ExitGame();
+            _onFinished();
+            _onFinished = null;
+         });
       }
    }
 

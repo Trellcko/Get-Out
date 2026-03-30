@@ -10,20 +10,24 @@ namespace Trellcko.Gameplay.QuestLogic
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
         [field: SerializeField] public QuestItem NeededItem { get; private set; } = QuestItem.None;
         [field: SerializeField] public QuestItem ReceiveItem { get; private set; } = QuestItem.None;
-        
+
         [SerializeField] private AudioSource _audioSource;
 
         [SerializeField] private AfterInteractionAction _afterInteractionAction;
 
-        [ShowIf("_showAnimationNameProperty")]
-        [SerializeField] private string _animationName;
-        
-        private bool _showAnimationNameProperty => _afterInteractionAction == AfterInteractionAction.PlayAnimation;
-        
-        public event Action Interacted;
-        
+        [ShowIf("_showAnimationNameProperty")] [SerializeField]
+        private string _animationName;
+
+
+        public event Action InteractionStarted;
+        public event Action InteractionFinished;
+
         public bool IsInteractable { get; private set; }
-        
+
+        private bool _showAnimationNameProperty => _afterInteractionAction == AfterInteractionAction.PlayAnimation;
+
+        private bool _isInteractionStarted;
+        private bool _isMiniGameInteraction;
         private MeshRenderer _meshRenderer;
         private Collider _collider;
         private Animator _animator;
@@ -34,6 +38,7 @@ namespace Trellcko.Gameplay.QuestLogic
             {
                 _animator = GetComponent<Animator>();
             }
+
             _collider = GetComponent<Collider>();
             _meshRenderer = GetComponent<MeshRenderer>();
         }
@@ -45,21 +50,39 @@ namespace Trellcko.Gameplay.QuestLogic
             InteractableOutline.EnableInteractOutline();
         }
 
+        public void SetIsMiniGameInteraction()
+        {
+            _isMiniGameInteraction = true;
+        }
+
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
             getItem = ReceiveItem;
             if (!IsInteractable || NeededItem != neededItem)
                 return false;
-
-            Interacted?.Invoke();
+            _isInteractionStarted = true;
+            InteractionStarted?.Invoke();
+            
             if (_audioSource)
                 _audioSource?.Play();
+            
             IsInteractable = false;
             InteractableOutline.Disable();
-
-            DoAfterInteractionAction();
-
+            if(!_isMiniGameInteraction)
+                FinishInteraction();
+            
             return true;
+        }
+
+        public void FinishInteraction()
+        {
+            if (_isInteractionStarted)
+            {
+                DoAfterInteractionAction();
+
+                InteractionFinished?.Invoke();
+                _isInteractionStarted = false;
+            }
         }
 
         private void DoAfterInteractionAction()

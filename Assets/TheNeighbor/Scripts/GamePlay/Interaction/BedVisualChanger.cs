@@ -15,15 +15,15 @@ namespace Trellcko.Gameplay.Interactable
 
         private void OnEnable()
         {
-            _interactable.Interacted += OnInteracted;
+            _interactable.InteractionStarted += OnInteractionStarted;
         }
 
         private void OnDisable()
         {
-            _interactable.Interacted -= OnInteracted;
+            _interactable.InteractionStarted -= OnInteractionStarted;
         }
 
-        private void OnInteracted()
+        private void OnInteractionStarted()
         {
             Material[] materials = _meshRenderer.materials;
             materials[2] = _goodBed;

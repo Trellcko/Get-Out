@@ -1324,7 +1324,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3169193368161124626, guid: a9036face319e4743a07431821e471aa, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 1801314318}
   m_SourcePrefab: {fileID: 100100000, guid: a9036face319e4743a07431821e471aa, type: 3}
 --- !u!1 &509137422 stripped
 GameObject:
@@ -3680,6 +3683,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 279850493692687439, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1539945198469754706, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.945
@@ -3756,7 +3763,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6142637387259405175, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3106047672230508640, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1724040711}
   m_SourcePrefab: {fileID: 100100000, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
 --- !u!114 &1551203346 stripped
 MonoBehaviour:
@@ -3945,6 +3955,40 @@ Transform:
   - {fileID: 1075721104}
   m_Father: {fileID: 330585546}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1724040702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3106047672230508640, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+  m_PrefabInstance: {fileID: 1551203345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1724040707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1031922897176062161, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+  m_PrefabInstance: {fileID: 1551203345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724040702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a0b33355b8fe94682bacc1b4796536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1724040711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724040702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractableOutline>k__BackingField: {fileID: 1724040707}
+  <NeededItem>k__BackingField: 0
+  <ReceiveItem>k__BackingField: 0
+  _audioSource: {fileID: 0}
+  _afterInteractionAction: 0
+  _animationName: 
 --- !u!1 &1758265591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,6 +4118,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1001031804}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1801314308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3169193368161124626, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1801314312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2019307663015835798, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801314308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a0b33355b8fe94682bacc1b4796536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1801314318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801314308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <InteractableOutline>k__BackingField: {fileID: 1801314312}
+  <NeededItem>k__BackingField: 0
+  <ReceiveItem>k__BackingField: 0
+  _audioSource: {fileID: 0}
+  _afterInteractionAction: 3
+  _animationName: 
 --- !u!1 &1815274479
 GameObject:
   m_ObjectHideFlags: 0

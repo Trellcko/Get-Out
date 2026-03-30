@@ -12,21 +12,16 @@ namespace Trellcko.Gameplay.Interactable
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _goCollider;
         [SerializeField] private AudioSource _interactAudio;
+        public event Action InteractionFinished;
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
         public bool IsInteractable { get; private set; } = true;
 
-        public event Action Interacted;
+        public event Action InteractionStarted;
 
-        private PlayerFacade _playerFacade;
         private Vector3 _defaultAngel;
 
         private const float OpenTime = 3f;
-
-        [Inject]
-        private void Construct(PlayerFacade playerFacade)
-        {
-            _playerFacade = playerFacade;
-        }
+        
 
         private void Awake()
         {
@@ -36,15 +31,17 @@ namespace Trellcko.Gameplay.Interactable
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
             getItem = neededItem;
-            if (IsInteractable && _playerFacade)
+            if (IsInteractable)
             {
+                InteractionStarted?.Invoke();
                 InteractableOutline.Disable();
                 IsInteractable = false;
                 Vector3 targetAngel = _defaultAngel;
                 targetAngel.y = -115f;
                 _interactAudio.Play();
-                Interacted?.Invoke();
+                InteractionStarted?.Invoke();
                 Open(targetAngel);
+                InteractionFinished?.Invoke();
                 return true;
             }
 
@@ -79,21 +76,6 @@ namespace Trellcko.Gameplay.Interactable
             _interactAudio.Play();
             _goCollider.enabled = true;
             transform.DOLocalRotate(_defaultAngel, OpenTime).OnComplete(() => IsInteractable = true);
-        }
-
-        private float GetOpenAngel()
-        {
-            Vector3 toPlayer = _playerFacade.transform.position - transform.position;
-
-            Vector3 doorNormal = transform.up;
-
-            float side = Vector3.SignedAngle(
-                transform.forward,
-                toPlayer,
-                doorNormal
-            );
-
-            return side > 0f ? 115f : -115f;
         }
     }
 }

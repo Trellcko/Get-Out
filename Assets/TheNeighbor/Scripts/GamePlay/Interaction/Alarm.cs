@@ -11,8 +11,10 @@ public class Alarm : MonoBehaviour, IInteractable
     [SerializeField] private AudioClip _alarm;
     [SerializeField] private AudioClip _turnOffAlarm;
 
-    public event Action Interacted;
+    public event Action InteractionStarted;
+    public event Action InteractionFinished;
     public bool IsInteractable { get; private set; }
+
 
     public void Activate()
     {
@@ -21,17 +23,18 @@ public class Alarm : MonoBehaviour, IInteractable
         _audioSource.loop = true;
         _audioSource.Play();
     }
-    
+
     public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
     {
         getItem = neededItem;
         if (!IsInteractable) return false;
+        InteractionStarted?.Invoke();
         _audioSource.clip = _turnOffAlarm;
         _audioSource.loop = false;
         _audioSource.Play();
-        Interacted?.Invoke();
         IsInteractable = false;
         InteractableOutline.Disable();
+        InteractionFinished?.Invoke();
         return true;
     }
 }
