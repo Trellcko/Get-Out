@@ -48,7 +48,7 @@ namespace Trellcko.Gameplay.MiniGame
                 _dot.position = _inputHandler.GetMousePosition();
         }
 
-        public void StartGame()
+        public void StartGame(MiniGamesParamsHolder param = null)
         {
             IsPlaying = true;
             _miniGameCanvas.SetActive(true);

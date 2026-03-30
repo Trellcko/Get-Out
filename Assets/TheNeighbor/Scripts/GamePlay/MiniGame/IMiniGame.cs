@@ -1,4 +1,5 @@
 ﻿using System;
+using Trellcko.Gameplay.Interactable;
 
 namespace Trellcko.Gameplay.MiniGame
 {
@@ -6,7 +7,7 @@ namespace Trellcko.Gameplay.MiniGame
     {
         bool IsPlaying { get; }
         MiniGameType MinigameType { get; }
-        void StartGame();
+        void StartGame(MiniGamesParamsHolder param = null);
         void FinishGame(bool success);
         event Action<bool, IMiniGame> Finished;
         void ExitGame();

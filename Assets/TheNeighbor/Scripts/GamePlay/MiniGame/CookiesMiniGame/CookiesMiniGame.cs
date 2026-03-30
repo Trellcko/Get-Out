@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Trellcko.Core.Audio;
+using Trellcko.Gameplay.Interactable;
 using Trellcko.Gameplay.Player;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -73,7 +74,7 @@ namespace Trellcko.Gameplay.MiniGame
             _handController.CookieGot -= OnCookieGot;
         }
 
-        public void StartGame()
+        public void StartGame(MiniGamesParamsHolder param = null)
         {
             _ui.SetActive(false);
             _miniGameUI.SetActive(true);

@@ -58,7 +58,6 @@ namespace Trellcko.Gameplay.QuestLogic
 
         private void OnAllQuestsInDayCompleted()
         {
-            Debug.Log("QuestSystem Handling");
             _questDays[Day].AllQuestsCompleted -= OnAllQuestsInDayCompleted;
             _soundController.StopPlayingAmbience();
             DayCompleted?.Invoke();

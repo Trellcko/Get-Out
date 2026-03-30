@@ -10,6 +10,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 using Trellcko.Core.Audio;
+using Trellcko.Gameplay.Interactable;
 using Zenject;
 
 namespace Trellcko.Gameplay.MiniGame
@@ -45,7 +46,7 @@ namespace Trellcko.Gameplay.MiniGame
             _playerFacade = playerFacade;
         }
         
-        public void StartGame()
+        public void StartGame(MiniGamesParamsHolder param)
         {
             _slider.fillAmount = 0;
             _soundController.PlayPlayerSound(PlayerSound.Crying);

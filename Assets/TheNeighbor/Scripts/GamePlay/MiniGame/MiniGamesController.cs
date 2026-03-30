@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Trellcko.Gameplay.Interactable;
 using Trellcko.UI;
 using UnityEngine;
 using Zenject;
@@ -36,12 +37,12 @@ namespace Trellcko.Gameplay.MiniGame
          }
       }
 
-      public void StartMiniGame(MiniGameType miniGameType, Action onFinished)
+      public void StartMiniGame(MiniGameType miniGameType, Action onFinished, MiniGamesParamsHolder param = null)
       {
          foreach (IMiniGame minigame in _minigames.Where(minigame => minigame.MinigameType == miniGameType))
          {
             _onFinished = onFinished;
-            _transitionUI.ShowAndHideUI(-1, minigame.StartGame);
+            _transitionUI.ShowAndHideUI(-1, ()=> minigame.StartGame(param));
             minigame.Finished += OnFinished;
             return;
          }

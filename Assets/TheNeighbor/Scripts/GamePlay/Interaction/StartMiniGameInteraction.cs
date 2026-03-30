@@ -10,6 +10,7 @@ namespace Trellcko.Gameplay.Interactable
     public class StartMiniGameInteraction : MonoBehaviour
     {
         [SerializeField] private MiniGameType _minigameType;
+        [SerializeField] private MiniGamesParamsHolder minigamesParamsHolder;
         private QuestInteractable _interactable;
         private MiniGamesController _minigameController;
 
@@ -37,7 +38,7 @@ namespace Trellcko.Gameplay.Interactable
 
         private void OnInteractionStarted()
         {
-            _minigameController.StartMiniGame(_minigameType, _interactable.FinishInteraction);
+            _minigameController.StartMiniGame(_minigameType, _interactable.FinishInteraction, minigamesParamsHolder);
         }
     }
 }
