@@ -47,6 +47,7 @@ namespace Trellcko.Gameplay.MiniGame
         private void OnEnable()
         {
             transform.position = _startPosition;
+            _lastMopPosition = _startPosition;
         }
 
         private void Update()

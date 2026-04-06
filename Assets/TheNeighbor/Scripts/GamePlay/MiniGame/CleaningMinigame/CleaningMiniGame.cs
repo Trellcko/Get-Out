@@ -20,7 +20,6 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private Material _minigameSpotMaterial;
         [SerializeField] private MeshRenderer _textRenderer;
         [SerializeField] private MeshRenderer _backroundRenderer;
-        
         [SerializeField] private Image _bar;
         [SerializeField] private GameObject _ui;
         [SerializeField] private GameObject _globalUI;

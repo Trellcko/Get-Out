@@ -68,5 +68,6 @@ namespace Trellcko.Gameplay.MiniGame
       ClosetMiniGame,
       CookiesMiniGame,
       CleaningMiniGame,
+      WateringMiniGame
    }
 }
