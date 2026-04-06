@@ -6267,6 +6267,10 @@ PrefabInstance:
       propertyPath: _wateringMiniGameData.Array.data[0].Speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5493214652437999868, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8548944412363754127, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -51.45
@@ -6306,6 +6310,14 @@ PrefabInstance:
     - target: {fileID: 8548944412363754127, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589456644849743190, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589456644849743190, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8758431267788093254, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: m_Name
