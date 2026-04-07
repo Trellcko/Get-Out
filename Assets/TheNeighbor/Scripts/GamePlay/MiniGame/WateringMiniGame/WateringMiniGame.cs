@@ -1,9 +1,11 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using TMPro;
 using Trellcko.Core.Input;
 using Trellcko.Gameplay.Interactable;
 using Unity.Cinemachine;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -16,6 +18,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         [SerializeField] private RectTransform _dot;
         [SerializeField] private RectTransform _fillBar;
+        [SerializeField] private TextMeshProUGUI _percentText;
 
         [SerializeField] private GameObject _gloablUI;
         [SerializeField] private GameObject _miniGameUI;
@@ -34,8 +37,15 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool, IMiniGame> Finished;
         private IInputHandler _inputHandler;
         
+        private Tween _waterCanRotationTween;
+        
         private float _velocity;
-        private float _fillBarRandomY = 0f;
+        private float _fillBarRandomY;
+
+        private bool _isBarWaiting;
+        private bool _isWatering;
+        
+        private float _currentFillTime;
 
         private const float DotBorder = 300f;
         private const float FillBarBorder = 256f;
@@ -54,15 +64,13 @@ namespace Trellcko.Gameplay.MiniGame
             _camera.enabled = true;
             IsPlaying = true;
             _inputHandler.SpaceClicked += OnSpaceClicked;
-            _fillBarRandomY = Random.Range(-FillBarBorder, FillBarBorder);
+            GeneratePositionToMove();
         }
 
         private void Update()
         {
             MoveBar();
-
             MoveDot();
-
             TryFilling();
         }
 
@@ -70,19 +78,69 @@ namespace Trellcko.Gameplay.MiniGame
         {
             if (Mathf.Abs(_dot.anchoredPosition.y - _fillBar.anchoredPosition.y) < FillAndDotMaxDifference)
             {
+                if (!_isWatering)
+                {
+                    _isWatering = true;
+                     _waterCan.DOKill();
+                     _waterCan.DOLocalRotate(new(0, 90, _wateringAngel), 0.5f)
+                        .OnComplete(_waterDrops.Play);
+                }
+                _currentFillTime =
+                    Mathf.Clamp(_currentFillTime + Time.deltaTime, 0, _wateringMiniGameData[0].TimeToFill);
+                _percentText.SetText($"{(100*(_currentFillTime/_wateringMiniGameData[0].TimeToFill)):N0}/100%");
                 
+                if(_currentFillTime >= _wateringMiniGameData[0].TimeToFill)
+                    FinishGame(true);
+                return;
+            }
+            
+            if (_isWatering)
+            {
+                _isWatering = false;
+                _waterCan.DOKill();
+                _waterDrops.Stop();
+                _waterCan.DOLocalRotate(new(0, 90, 0), 0.5f);
             }
         }
 
+        
         private void MoveBar()
         {
+            if(_isBarWaiting) return;
+            
             _fillBar.anchoredPosition = new(_fillBar.anchoredPosition.x, 
-                Mathf.Lerp(_fillBar.anchoredPosition.y, _fillBarRandomY,
+                Mathf.MoveTowards(_fillBar.anchoredPosition.y, _fillBarRandomY,
                     Time.deltaTime * _wateringMiniGameData[0].Speed));
 
             if (Mathf.Abs(_fillBar.anchoredPosition.y - _fillBarRandomY) < 1f)
             {
-                _fillBarRandomY = Random.Range(-FillBarBorder, FillBarBorder);
+                StartCoroutine(GeneratePositionAfterWaiting(_wateringMiniGameData[0].MinTimeToWait));
+            }
+        }
+
+        private IEnumerator GeneratePositionAfterWaiting(float time)
+        {
+            _isBarWaiting = true;
+            yield return new WaitForSeconds(time);
+            GeneratePositionToMove();
+            _isBarWaiting = false;
+        }
+
+        private void GeneratePositionToMove()
+        {
+            float random = Random.Range(-FillBarBorder, FillBarBorder);
+            float abs = Mathf.Abs(random - _fillBarRandomY);
+            if (abs < _wateringMiniGameData[0].MinDistance)
+            {
+                int modificator = random < _fillBarRandomY ? -1 : 1;
+
+                random = Mathf.Repeat(random + FillBarBorder + _wateringMiniGameData[0].MinDistance * modificator,
+                    FillBarBorder * 2);
+                _fillBarRandomY = random - FillBarBorder;
+            }
+            else
+            {
+                _fillBarRandomY = random;
             }
         }
 
@@ -93,7 +151,7 @@ namespace Trellcko.Gameplay.MiniGame
             float newY = _dot.anchoredPosition.y - _velocity * Time.deltaTime;
             newY = Mathf.Clamp(newY, -DotBorder, DotBorder);
 
-            _dot.anchoredPosition = new Vector2(_dot.anchoredPosition.x, newY);
+            _dot.anchoredPosition = new(_dot.anchoredPosition.x, newY);
         }
 
         private void OnSpaceClicked()
@@ -104,6 +162,7 @@ namespace Trellcko.Gameplay.MiniGame
         public void FinishGame(bool success)
         {
             _inputHandler.SpaceClicked -= OnSpaceClicked;
+            Finished?.Invoke(success, this);
         }
 
         public void ExitGame()
@@ -122,5 +181,6 @@ namespace Trellcko.Gameplay.MiniGame
         public float MinDistance;
         public float MinTimeToWait;
         public float Speed;
+        public float TimeToFill;
     }
 }

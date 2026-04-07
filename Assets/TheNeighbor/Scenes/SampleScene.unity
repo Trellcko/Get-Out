@@ -6252,25 +6252,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _fillBar
-      value: 
-      objectReference: {fileID: 3428491315013772635}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: _gloablUI
       value: 
       objectReference: {fileID: 131146912}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[0].Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5493214652437999868, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8548944412363754127, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -51.45
@@ -6311,14 +6295,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8589456644849743190, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 8589456644849743190, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 40
-      objectReference: {fileID: 0}
     - target: {fileID: 8758431267788093254, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: m_Name
       value: WateringMiniGame
@@ -6328,11 +6304,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
---- !u!224 &3428491315013772635 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1170596837582859239, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-  m_PrefabInstance: {fileID: 3428491315013772632}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3827104582650200395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6731,7 +6702,7 @@ MonoBehaviour:
   <NeededItem>k__BackingField: 3
   <ReceiveItem>k__BackingField: 0
   _audioSource: {fileID: 0}
-  _afterInteractionAction: 3
+  _afterInteractionAction: 0
   _animationName: 
 --- !u!1001 &4246944704949796542
 PrefabInstance:
