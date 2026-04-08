@@ -12,6 +12,7 @@ namespace Trellcko.Gameplay.Interactable
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Collider _goCollider;
         [SerializeField] private AudioSource _interactAudio;
+        [SerializeField] private AudioSource _knockingSound;
         public event Action InteractionFinished;
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
         public bool IsInteractable { get; private set; } = true;
@@ -28,6 +29,17 @@ namespace Trellcko.Gameplay.Interactable
             _defaultAngel = transform.localEulerAngles;
         }
 
+        public void PlayKnockingSound(bool loop)
+        {
+            _knockingSound.loop = loop;
+            _knockingSound.Play();
+        }
+
+        public void StopKnockingSound()
+        {
+            _knockingSound.Stop();
+        }
+        
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {
             getItem = neededItem;

@@ -7,5 +7,8 @@
         ThrowingUp,
         Pick,
         Put,
+        Watering,
+        WaterCan1,
+        WaterCan2,
     }
 }

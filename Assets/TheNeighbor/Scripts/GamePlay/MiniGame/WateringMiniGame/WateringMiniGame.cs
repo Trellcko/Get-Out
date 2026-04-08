@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
+using Trellcko.Core.Audio;
 using Trellcko.Core.Input;
 using Trellcko.Gameplay.Interactable;
 using Unity.Cinemachine;
@@ -36,6 +37,7 @@ namespace Trellcko.Gameplay.MiniGame
         public MiniGameType MinigameType => MiniGameType.WateringMiniGame;
         public event Action<bool, IMiniGame> Finished;
         private IInputHandler _inputHandler;
+        private ISoundController _soundController;
         
         private Tween _waterCanRotationTween;
         
@@ -52,8 +54,9 @@ namespace Trellcko.Gameplay.MiniGame
         private const float FillAndDotMaxDifference = 80f;
         
         [Inject]
-        private void Construct(IInputHandler inputHandler)
+        private void Construct(IInputHandler inputHandler, ISoundController soundController)
         {
+            _soundController = soundController;
             _inputHandler = inputHandler;
         }
         
@@ -69,6 +72,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void Update()
         {
+            if(!IsPlaying) return;
             MoveBar();
             MoveDot();
             TryFilling();
@@ -82,8 +86,13 @@ namespace Trellcko.Gameplay.MiniGame
                 {
                     _isWatering = true;
                      _waterCan.DOKill();
+                     _soundController.PlayOtherSound(OtherSound.WaterCan1);
                      _waterCan.DOLocalRotate(new(0, 90, _wateringAngel), 0.5f)
-                        .OnComplete(_waterDrops.Play);
+                        .OnComplete(()=>
+                        {
+                            _waterDrops.Play();
+                            _soundController.PlayOtherSound(OtherSound.Watering);
+                        });
                 }
                 _currentFillTime =
                     Mathf.Clamp(_currentFillTime + Time.deltaTime, 0, _wateringMiniGameData[0].TimeToFill);
@@ -96,6 +105,8 @@ namespace Trellcko.Gameplay.MiniGame
             
             if (_isWatering)
             {
+                
+                _soundController.PlayOtherSound(OtherSound.WaterCan2);
                 _isWatering = false;
                 _waterCan.DOKill();
                 _waterDrops.Stop();

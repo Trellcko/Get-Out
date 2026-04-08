@@ -38,7 +38,6 @@ namespace Trellcko.Gameplay.Interactable
             _audioSource.loop = false;
             StartCoroutine(PlaySound());
             InteractableOutline.Disable();
-            InteractionFinished?.Invoke();
             return true;
         }
 
@@ -50,6 +49,7 @@ namespace Trellcko.Gameplay.Interactable
             yield return new WaitForSeconds(_speekingTime);
             _audioSource.clip = _hangDownPhoneClip;
             _audioSource.Play();
+            InteractionFinished?.Invoke();
         }
     }
 }

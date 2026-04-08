@@ -8,7 +8,8 @@
         void PlayShockMoment(bool playAfterAmbien = false);
         void StopPlayingAmbience();
         void PlayMonsterSound(MonsterSound monsterSound);
-        void PlayOtherSound(OtherSound otherSound, bool randomPitch = false);
+        void PlayOtherSound(OtherSound otherSound, bool randomPitch = false, bool loop = false);
+        void StopPlayingOtherSound();
         void PlayPlayerSound(PlayerSound playerSound);
     }
 }

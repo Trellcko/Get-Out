@@ -2040,6 +2040,12 @@ MonoBehaviour:
     Clip: {fileID: 8300000, guid: 1a64b31322e95a74cbe254fe2fb27271, type: 3}
   - Sound: 4
     Clip: {fileID: 8300000, guid: 66c7498f7b6405b4da834acce86bd34b, type: 3}
+  - Sound: 5
+    Clip: {fileID: 8300000, guid: d989972d53bf4ab46b05d0a829068ff6, type: 3}
+  - Sound: 6
+    Clip: {fileID: 8300000, guid: d903b74e91565a4459a137c3082bc74e, type: 3}
+  - Sound: 7
+    Clip: {fileID: 8300000, guid: 619f280c5503366499ca312ea385752b, type: 3}
   _playerSounds:
   - Sound: 0
     Clip: {fileID: 8300000, guid: 3c9140707af73324b9ab35e6c46a1224, type: 3}
@@ -6162,23 +6168,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2935066301352151446, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.56
+      value: -12.32
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.227
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.36
+      value: -17.6
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6186,7 +6192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalRotation.z
@@ -6198,7 +6204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 5334417478840327623, guid: 8496c030fbe3957478461498419b6e39, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6352,6 +6358,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1103353066705856424, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -71.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159970063619424362, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1682672207650904561, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
       propertyPath: _monster
       value: 
@@ -6376,6 +6390,18 @@ PrefabInstance:
       propertyPath: monsterFacade
       value: 
       objectReference: {fileID: 1190455749}
+    - target: {fileID: 9093443663107965525, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0625b26d3e8660547a7572af797dbbe6, type: 3}
+    - target: {fileID: 9093443663107965525, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9093443663107965525, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _speekingTime
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

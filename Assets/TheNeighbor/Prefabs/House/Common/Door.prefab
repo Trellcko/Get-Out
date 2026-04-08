@@ -110,6 +110,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 4979149382288406385}
   _goCollider: {fileID: 9121661182487420765}
   _interactAudio: {fileID: 8817515664448613146}
+  _knockingSound: {fileID: 4666018939160763315}
   <InteractableOutline>k__BackingField: {fileID: 4588615092078191117}
 --- !u!114 &4588615092078191117
 MonoBehaviour:
@@ -568,9 +569,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4768196593758971429}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000000059604645, y: -0.000000045227353, z: -0.70710725, w: 0.70710635}
-  m_LocalPosition: {x: -0.20766178, y: -0.22312932, z: 0.026873305}
-  m_LocalScale: {x: 1.5471679, y: 4.0396423, z: 2.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6888230224746822769}

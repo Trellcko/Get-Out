@@ -34,11 +34,17 @@ namespace Trellcko.Core.Audio
             _monsterSoundAudioSource.Play();
         }
 
-        public void PlayOtherSound(OtherSound otherSound, bool randomPitch = false)
+        public void PlayOtherSound(OtherSound otherSound, bool randomPitch = false, bool loop = false)
         {
             _otherSoundAudioSource.pitch = randomPitch ? Random.Range(0.9f, 1.1f) : 1f;
             _otherSoundAudioSource.clip = _otherSounds.First(x => x.Sound == otherSound).Clip;
             _otherSoundAudioSource.Play();
+            _otherSoundAudioSource.loop = loop;
+        }
+
+        public void StopPlayingOtherSound()
+        {
+            _otherSoundAudioSource.Stop();
         }
 
         public void PlayShockMoment(bool playAfterAmbien = false)
