@@ -26,7 +26,7 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private Material[] _playerMaterials;
         public bool IsPlaying { get; private set; }
 
-        private QuestSystem _questSystem;
+        private IQuestSystem _questSystem;
         private IInputHandler _inputHandler;
         private Coroutine _miniGameCoroutine;
         private PlayerFacade _playerFacade;
@@ -39,17 +39,19 @@ namespace Trellcko.Gameplay.MiniGame
         public MiniGameType MinigameType => MiniGameType.WindowMiniGame;
 
         [Inject]
-        private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler, ISoundController soundController)
+        private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler, ISoundController soundController,
+            IQuestSystem questSystem)
         {
             _soundController = soundController;
             _inputHandler = inputHandler;
             _playerFacade = playerFacade;
+            _questSystem = questSystem;
         }
         
         public void StartGame(MiniGamesParamsHolder param)
         {
             _slider.fillAmount = 0;
-            _soundController.PlayPlayerSound(PlayerSound.Crying);
+            _soundController.PlayPlayerSound(PlayerSound.Whimper);
             IsPlaying = true;
             _UI.SetActive(true);
             _playerFacade.PlayerMovement.IsEnabled = false;
@@ -89,7 +91,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void OnSpaceClicked()
         {
-            _slider.fillAmount += _data[0].power;
+            _slider.fillAmount += _data[_questSystem.Day].power;
             UpdatePlayerMaterials();
             if (_slider.fillAmount >= 1)
             {
@@ -99,12 +101,12 @@ namespace Trellcko.Gameplay.MiniGame
 
         private IEnumerator MiniGameCycle()
         {
-            float currentTime = _data[0].time;
+            float currentTime = _data[_questSystem.Day].time;
             
             while (currentTime > 0)
             {
                 _timer.SetText(((int)currentTime).ToString("00"));
-                _slider.fillAmount -= _data[0].fallDownSpeed;
+                _slider.fillAmount -= _data[_questSystem.Day].fallDownSpeed;
                 currentTime -= Time.deltaTime;
                 UpdatePlayerMaterials();
                 yield return null;
@@ -124,15 +126,12 @@ namespace Trellcko.Gameplay.MiniGame
                 switch (index)
                 {
                     case 0:
-                        _soundController.PlayPlayerSound(PlayerSound.Crying);
-                        break;
-                    case 1:
                         _soundController.PlayPlayerSound(PlayerSound.Whimper);
                         break;
-                    case 2:
+                    case 1:
                         _soundController.PlayPlayerSound(PlayerSound.Breathing);
                         break;
-                    case 3:
+                    case 2:
                         _soundController.PlayPlayerSound(PlayerSound.Chuckle);
                         break;
                 }

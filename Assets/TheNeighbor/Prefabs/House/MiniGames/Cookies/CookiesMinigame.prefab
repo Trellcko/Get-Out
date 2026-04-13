@@ -1262,8 +1262,8 @@ MonoBehaviour:
   _handController: {fileID: 8190470880641126771}
   _cinemachineCamera: {fileID: 2273506346553546235}
   _cookiesMiniGameData:
-  - cookiesChance: 0.5
-    needCookies: 5
+  - cookiesChance: 1
+    needCookies: 10
   _ui: {fileID: 0}
   _miniGameUI: {fileID: 6902607134507224955}
   _countText: {fileID: 1063846035136577610}

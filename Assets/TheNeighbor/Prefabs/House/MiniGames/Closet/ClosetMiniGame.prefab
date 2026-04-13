@@ -1289,8 +1289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _closetMiniGameData:
-  - CorpseCount: 1
-    ClothesCount: 2
+  - CorpseCount: 0
+    ClothesCount: 5
   _clothesInteractable: {fileID: 2140830671425920910}
   _camera: {fileID: 274694756533771414}
   _mainCanvas: {fileID: 0}

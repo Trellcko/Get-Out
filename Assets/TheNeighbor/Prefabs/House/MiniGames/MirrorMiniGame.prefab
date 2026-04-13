@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-  - power: 0.2
+  - power: 0.08
     time: 35
     fallDownSpeed: 0.001
   _slider: {fileID: 6062218051444112935}
@@ -1330,7 +1330,6 @@ MonoBehaviour:
   _timer: {fileID: 6653272878613659703}
   _playerMeshRenderer: {fileID: 4976149020338516288}
   _playerMaterials:
-  - {fileID: 2100000, guid: 4d51853a0712af84d83a7cf768ffdd99, type: 2}
   - {fileID: 2100000, guid: fc29831bd62b6bb4ca53925940fc8658, type: 2}
   - {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
   - {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}

@@ -18,6 +18,10 @@ namespace Trellcko.Gameplay.Interactable
         public event Action InteractionStarted;
         public event Action InteractionFinished;
 
+        private void Start()
+        {
+            Activate();
+        }
 
         public void Activate()
         {

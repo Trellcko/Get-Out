@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minigameType: 3
+  minigamesParamsHolder: {fileID: 0}
 --- !u!1 &7678197193972664547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minigameType: 0
+  minigamesParamsHolder: {fileID: 0}
 --- !u!4 &4701727193975427292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8529737059751232477, guid: 617b6662ecd9cca4ba288383a86d8ee6, type: 3}
@@ -1598,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _minigameType: 1
+  minigamesParamsHolder: {fileID: 0}
 --- !u!1001 &5912289223190601902
 PrefabInstance:
   m_ObjectHideFlags: 0

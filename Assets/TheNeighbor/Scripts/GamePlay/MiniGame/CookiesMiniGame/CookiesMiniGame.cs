@@ -5,6 +5,7 @@ using TMPro;
 using Trellcko.Core.Audio;
 using Trellcko.Gameplay.Interactable;
 using Trellcko.Gameplay.Player;
+using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -43,7 +44,7 @@ namespace Trellcko.Gameplay.MiniGame
 
 
         private PlayerFacade _playerFacade;
-
+        private IQuestSystem _questSystem;
         private Coroutine _spawningCoroutine;
         private ISoundController _soundController;
         private MiniGameBadEffect _miniGameBadEffect;
@@ -51,11 +52,13 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool, IMiniGame> Finished;
 
         [Inject]
-        private void Construct(PlayerFacade playerFacade, ISoundController soundController, MiniGameBadEffect miniGameBadEffect)
+        private void Construct(PlayerFacade playerFacade, ISoundController soundController,
+            MiniGameBadEffect miniGameBadEffect, IQuestSystem questSystem)
         {
             _miniGameBadEffect = miniGameBadEffect;
             _soundController = soundController;
             _playerFacade = playerFacade;
+            _questSystem = questSystem;
         }
 
         private void Awake()
@@ -92,7 +95,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void UpdateText()
         {
-            _countText.SetText($"Cookies {_currentCookies}/{_cookiesMiniGameData[0].needCookies}");
+            _countText.SetText($"Cookies {_currentCookies}/{_cookiesMiniGameData[_questSystem.Day].needCookies}");
         }
 
         private IEnumerator SpawningCorun()
@@ -110,7 +113,7 @@ namespace Trellcko.Gameplay.MiniGame
         private Cookie SpawnCookie(Vector3 position)
         {
             float chance = Random.Range(0f, 1f);
-            List<Cookie> cookies = chance < _cookiesMiniGameData[0].cookiesChance ? _goodCookies : _badCookies;
+            List<Cookie> cookies = chance < _cookiesMiniGameData[_questSystem.Day].cookiesChance ? _goodCookies : _badCookies;
             
             return Instantiate(cookies[Random.Range(0, cookies.Count)], position, Quaternion.identity);
         }
@@ -146,7 +149,7 @@ namespace Trellcko.Gameplay.MiniGame
             _currentCookies++;
             _soundController.PlayOtherSound(OtherSound.Eating);
             UpdateText();
-            if (_currentCookies >= _cookiesMiniGameData[0].needCookies)
+            if (_currentCookies >= _cookiesMiniGameData[_questSystem.Day].needCookies)
             {
                 FinishGame(true);
             }

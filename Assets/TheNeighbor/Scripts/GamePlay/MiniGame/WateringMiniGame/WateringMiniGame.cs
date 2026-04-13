@@ -6,6 +6,7 @@ using TMPro;
 using Trellcko.Core.Audio;
 using Trellcko.Core.Input;
 using Trellcko.Gameplay.Interactable;
+using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -48,14 +49,16 @@ namespace Trellcko.Gameplay.MiniGame
         private bool _isWatering;
         
         private float _currentFillTime;
+        private IQuestSystem _questSystem;
 
         private const float DotBorder = 300f;
         private const float FillBarBorder = 256f;
         private const float FillAndDotMaxDifference = 80f;
         
         [Inject]
-        private void Construct(IInputHandler inputHandler, ISoundController soundController)
+        private void Construct(IInputHandler inputHandler, ISoundController soundController, IQuestSystem questSystem)
         {
+            _questSystem = questSystem;
             _soundController = soundController;
             _inputHandler = inputHandler;
         }

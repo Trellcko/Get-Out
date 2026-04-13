@@ -4,6 +4,7 @@ using Trellcko.Core.Input;
 using Trellcko.Core.Physics;
 using Trellcko.Gameplay.Interactable;
 using Trellcko.Gameplay.Player;
+using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -22,6 +23,7 @@ namespace Trellcko.Gameplay.MiniGame
         public MiniGameType MinigameType => MiniGameType.ClosetMiniGame;
 
         private PlayerFacade _playerFacade;
+        private IQuestSystem _questSystem;
         private IInputHandler _inputHandler;
         private IRayGetter _rayGetter;
         private ICursorController _cursorController;
@@ -29,11 +31,13 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool, IMiniGame> Finished;
 
         [Inject]
-        private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler, ICursorController cursorController)
+        private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler,
+            ICursorController cursorController, IQuestSystem questSystem)
         {
             _cursorController = cursorController;
             _inputHandler = inputHandler;
             _playerFacade = playerFacade;
+            _questSystem = questSystem;
         }
 
         private void Awake()
