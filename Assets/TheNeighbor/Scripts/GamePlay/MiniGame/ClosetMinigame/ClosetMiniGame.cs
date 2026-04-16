@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Trellcko.Core.Input;
 using Trellcko.Core.Physics;
 using Trellcko.Gameplay.Interactable;
@@ -14,6 +15,9 @@ namespace Trellcko.Gameplay.MiniGame
     public class ClosetMiniGame : MonoBehaviour, IMiniGame
     {
         [SerializeField] private List<ClosetMiniGameData> _closetMiniGameData;
+        [SerializeField] private Material _clothes;
+        [SerializeField] private Material _corpse;
+        [SerializeField] private List<ClothesAnchor> _clothesAnchors;
         [SerializeField] private ClothesInteractable _clothesInteractable;
         [SerializeField] private CinemachineCamera _camera;
         [SerializeField] private GameObject _mainCanvas;
@@ -23,27 +27,18 @@ namespace Trellcko.Gameplay.MiniGame
         public MiniGameType MinigameType => MiniGameType.ClosetMiniGame;
 
         private PlayerFacade _playerFacade;
-        private IQuestSystem _questSystem;
         private IInputHandler _inputHandler;
-        private IRayGetter _rayGetter;
         private ICursorController _cursorController;
 
         public event Action<bool, IMiniGame> Finished;
 
         [Inject]
         private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler,
-            ICursorController cursorController, IQuestSystem questSystem)
+            ICursorController cursorController)
         {
             _cursorController = cursorController;
             _inputHandler = inputHandler;
             _playerFacade = playerFacade;
-            _questSystem = questSystem;
-        }
-
-        private void Awake()
-        {
-            _rayGetter = new RayMouseGetter(_inputHandler, Camera.main);
-            
         }
 
         private void Update()
@@ -55,6 +50,10 @@ namespace Trellcko.Gameplay.MiniGame
         public void StartGame(MiniGamesParamsHolder param = null)
         {
             IsPlaying = true;
+            foreach (var clothesAnchor in _clothesAnchors)
+            {
+                clothesAnchor.MeshRenderer.enabled = false;
+            }
             _miniGameCanvas.SetActive(true);
             _mainCanvas.SetActive(false);
             _cursorController.UnlockCursor();
@@ -63,10 +62,28 @@ namespace Trellcko.Gameplay.MiniGame
             _playerFacade.PlayerRotation.IsEnabled = false;
             _playerFacade.Interactable.IsEnabled = false;
             _clothesInteractable.SetMiniGameData(_closetMiniGameData[0]);
-            _clothesInteractable.ClothesRunOut += OnClothesRunOut;
+            _clothesInteractable.RunOut += OnRunOut;
+            _clothesInteractable.Putted += OnPutted;
         }
 
-        private void OnClothesRunOut()
+        private void OnPutted(bool isCorpse)
+        {
+            ClothesAnchor anchor = _clothesAnchors.FirstOrDefault(x =>
+                x.IsCorpse == isCorpse && x.Count is > 0 and < ClothesAnchor.MaxPerStack);
+
+            if (anchor == null)
+            {
+                anchor = _clothesAnchors.FirstOrDefault(x => x.Count == 0);
+                if (anchor == null) return;
+                anchor.IsCorpse = isCorpse;
+                anchor.MeshRenderer.sharedMaterial = isCorpse ? _corpse : _clothes;
+                anchor.MeshRenderer.enabled = true;
+            }
+
+            anchor.Count++;
+        }
+
+        private void OnRunOut()
         {
             FinishGame(true);
         }
@@ -87,6 +104,18 @@ namespace Trellcko.Gameplay.MiniGame
             _playerFacade.PlayerMovement.IsEnabled = true;
             _playerFacade.PlayerRotation.IsEnabled = true;
             _playerFacade.Interactable.IsEnabled = true;
+            _clothesInteractable.RunOut -= OnRunOut;
+            _clothesInteractable.Putted -= OnPutted;
         }
+    }
+
+    [Serializable]
+    public class ClothesAnchor
+    {
+       public MeshRenderer MeshRenderer;
+       public bool IsCorpse;
+       public int Count;
+       
+       public const int  MaxPerStack = 3;
     }
 }

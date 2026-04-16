@@ -34,11 +34,12 @@ namespace Trellcko.Gameplay.MiniGame
             _inputHandler.Moved += OnMoveInputInvoked;
             _inputHandler.Interacted += OnInteractButtonClicked;
             _clothesInteractable.Reseted += OnReseted;
-            _clothesInteractable.ClothesRunOut += OnClothesRunOut;
-            _clothesInteractable.ClothesGenerated += OnClothesGenerated;
+            _clothesInteractable.RunOut += OnClothesRunOut;
+            _clothesInteractable.Generated += OnGenerated;
         }
 
-        private void OnClothesGenerated(bool isCorpse)
+
+        private void OnGenerated(bool isCorpse)
         {
             _clothesInteractable.InteractableOutline.Disable();
             _closetInteractableOutline.EnableInteractOutline();

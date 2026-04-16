@@ -50,6 +50,7 @@ namespace Trellcko.Gameplay.MiniGame
             _cleaningMiniGamesParams = (CleaningMiniGamesParamsHolder)param;
             
             _minigameSpotMaterial.mainTexture = _cleaningMiniGamesParams.Spot;
+            _textRenderer.enabled = _cleaningMiniGamesParams.Text;
             _textRenderer.sharedMaterial = _cleaningMiniGamesParams.Text;
             _backroundRenderer.sharedMaterial = _cleaningMiniGamesParams.Background;
             _backroundRenderer.transform.rotation = Quaternion.Euler(0, _cleaningMiniGamesParams.Rotation, 0);

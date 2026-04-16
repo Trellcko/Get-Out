@@ -29,11 +29,11 @@ namespace Trellcko.Gameplay.MiniGame
         private DiContainer _container;
         private ISoundController _soundController;
 
-        public event Action<bool> ClothesGenerated;
+        public event Action<bool> Generated;
+        public event Action<bool> Putted;
         public event Action Reseted;
-        public event Action ClothesRunOut;
+        public event Action RunOut;
         public event Action InteractionStarted;
-
         public event Action InteractionFinished;
 
         [Inject]
@@ -60,7 +60,7 @@ namespace Trellcko.Gameplay.MiniGame
             ClothesDraggable clothesInstance = _container.InstantiatePrefab(_clothesPrefab).GetComponent<ClothesDraggable>();
             clothesInstance.transform.position = transform.position;
             clothesInstance.Putted += OnPutted;
-            clothesInstance.UpdateSprite(TakeRandomSprite(out bool isCorpse));
+            clothesInstance.UpdateSprite(TakeRandomSprite(out bool isCorpse), isCorpse);
             if (isCorpse)
             {
                 _miniGameBadEffect.PlayCorpseEffect(volume);
@@ -69,7 +69,7 @@ namespace Trellcko.Gameplay.MiniGame
             {
                 _soundController.PlayOtherSound(OtherSound.Pick);
             }
-            ClothesGenerated?.Invoke(isCorpse);
+            Generated?.Invoke(isCorpse);
             IsInteractable = false;
             InteractionFinished?.Invoke();
             return true;
@@ -80,9 +80,10 @@ namespace Trellcko.Gameplay.MiniGame
             obj.Putted -= OnPutted;
             if (_currentClothes <= 0 && _currentCorpses <= 0)
             {
-                ClothesRunOut?.Invoke();
+                RunOut?.Invoke();
                 return;
             }
+            Putted?.Invoke(obj.IsCorpse);
             Reseted?.Invoke();
             IsInteractable = true;
 

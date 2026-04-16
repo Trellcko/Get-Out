@@ -9,7 +9,6 @@ using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
-using Trellcko.Core.Audio;
 using Trellcko.Gameplay.Interactable;
 using Zenject;
 
@@ -21,7 +20,6 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private Image _slider;
         [SerializeField] private GameObject _UI;
         [SerializeField] private CinemachineCamera _camera;
-        [SerializeField] private TextMeshProUGUI _timer;
         [SerializeField] private MeshRenderer _playerMeshRenderer;
         [SerializeField] private Material[] _playerMaterials;
         public bool IsPlaying { get; private set; }
@@ -51,7 +49,7 @@ namespace Trellcko.Gameplay.MiniGame
         public void StartGame(MiniGamesParamsHolder param)
         {
             _slider.fillAmount = 0;
-            _soundController.PlayPlayerSound(PlayerSound.Whimper);
+            _soundController.PlayPlayerSound(PlayerSound.Breathing);
             IsPlaying = true;
             _UI.SetActive(true);
             _playerFacade.PlayerMovement.IsEnabled = false;
@@ -101,18 +99,12 @@ namespace Trellcko.Gameplay.MiniGame
 
         private IEnumerator MiniGameCycle()
         {
-            float currentTime = _data[_questSystem.Day].time;
-            
-            while (currentTime > 0)
+            while (true)
             {
-                _timer.SetText(((int)currentTime).ToString("00"));
                 _slider.fillAmount -= _data[_questSystem.Day].fallDownSpeed;
-                currentTime -= Time.deltaTime;
                 UpdatePlayerMaterials();
                 yield return null;
             }
-            FinishGame(false);
-            
         }
 
         private void UpdatePlayerMaterials()
@@ -126,9 +118,6 @@ namespace Trellcko.Gameplay.MiniGame
                 switch (index)
                 {
                     case 0:
-                        _soundController.PlayPlayerSound(PlayerSound.Whimper);
-                        break;
-                    case 1:
                         _soundController.PlayPlayerSound(PlayerSound.Breathing);
                         break;
                     case 2:

@@ -24,10 +24,10 @@ public class TurnOffLight : MonoBehaviour
     
     private void OnEnable()
     {
-        _clothesInteractable.ClothesGenerated += OnClothesGenerated;    
+        _clothesInteractable.Generated += OnGenerated;    
     }
 
-    private void OnClothesGenerated(bool obj)
+    private void OnGenerated(bool obj)
     {
         if(obj)
             StartCoroutine(TriggerCorun());

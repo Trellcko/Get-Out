@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using TheNeighbor.Scripts.Constants;
 using Trellcko.Core.Input;
 using Trellcko.Core.Physics;
@@ -94,14 +95,15 @@ namespace Trellcko.Gameplay.Player
             Ray ray = _rayGetter.GetRay();
             Debug.DrawRay(ray.origin, ray.direction * _rayLength, Color.red);
             int count = Physics.RaycastNonAlloc(ray, _hits, _rayLength, Layers.Interactable);
-            float maxDistance = float.MaxValue;
+            float minDistance = float.MaxValue;
             for (int i = 0; i < count; i++)
             {
-                if (_hits[i].distance < maxDistance)
+                if (_hits[i].distance < minDistance)
                 {
-                    if (_hits[i].transform.TryGetComponent(out questInteractable))
+                    questInteractable = _hits[i].transform.GetComponentsInChildren<IInteractable>().FirstOrDefault(x => x.IsInteractable);
+                    if (questInteractable != null)
                     {
-                        maxDistance = _hits[i].distance;
+                        minDistance = _hits[i].distance;
                     }
                 }
             }

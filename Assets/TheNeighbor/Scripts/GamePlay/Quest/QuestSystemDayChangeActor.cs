@@ -85,10 +85,16 @@ namespace Trellcko.Gameplay.QuestLogic
 
         private void AnimationStartNextDay(Action callback = null)
         {
+            Debug.Log("Show UI next day");
             _transitionUI.ShowUI(_questSystem.Day + 2, () =>
             {
+                
+                Debug.Log("Reset next day");
                 _dayResetting.ResetItemsFor(_questSystem.Day + 1);
+                Debug.Log("Start next day");
                 _questSystem.StartNextDay();
+                
+                Debug.Log("Hide Ui next day");
                 _transitionUI.HideUI(() =>
                 {
                     PlayerMovement.IsEnabled = PlayerRotation.IsEnabled = true;

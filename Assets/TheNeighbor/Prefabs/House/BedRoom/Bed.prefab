@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 974626890420037604}
   - component: {fileID: 6440828588852073432}
-  - component: {fileID: 4072726795579327234}
   - component: {fileID: 8632000209767608518}
   m_Layer: 6
   m_Name: Sleeping
@@ -52,27 +51,6 @@ MonoBehaviour:
   _audioSource: {fileID: 8632000209767608518}
   _afterInteractionAction: 0
   _animationName: 
---- !u!65 &4072726795579327234
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386624149198089266}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.048782412, y: 0.01573316, z: 0.019999998}
-  m_Center: {x: 0.010787009, y: 0.00000001071021, z: -0.0000000037252903}
 --- !u!82 &8632000209767608518
 AudioSource:
   m_ObjectHideFlags: 0
@@ -299,7 +277,7 @@ MonoBehaviour:
   <NeededItem>k__BackingField: 0
   <ReceiveItem>k__BackingField: 0
   _audioSource: {fileID: 3656734439346711319}
-  _afterInteractionAction: 2
+  _afterInteractionAction: 0
   _animationName: 
 --- !u!114 &735645447097280944
 MonoBehaviour:

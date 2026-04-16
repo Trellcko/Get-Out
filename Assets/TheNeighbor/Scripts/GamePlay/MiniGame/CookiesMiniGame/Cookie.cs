@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Trellcko.Gameplay.MiniGame
 {
@@ -12,6 +13,7 @@ namespace Trellcko.Gameplay.MiniGame
 
       private void Start()
       {
+         transform.localEulerAngles = new(0, 0, Random.Range(0f, 360f));
          _rigidbody.linearVelocity = new(0, -_speed, 0);
       }
    }

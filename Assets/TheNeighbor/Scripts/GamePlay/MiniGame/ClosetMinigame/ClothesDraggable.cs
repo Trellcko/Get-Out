@@ -15,6 +15,7 @@ namespace Trellcko.Gameplay.MiniGame
         private Camera _camera;
         private IInputHandler _inputHandler;
         private ISoundController _soundController;
+        public bool IsCorpse { get; private set; }
         public event Action<ClothesDraggable> Putted;
 
         [Inject]
@@ -29,8 +30,9 @@ namespace Trellcko.Gameplay.MiniGame
             _camera = Camera.main;
         }
 
-        public void UpdateSprite(Sprite sprite)
+        public void UpdateSprite(Sprite sprite, bool isCorpse)
         {
+            IsCorpse = isCorpse;
             _material.SetTexture(ShaderProperties.MainTex, sprite.texture);
 
             float width = sprite.rect.width / sprite.pixelsPerUnit;

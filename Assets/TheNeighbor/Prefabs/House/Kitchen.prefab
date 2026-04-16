@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 6072914512252535699}
   - component: {fileID: 987007196150397904}
   m_Layer: 6
-  m_Name: EnableColliderAndMeshResetObject
+  m_Name: CookiesEnableColliderAndMeshResetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
