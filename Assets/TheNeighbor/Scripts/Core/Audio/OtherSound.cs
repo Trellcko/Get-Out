@@ -10,5 +10,6 @@
         Watering,
         WaterCan1,
         WaterCan2,
+        TextBlip
     }
 }

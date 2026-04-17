@@ -9,7 +9,7 @@ namespace Trellcko.Gameplay.QuestLogic
 {
     public class DayEventsHandler : MonoBehaviour
     {
-        [SerializeField] private List<DayEventsList> _dayTriggersData;
+        [SerializeField] private List<DayEventsList> _dayEvents;
         
         private IQuestSystem _questSystem;
 
@@ -35,7 +35,7 @@ namespace Trellcko.Gameplay.QuestLogic
         private void OnDayStarted()
         {
             _questSystem.CurrentDayList.QuestActivated += OnQuestActivated;
-            foreach (DayTriggerData dayTriggerData in _dayTriggersData[_questSystem.Day]._dayTriggersData)
+            foreach (DayTriggerData dayTriggerData in _dayEvents[_questSystem.Day]._dayTriggersData)
             {
                 dayTriggerData._baseEvent.Init(dayTriggerData._notifier);
             }
@@ -48,9 +48,9 @@ namespace Trellcko.Gameplay.QuestLogic
 
         private void OnQuestActivated()
         {
-            if (_dayTriggersData.Count > _questSystem.Day)
+            if (_dayEvents.Count > _questSystem.Day)
             {
-                List<DayTriggerData> data = _dayTriggersData[_questSystem.Day]._dayTriggersData.Where(x => x.QuestIndex == _questSystem.CurrentDayList.QuestIndex).ToList();
+                List<DayTriggerData> data = _dayEvents[_questSystem.Day]._dayTriggersData.Where(x => x.QuestIndex == _questSystem.CurrentDayList.QuestIndex).ToList();
                 foreach (DayTriggerData dayTriggerData in data)
                 {
                     dayTriggerData._notifier?.StartWatching();

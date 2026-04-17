@@ -32,7 +32,6 @@ namespace Trellcko.Gameplay.QuestLogic
 
         private void OnQuestCompleted()
         {
-            Debug.Log("oNqUEST cOMPLETED " + QuestIndex);
             CurrentQuest.Completed -= OnQuestCompleted;
             BeforeQuestActivated?.Invoke();
             if (QuestIndex == Quests.Count - 1)
