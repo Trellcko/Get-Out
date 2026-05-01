@@ -12,9 +12,8 @@ namespace Trellcko.Gameplay.Interactable
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _putClip;
         [SerializeField] private AudioClip _getClip;
-        
-        
         public bool IsInteractable => true;
+        public event Action InteractionEnabled;
         public event Action InteractionStarted;
 
         private ISoundController _soundController;

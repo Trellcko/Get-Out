@@ -6,6 +6,7 @@ namespace Trellcko.Gameplay.Interactable
 {
     public class InteractableTemple : MonoBehaviour, IInteractable
     {
+        public event Action InteractionEnabled;
         public event Action InteractionStarted;
         public event Action InteractionFinished;
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }

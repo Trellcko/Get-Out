@@ -33,6 +33,7 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool> Putted;
         public event Action Reseted;
         public event Action RunOut;
+        public event Action InteractionEnabled;
         public event Action InteractionStarted;
         public event Action InteractionFinished;
 
@@ -50,6 +51,7 @@ namespace Trellcko.Gameplay.MiniGame
             _currentCorpses = closetMiniGameData.CorpseCount;
             IsInteractable = true;
             Reseted?.Invoke();
+            InteractionEnabled?.Invoke();
         }
 
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)

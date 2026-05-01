@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 1986519736068070835}
   - component: {fileID: 6351572351303567476}
   m_Layer: 6
-  m_Name: Spot
+  m_Name: SpotDay1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7342758294844074771}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -805,7 +805,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 1.0000002, z: 6.1232336e-17}
   m_Center: {x: 0.00000047683716, y: 0.00000023841858, z: -0.000000016763806}

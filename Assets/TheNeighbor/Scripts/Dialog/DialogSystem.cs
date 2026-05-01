@@ -37,14 +37,14 @@ namespace Trellcko.Dialog
         private void ShowNextReplica()
         {
             Action hidedAction = null;
-            Action showAction = null;
+            Action showedAction = null;
             
             ReplicaData replicaData = _dialogData.ReplicaData[_counter];
             hidedAction += replicaData.OnHidedText;
             _counter++;
             
-            showAction += replicaData.OnShowedText;
-            showAction += _soundController.StopPlayingOtherSound;
+            showedAction += replicaData.OnShowedText;
+            showedAction += _soundController.StopPlayingOtherSound;
             
             if (_counter < _dialogData.ReplicaData.Count)
             {
@@ -61,7 +61,7 @@ namespace Trellcko.Dialog
             }
             _soundController.PlayOtherSound(OtherSound.TextBlip, true, true);
             _dialogUI.ShowText(replicaData.Text, replicaData.Duration, 
-                showAction, hidedAction);
+                showedAction, hidedAction);
         }
     }
 }

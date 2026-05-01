@@ -19,6 +19,7 @@ namespace Trellcko.Gameplay.QuestLogic
         private string _animationName;
 
 
+        public event Action InteractionEnabled;
         public event Action InteractionStarted;
         public event Action InteractionFinished;
 
@@ -48,6 +49,7 @@ namespace Trellcko.Gameplay.QuestLogic
         {
             IsInteractable = true;
             InteractableOutline.EnableInteractOutline();
+            InteractionEnabled?.Invoke();
         }
 
         public void SetIsMiniGameInteraction()

@@ -11,6 +11,7 @@ public class Alarm : MonoBehaviour, IInteractable
     [SerializeField] private AudioClip _alarm;
     [SerializeField] private AudioClip _turnOffAlarm;
 
+    public event Action InteractionEnabled;
     public event Action InteractionStarted;
     public event Action InteractionFinished;
     public bool IsInteractable { get; private set; }
@@ -22,6 +23,7 @@ public class Alarm : MonoBehaviour, IInteractable
         _audioSource.clip = _alarm;
         _audioSource.loop = true;
         _audioSource.Play();
+        InteractionEnabled?.Invoke();
     }
 
     public bool TryInteract(out QuestItem getItem, QuestItem neededItem)

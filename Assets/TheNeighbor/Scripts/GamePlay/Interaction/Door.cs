@@ -17,6 +17,7 @@ namespace Trellcko.Gameplay.Interactable
         [field: SerializeField] public InteractableOutline InteractableOutline { get; private set; }
         public bool IsInteractable { get; private set; } = true;
 
+        public event Action InteractionEnabled;
         public event Action InteractionStarted;
 
         private Vector3 _defaultAngel;
@@ -78,6 +79,7 @@ namespace Trellcko.Gameplay.Interactable
             transform.localRotation = Quaternion.Euler(_defaultAngel);
             IsInteractable = true;
             _goCollider.enabled = true;
+            InteractionEnabled?.Invoke();
         }
 
         public void ReturnToInit()
@@ -87,7 +89,11 @@ namespace Trellcko.Gameplay.Interactable
 
             _interactAudio.Play();
             _goCollider.enabled = true;
-            transform.DOLocalRotate(_defaultAngel, OpenTime).OnComplete(() => IsInteractable = true);
+            transform.DOLocalRotate(_defaultAngel, OpenTime).OnComplete(() =>
+            {
+                IsInteractable = true;
+                InteractionEnabled?.Invoke();
+            });
         }
     }
 }

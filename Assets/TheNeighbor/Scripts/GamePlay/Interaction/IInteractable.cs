@@ -5,6 +5,7 @@ namespace Trellcko.Gameplay.QuestLogic
 {
     public interface IInteractable
     {
+        event Action InteractionEnabled;
         event Action InteractionStarted;
         event Action InteractionFinished;
         public InteractableOutline InteractableOutline { get; }

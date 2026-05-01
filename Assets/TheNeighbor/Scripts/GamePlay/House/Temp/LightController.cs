@@ -8,7 +8,7 @@ public class LightController : MonoBehaviour
 {
     [SerializeField] private GameObject _monster;
     [SerializeField] private CleaningMiniGame _cleaningMiniGame;
-    [SerializeField] private Phone _phone;
+    [SerializeField] private Phone phone;
 
 
     private void OnEnable()
@@ -18,7 +18,7 @@ public class LightController : MonoBehaviour
 
     private void OnFinished(bool arg1, IMiniGame arg2)
     {
-        _phone.enabled = true;
+        phone.enabled = true;
         _monster.SetActive(true);
     }
 }

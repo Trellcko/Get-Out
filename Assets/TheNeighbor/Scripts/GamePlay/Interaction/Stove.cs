@@ -10,9 +10,15 @@ namespace Trellcko.Gameplay.Interactable
         [SerializeField] private AudioSource _interactAudio;
         [SerializeField] private GameObject _fire;
         public bool IsInteractable => true;
-        
+
+        public event Action InteractionEnabled;
         public event Action InteractionStarted;
         public event Action InteractionFinished;
+
+        private void Awake()
+        {
+            InteractionEnabled?.Invoke();
+        }
 
         public bool TryInteract(out QuestItem getItem, QuestItem neededItem)
         {

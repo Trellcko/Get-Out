@@ -2,7 +2,9 @@
 {
     public enum Ambience
     {
-        InDayTime,
-        InStrangeDayTime
+        NewDay = 0,
+        InDayTime = 1,
+        InStrangeDayTime = 2,
+        MainMenu = 3
     }
 }
