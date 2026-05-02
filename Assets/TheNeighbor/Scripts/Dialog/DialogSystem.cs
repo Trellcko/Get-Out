@@ -2,7 +2,6 @@ using System;
 using Trellcko.Core.Audio;
 using Trellcko.UI;
 using UnityEngine;
-using UnityEngine.Events;
 using Zenject;
 
 namespace Trellcko.Dialog
@@ -15,6 +14,7 @@ namespace Trellcko.Dialog
         private DialogData _dialogData;
         private int _counter;
         private ISoundController _soundController;
+        private bool _useAudio;
 
         [Inject]
         private void Construct(ISoundController soundController)
@@ -22,9 +22,10 @@ namespace Trellcko.Dialog
             _soundController = soundController;
         }
         
-        public void ShowDialog(DialogData dialogData)
+        public void ShowDialog(DialogData dialogData, bool useAudio = true)
         {
             if(_isShowing) return;
+            _useAudio = useAudio;
             _isShowing = true;
             _counter = 0;
             _dialogData = dialogData;
@@ -59,7 +60,8 @@ namespace Trellcko.Dialog
                     _dialogData.OnHided?.Invoke();
                 };
             }
-            _soundController.PlayOtherSound(OtherSound.TextBlip, true, true);
+            if(_useAudio)
+                _soundController.PlayOtherSound(OtherSound.TextBlip, true, true);
             _dialogUI.ShowText(replicaData.Text, replicaData.Duration, 
                 showedAction, hidedAction);
         }

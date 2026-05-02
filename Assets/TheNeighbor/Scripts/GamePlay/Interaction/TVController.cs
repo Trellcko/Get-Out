@@ -15,8 +15,7 @@ namespace Trellcko.Gameplay
         [SerializeField] private ParticleSystem _redParticle;
         [SerializeField] private AudioSource _audio;
 
-        private bool IsWorked { get; set; }
-
+        private bool _isWorked;
         public event Action InteractionEnabled;
         public event Action InteractionStarted;
         public event Action InteractionFinished;
@@ -25,12 +24,14 @@ namespace Trellcko.Gameplay
 
         private void OnEnable()
         {
+            if(!_questInteractable) return;
             _questInteractable.InteractionEnabled += OnInteractionEnabled;
             _questInteractable.InteractionFinished += OnInteractionFinished;
         }
 
         private void OnDisable()
         {
+            if(!_questInteractable) return;
             _questInteractable.InteractionEnabled -= OnInteractionEnabled;
             _questInteractable.InteractionFinished -= OnInteractionFinished;
         }
@@ -52,7 +53,7 @@ namespace Trellcko.Gameplay
             if (!IsInteractable)
                 return false;
             InteractionStarted?.Invoke();
-            if (IsWorked)
+            if (_isWorked)
             {
                 TurnOff();
             }
@@ -66,7 +67,7 @@ namespace Trellcko.Gameplay
 
         public void TurnOn()
         {
-            IsWorked = true;
+            _isWorked = true;
             _light.color = Color.white;
             _light.enabled = true;
             _particle.Play();
@@ -75,7 +76,7 @@ namespace Trellcko.Gameplay
 
         public void TurnOnRedMode()
         {
-            IsWorked = true;
+            _isWorked = true;
             _light.color = Color.red;
             _light.enabled = true;
             _redParticle.Play();
@@ -84,7 +85,7 @@ namespace Trellcko.Gameplay
 
         public void TurnOff()
         {
-            IsWorked = false;
+            _isWorked = false;
             _light.enabled = false;
             _redParticle.Stop();
             _particle.Stop();
