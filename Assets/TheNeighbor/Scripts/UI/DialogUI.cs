@@ -10,12 +10,9 @@ namespace Trellcko.UI
         [SerializeField] private GameObject _content;
         [SerializeField] private TextMeshProUGUI _text;
 
-        private const float Delay = 0.03f;
-
         private Coroutine _typeCorun;
 
         private Action _onShowed;
-        private Action _onHided;
 
         public void Activate()
         {
@@ -27,39 +24,28 @@ namespace Trellcko.UI
             _content.SetActive(false);
         }
 
-        public void ShowText(string text, float showDuration = -1, Action showed = null, Action hided = null)
+        public void ShowText(string text, float delayPerCharacter, float delay = 0, Action showed = null)
         {
             if (_typeCorun != null)
                 StopCoroutine(_typeCorun);
 
             _onShowed = showed;
-            _onHided = hided;
-            _typeCorun = StartCoroutine(TypeText(text, showDuration));
+            _typeCorun = StartCoroutine(TypeText(text, delayPerCharacter, delay));
         }
 
-        public void HideText()
+        private IEnumerator TypeText(string text, float delayPerCharacter, float delay)
         {
             _text.SetText("");
-            _onHided?.Invoke();
-        }
-
-        private IEnumerator TypeText(string text, float showDuration)
-        {
-            _text.SetText("");
-
+            
+            yield return new WaitForSeconds(delay);
+            
             foreach (char character in text)
             {
                 _text.SetText(_text.text + character);
-                yield return new WaitForSeconds(Delay);
+                yield return new WaitForSeconds(delayPerCharacter);
             }
 
             _onShowed?.Invoke();
-
-            if (showDuration > 0)
-            {
-                yield return new WaitForSeconds(showDuration);
-                HideText();
-            }
         }
     }
 }

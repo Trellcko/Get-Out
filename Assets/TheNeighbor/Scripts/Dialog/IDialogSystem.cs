@@ -2,6 +2,6 @@
 {
     public interface IDialogSystem
     {
-        void ShowDialog(DialogData dialogData, bool useAudio = true);
+        void ShowDialog(DialogData dialogData);
     }
 }
