@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Spot>k__BackingField: {fileID: 2800000, guid: ffd029fcdae061b43a00bb4f7c77972f, type: 3}
-  <Text>k__BackingField: {fileID: 0}
+  <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: f9f1113de9b77284eb02e3291abf8584, type: 2}
   <Rotation>k__BackingField: 180
 --- !u!1 &7678197193972664547
@@ -1719,6 +1719,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8685245742684986318}
   m_SourcePrefab: {fileID: 100100000, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
+--- !u!114 &1933857014099252870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5665108558225517827, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
+  m_PrefabInstance: {fileID: 6073370740500347781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555348066198041280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6a0b33355b8fe94682bacc1b4796536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2555348066198041280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8592473388708071749, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
@@ -1736,7 +1747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InteractableOutline>k__BackingField: {fileID: 0}
+  <InteractableOutline>k__BackingField: {fileID: 1933857014099252870}
   <NeededItem>k__BackingField: 0
   <ReceiveItem>k__BackingField: 0
   _audioSource: {fileID: 0}

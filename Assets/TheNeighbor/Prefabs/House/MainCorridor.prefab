@@ -756,7 +756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Spot>k__BackingField: {fileID: 2800000, guid: ffd029fcdae061b43a00bb4f7c77972f, type: 3}
-  <Text>k__BackingField: {fileID: 0}
+  <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: f9f1113de9b77284eb02e3291abf8584, type: 2}
   <Rotation>k__BackingField: 180
 --- !u!114 &5957074266646377237
@@ -2343,7 +2343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Spot>k__BackingField: {fileID: 2800000, guid: ffd029fcdae061b43a00bb4f7c77972f, type: 3}
-  <Text>k__BackingField: {fileID: 2100000, guid: b0bd059d22689f04dba44b929bb832c3, type: 2}
+  <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: 7fa0f6ea2044f874b951aab03be1dd1b, type: 2}
   <Rotation>k__BackingField: 180
 --- !u!114 &7470758525856000634
@@ -4152,7 +4152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Spot>k__BackingField: {fileID: 2800000, guid: ffd029fcdae061b43a00bb4f7c77972f, type: 3}
-  <Text>k__BackingField: {fileID: 2100000, guid: a2da54a283722ea46a9d19d814a0f442, type: 2}
+  <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: 7fa0f6ea2044f874b951aab03be1dd1b, type: 2}
   <Rotation>k__BackingField: 180
 --- !u!114 &4937130485281650962

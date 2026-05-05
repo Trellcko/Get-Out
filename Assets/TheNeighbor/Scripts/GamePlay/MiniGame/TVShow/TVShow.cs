@@ -75,6 +75,7 @@ namespace Trellcko.Gameplay.MiniGame
             {
                 if(_mouth.IsHiding)
                     TurnOnNoiseForTime();
+                
                 _mouth.Show();
                 _mouth.Run();
                 _image.enabled = false;

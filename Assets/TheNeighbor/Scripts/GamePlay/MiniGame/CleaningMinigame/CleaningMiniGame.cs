@@ -18,7 +18,6 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private MopController _mopController;
         [SerializeField] private Texture2D _maskTexture;
         [SerializeField] private Material _minigameSpotMaterial;
-        [SerializeField] private MeshRenderer _textRenderer;
         [SerializeField] private MeshRenderer _backroundRenderer;
         [SerializeField] private Image _bar;
         [SerializeField] private GameObject _ui;
@@ -49,9 +48,8 @@ namespace Trellcko.Gameplay.MiniGame
         {
             _cleaningMiniGamesParams = (CleaningMiniGamesParamsHolder)param;
             
-            _minigameSpotMaterial.mainTexture = _cleaningMiniGamesParams.Spot;
-            _textRenderer.enabled = _cleaningMiniGamesParams.Text;
-            _textRenderer.sharedMaterial = _cleaningMiniGamesParams.Text;
+            _minigameSpotMaterial.SetTexture("_MainTexture", _cleaningMiniGamesParams.Spot);
+            _minigameSpotMaterial.color = _cleaningMiniGamesParams.SpotColor;
             _backroundRenderer.sharedMaterial = _cleaningMiniGamesParams.Background;
             _backroundRenderer.transform.rotation = Quaternion.Euler(0, _cleaningMiniGamesParams.Rotation, 0);
             

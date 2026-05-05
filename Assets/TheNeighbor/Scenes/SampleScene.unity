@@ -1410,6 +1410,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen
       objectReference: {fileID: 0}
+    - target: {fileID: 1523860532336482011, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: <Spot>k__BackingField
+      value: 
+      objectReference: {fileID: 2800000, guid: ec9f17604c95ac044945bca6c1197061, type: 3}
+    - target: {fileID: 1523860532336482011, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: <SpotColor>k__BackingField.b
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523860532336482011, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: <SpotColor>k__BackingField.g
+      value: 0.003921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 1523860532336482011, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: <SpotColor>k__BackingField.r
+      value: 0.8039216
+      objectReference: {fileID: 0}
     - target: {fileID: 2295972349066865834, guid: a9036face319e4743a07431821e471aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.9175
@@ -1450,6 +1466,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6979787380250738647, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091125234406968385, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b0bd059d22689f04dba44b929bb832c3, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3237,8 +3261,8 @@ MonoBehaviour:
       <QuestInteractable>k__BackingField: {fileID: 1551203347}
     - <Description>k__BackingField: Make a bed
       <QuestInteractable>k__BackingField: {fileID: 1089405755}
-  _startDay: 3
-  _startQuestIndex: 0
+  _startDay: 2
+  _startQuestIndex: 3
 --- !u!4 &1239929710
 Transform:
   m_ObjectHideFlags: 0
@@ -6508,6 +6532,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1704414730068039232, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c6fec3d686702c643baae53d76719b6f, type: 2}
     - target: {fileID: 1816837741448614183, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -6516,8 +6544,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningMiniGame
       objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2246990873520895353, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
