@@ -65,6 +65,8 @@ namespace Trellcko.Gameplay.MiniGame
         
         public void StartGame(MiniGamesParamsHolder param = null)
         {
+            _currentFillTime = 0f;
+            _percentText.SetText($"0/100%");
             _gloablUI.gameObject.SetActive(false);
             _miniGameUI.gameObject.SetActive(true);
             _camera.enabled = true;
@@ -98,7 +100,7 @@ namespace Trellcko.Gameplay.MiniGame
                         });
                 }
                 _currentFillTime =
-                    Mathf.Clamp(_currentFillTime + Time.deltaTime, 0, _wateringMiniGameData[0].TimeToFill);
+                    Mathf.Clamp(_currentFillTime + Time.deltaTime, 0, _wateringMiniGameData[_questSystem.Day].TimeToFill);
                 _percentText.SetText($"{(100*(_currentFillTime/_wateringMiniGameData[0].TimeToFill)):N0}/100%");
                 
                 if(_currentFillTime >= _wateringMiniGameData[0].TimeToFill)

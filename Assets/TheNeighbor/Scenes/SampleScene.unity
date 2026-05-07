@@ -413,6 +413,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1847603063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &126040004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7166233127108405287, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &131146912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1251,28 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 1159970063619424362, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
   m_PrefabInstance: {fileID: 3827104582650200395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &346861401 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5334347643473938226, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573c8b5482ebdac4b92566d53c7ea921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &346861406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6824817962528285737, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371954615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,6 +1437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen
       objectReference: {fileID: 0}
+    - target: {fileID: 1860328242178877061, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: m_Name
+      value: SpotDay3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2054795729119212896, guid: a9036face319e4743a07431821e471aa, type: 3}
+      propertyPath: m_Name
+      value: SpotDay2
+      objectReference: {fileID: 0}
     - target: {fileID: 2295972349066865834, guid: a9036face319e4743a07431821e471aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.9175
@@ -1453,14 +1488,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7166233127108405287, guid: a9036face319e4743a07431821e471aa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 448248433}
   m_SourcePrefab: {fileID: 100100000, guid: a9036face319e4743a07431821e471aa, type: 3}
 --- !u!114 &448248425 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4820460788458736655, guid: a9036face319e4743a07431821e471aa, type: 3}
   m_PrefabInstance: {fileID: 448248424}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 126040004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
@@ -1477,6 +1515,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573c8b5482ebdac4b92566d53c7ea921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &448248430 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 2356583504752468601, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &448248431 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9151359962871769542, guid: a9036face319e4743a07431821e471aa, type: 3}
+  m_PrefabInstance: {fileID: 448248424}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &448248433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126040004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573c8b5482ebdac4b92566d53c7ea921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _meshRenderer: {fileID: 448248431}
+  _collider: {fileID: 448248430}
 --- !u!1 &509137422 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5279306810368843054, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
@@ -1644,7 +1706,7 @@ GameObject:
   - component: {fileID: 609224514}
   - component: {fileID: 609224515}
   m_Layer: 0
-  m_Name: PhoneEventDay4
+  m_Name: PhoneEventDay3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2491,6 +2553,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delay: 0
   _TVController: {fileID: 0}
+--- !u!114 &1051032131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1982196014474586637, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+  m_PrefabInstance: {fileID: 1551203345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &1063475840 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 3064161782077944003, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
@@ -2622,6 +2695,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1104947698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5581226853995457753, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+  m_PrefabInstance: {fileID: 1551203345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 573c8b5482ebdac4b92566d53c7ea921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1119045534
@@ -2916,7 +3000,7 @@ GameObject:
   - component: {fileID: 1163906759}
   - component: {fileID: 1163906760}
   m_Layer: 0
-  m_Name: DoorKnockingNotifierDay2
+  m_Name: DoorKnockingNotifierDay1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3167,31 +3251,9 @@ MonoBehaviour:
     - <Description>k__BackingField: Take a mop
       <QuestInteractable>k__BackingField: {fileID: 1626632421}
     - <Description>k__BackingField: Clean up
-      <QuestInteractable>k__BackingField: {fileID: 1551203346}
-    - <Description>k__BackingField: Eat the cookies!
-      <QuestInteractable>k__BackingField: {fileID: 1600684780}
-    - <Description>k__BackingField: Go to bed
-      <QuestInteractable>k__BackingField: {fileID: 969703951}
-  - <Ambience>k__BackingField: 0
-    <Quests>k__BackingField:
-    - <Description>k__BackingField: Make the bed
-      <QuestInteractable>k__BackingField: {fileID: 1089405755}
-    - <Description>k__BackingField: Eat the cookies!
-      <QuestInteractable>k__BackingField: {fileID: 1600684780}
-    - <Description>k__BackingField: Look at the mirror
-      <QuestInteractable>k__BackingField: {fileID: 1724040711}
-    - <Description>k__BackingField: Take a water can
-      <QuestInteractable>k__BackingField: {fileID: 448248425}
-    - <Description>k__BackingField: To water the flowers
-      <QuestInteractable>k__BackingField: {fileID: 3827104582650200400}
-    - <Description>k__BackingField: Take the clothes
-      <QuestInteractable>k__BackingField: {fileID: 1626505117}
-    - <Description>k__BackingField: Puth the in the closet
-      <QuestInteractable>k__BackingField: {fileID: 210958023}
-    - <Description>k__BackingField: Take a mop
-      <QuestInteractable>k__BackingField: {fileID: 1626632421}
-    - <Description>k__BackingField: Clean up
       <QuestInteractable>k__BackingField: {fileID: 254748587}
+    - <Description>k__BackingField: Eat the cookies!
+      <QuestInteractable>k__BackingField: {fileID: 1600684780}
     - <Description>k__BackingField: Check the door
       <QuestInteractable>k__BackingField: {fileID: 1063475855}
     - <Description>k__BackingField: Go to bed
@@ -3200,34 +3262,56 @@ MonoBehaviour:
     <Quests>k__BackingField:
     - <Description>k__BackingField: Make the bed
       <QuestInteractable>k__BackingField: {fileID: 1089405755}
-    - <Description>k__BackingField: Eat the cookies!
-      <QuestInteractable>k__BackingField: {fileID: 1600684780}
     - <Description>k__BackingField: Look at the mirror
       <QuestInteractable>k__BackingField: {fileID: 1724040711}
-    - <Description>k__BackingField: Take a mop
-      <QuestInteractable>k__BackingField: {fileID: 1626632421}
-    - <Description>k__BackingField: Clean up
-      <QuestInteractable>k__BackingField: {fileID: 1740244907}
     - <Description>k__BackingField: Take a water can
       <QuestInteractable>k__BackingField: {fileID: 448248425}
     - <Description>k__BackingField: To water the flowers
       <QuestInteractable>k__BackingField: {fileID: 3827104582650200400}
-    - <Description>k__BackingField: Take a phone
-      <QuestInteractable>k__BackingField: {fileID: 3827104582650200399}
+    - <Description>k__BackingField: Take a mop
+      <QuestInteractable>k__BackingField: {fileID: 1626632421}
+    - <Description>k__BackingField: Clean up
+      <QuestInteractable>k__BackingField: {fileID: 1740244907}
     - <Description>k__BackingField: Take the clothes
       <QuestInteractable>k__BackingField: {fileID: 1626505117}
     - <Description>k__BackingField: Puth the in the closet
       <QuestInteractable>k__BackingField: {fileID: 210958023}
+    - <Description>k__BackingField: Eat the cookies!
+      <QuestInteractable>k__BackingField: {fileID: 1600684780}
+    - <Description>k__BackingField: Take a phone
+      <QuestInteractable>k__BackingField: {fileID: 3827104582650200399}
     - <Description>k__BackingField: Go to bed
       <QuestInteractable>k__BackingField: {fileID: 969703951}
   - <Ambience>k__BackingField: 0
     <Quests>k__BackingField:
+    - <Description>k__BackingField: Make the bed
+      <QuestInteractable>k__BackingField: {fileID: 1089405755}
+    - <Description>k__BackingField: Look at the mirror
+      <QuestInteractable>k__BackingField: {fileID: 1724040711}
     - <Description>k__BackingField: Watch the TV
       <QuestInteractable>k__BackingField: {fileID: 1551203347}
-    - <Description>k__BackingField: Make a bed
-      <QuestInteractable>k__BackingField: {fileID: 1089405755}
-  _startDay: 2
-  _startQuestIndex: 3
+    - <Description>k__BackingField: Take a water can
+      <QuestInteractable>k__BackingField: {fileID: 448248425}
+    - <Description>k__BackingField: To water the flowers
+      <QuestInteractable>k__BackingField: {fileID: 3827104582650200400}
+    - <Description>k__BackingField: Take a mop
+      <QuestInteractable>k__BackingField: {fileID: 1626632421}
+    - <Description>k__BackingField: Clean up
+      <QuestInteractable>k__BackingField: {fileID: 346861406}
+    - <Description>k__BackingField: Clean up
+      <QuestInteractable>k__BackingField: {fileID: 1051032131}
+    - <Description>k__BackingField: Take the clothes
+      <QuestInteractable>k__BackingField: {fileID: 1626505117}
+    - <Description>k__BackingField: Puth the in the closet
+      <QuestInteractable>k__BackingField: {fileID: 210958023}
+    - <Description>k__BackingField: Eat the cookies!
+      <QuestInteractable>k__BackingField: {fileID: 1600684780}
+    - <Description>k__BackingField: Take a phone
+      <QuestInteractable>k__BackingField: {fileID: 3827104582650200399}
+    - <Description>k__BackingField: Go to bed
+      <QuestInteractable>k__BackingField: {fileID: 969703951}
+  _startDay: 0
+  _startQuestIndex: 0
 --- !u!4 &1239929710
 Transform:
   m_ObjectHideFlags: 0
@@ -4095,6 +4179,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 988963559447434423, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b0bd059d22689f04dba44b929bb832c3, type: 2}
     - target: {fileID: 1539945198469754706, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.945
@@ -4139,22 +4227,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BedRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 5230105754154899793, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
+      propertyPath: m_Name
+      value: SpotDay3_2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7342758294844074771, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
---- !u!114 &1551203346 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 279850493692687439, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
-  m_PrefabInstance: {fileID: 1551203345}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1551203347 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5665524925021791657, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
@@ -4797,17 +4879,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dayEvents:
-  - _dayTriggersData: []
   - _dayTriggersData:
     - QuestIndex: 9
       _baseEvent: {fileID: 1428749516}
       _notifier: {fileID: 1163906760}
   - _dayTriggersData:
-    - QuestIndex: 7
+    - QuestIndex: 9
       _baseEvent: {fileID: 1934576159}
       _notifier: {fileID: 61666809}
   - _dayTriggersData:
-    - QuestIndex: 7
+    - QuestIndex: 11
       _baseEvent: {fileID: 609224515}
       _notifier: {fileID: 61666809}
 --- !u!1 &1883702508
@@ -5342,7 +5423,7 @@ GameObject:
   - component: {fileID: 1934576158}
   - component: {fileID: 1934576159}
   m_Layer: 0
-  m_Name: PhoneEventDay3
+  m_Name: PhoneEventDay2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6135,8 +6216,6 @@ MonoBehaviour:
   _playerSpawnPosition: {fileID: 316921628}
   _resetObjectData:
   - <Items>k__BackingField:
-    - {fileID: 2113905262}
-  - <Items>k__BackingField:
     - {fileID: 209173225}
     - {fileID: 294669711}
     - {fileID: 1943928836}
@@ -6144,6 +6223,7 @@ MonoBehaviour:
     - {fileID: 787756712}
     - {fileID: 2111758110}
     - {fileID: 254748582}
+    - {fileID: 448248433}
   - <Items>k__BackingField:
     - {fileID: 209173225}
     - {fileID: 294669711}
@@ -6152,8 +6232,27 @@ MonoBehaviour:
     - {fileID: 787756712}
     - {fileID: 2111758110}
     - {fileID: 1740244902}
-  - <Items>k__BackingField: []
-  - <Items>k__BackingField: []
+    - {fileID: 448248433}
+  - <Items>k__BackingField:
+    - {fileID: 209173225}
+    - {fileID: 294669711}
+    - {fileID: 1943928836}
+    - {fileID: 448248426}
+    - {fileID: 787756712}
+    - {fileID: 2111758110}
+    - {fileID: 346861401}
+    - {fileID: 1104947698}
+    - {fileID: 448248433}
+  - <Items>k__BackingField:
+    - {fileID: 209173225}
+    - {fileID: 294669711}
+    - {fileID: 1943928836}
+    - {fileID: 448248426}
+    - {fileID: 787756712}
+    - {fileID: 2111758110}
+    - {fileID: 346861401}
+    - {fileID: 1104947698}
+    - {fileID: 448248433}
 --- !u!1 &2074311592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6216,17 +6315,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b432d53c53910894c8e122696bedbab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2113905262 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3236598324046829619, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
-  m_PrefabInstance: {fileID: 1551203345}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573c8b5482ebdac4b92566d53c7ea921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2121729082
@@ -6900,6 +6988,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398244614543479200, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: m_Name
+      value: SpotDay1
+      objectReference: {fileID: 0}
     - target: {fileID: 691260906631608961, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.945

@@ -19,7 +19,7 @@ namespace Trellcko.Dialog
         private ISoundController _soundController;
         private bool _useAudio;
 
-        public const float DelayStandart = 0.3f;
+        public const float DelayStandart = 0.05f;
 
         [Inject]
         private void Construct(ISoundController soundController, IInputHandler inputHandler)
@@ -48,7 +48,7 @@ namespace Trellcko.Dialog
             _inputHandler.SpaceClicked -= OnSpaceClicked;
             showedAction += () =>
             {
-                replicaData?.OnShowedText(_counter);
+                replicaData?.OnShowedText?.Invoke(_counter);
                 _soundController.StopPlayingOtherSound();
                 SubscribeToSpace();
             };

@@ -81,8 +81,8 @@ namespace Trellcko.Gameplay.MiniGame
         {
             _ui.SetActive(false);
             _miniGameUI.SetActive(true);
-            UpdateText();
             _currentCookies = 0;
+            UpdateText();
             IsPlaying = true;
             _handController.transform.localPosition = _handStartPosition;
             _playerFacade.PlayerMovement.IsEnabled = false;

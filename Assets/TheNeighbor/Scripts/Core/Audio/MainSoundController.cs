@@ -18,10 +18,16 @@ namespace Trellcko.Core.Audio
         
         [SerializeField] private AudioClip _shockMoment;
         public bool IsAmbiencPlaying => _ambienceAudioSource.isPlaying;
-        public Ambience CurrentAmbience { get; private set; }
+        public Ambience CurrentAmbience { get; private set; } = Ambience.None;
 
         public void PlayAmbience(Ambience ambience)
         {
+            if(CurrentAmbience == ambience) return;
+            if (ambience == Ambience.None)
+            {
+                StopPlayingAmbience();
+                return;
+            }
             CurrentAmbience = ambience;
             _ambienceAudioSource.loop = true;
             _ambienceAudioSource.clip = _ambiences.First(x => x.ambience == ambience).Clip;
@@ -76,6 +82,7 @@ namespace Trellcko.Core.Audio
 
         public void StopPlayingAmbience()
         {
+            CurrentAmbience = Ambience.None;
             _ambienceAudioSource.Stop();
         }
     }

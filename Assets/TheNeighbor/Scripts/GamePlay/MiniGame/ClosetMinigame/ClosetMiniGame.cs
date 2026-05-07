@@ -4,6 +4,7 @@ using System.Linq;
 using Trellcko.Core.Input;
 using Trellcko.Gameplay.Interactable;
 using Trellcko.Gameplay.Player;
+using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -27,13 +28,15 @@ namespace Trellcko.Gameplay.MiniGame
         private PlayerFacade _playerFacade;
         private IInputHandler _inputHandler;
         private ICursorController _cursorController;
+        private IQuestSystem _questSystem;
 
         public event Action<bool, IMiniGame> Finished;
 
         [Inject]
         private void Construct(PlayerFacade playerFacade, IInputHandler inputHandler,
-            ICursorController cursorController)
+            ICursorController cursorController, IQuestSystem questSystem)
         {
+            _questSystem = questSystem;
             _cursorController = cursorController;
             _inputHandler = inputHandler;
             _playerFacade = playerFacade;
@@ -50,6 +53,7 @@ namespace Trellcko.Gameplay.MiniGame
             IsPlaying = true;
             foreach (var clothesAnchor in _clothesAnchors)
             {
+                clothesAnchor.Count = 0;
                 clothesAnchor.MeshRenderer.enabled = false;
             }
             _miniGameCanvas.SetActive(true);
@@ -59,7 +63,7 @@ namespace Trellcko.Gameplay.MiniGame
             _playerFacade.PlayerMovement.IsEnabled = false;
             _playerFacade.PlayerRotation.IsEnabled = false;
             _playerFacade.Interactable.IsEnabled = false;
-            _clothesInteractable.SetMiniGameData(_closetMiniGameData[0]);
+            _clothesInteractable.SetMiniGameData(_closetMiniGameData[_questSystem.Day]);
             _clothesInteractable.RunOut += OnRunOut;
             _clothesInteractable.Putted += OnPutted;
         }
