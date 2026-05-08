@@ -33,9 +33,11 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private Transform _startPoint;
         [SerializeField] private Transform _endPoint;
 
+
         public bool IsPlaying { get; private set; }
-        
+
         private Vector3 _previousSpawnPoint;
+        private float _extraMultyplayer;
         private float _totalDistance;
         private float _minStep;
         private float _currentT;
@@ -82,6 +84,7 @@ namespace Trellcko.Gameplay.MiniGame
             _ui.SetActive(false);
             _miniGameUI.SetActive(true);
             _currentCookies = 0;
+            _extraMultyplayer = 1;
             UpdateText();
             IsPlaying = true;
             _handController.transform.localPosition = _handStartPosition;
@@ -113,8 +116,18 @@ namespace Trellcko.Gameplay.MiniGame
         private Cookie SpawnCookie(Vector3 position)
         {
             float chance = Random.Range(0f, 1f);
-            List<Cookie> cookies = chance < _cookiesMiniGameData[_questSystem.Day].cookiesChance ? _goodCookies : _badCookies;
-            
+            bool isBadCookie = chance < _cookiesMiniGameData[_questSystem.Day].badCookiesChance * _extraMultyplayer;
+            List<Cookie> cookies;
+            if (isBadCookie)
+            {
+                _extraMultyplayer = 1;
+                cookies = _badCookies;
+            }
+            else
+            {
+                _extraMultyplayer++;
+                cookies = _goodCookies;
+            }
             return Instantiate(cookies[Random.Range(0, cookies.Count)], position, Quaternion.identity);
         }
 
@@ -170,7 +183,7 @@ namespace Trellcko.Gameplay.MiniGame
     [Serializable]
     public class CookiesMiniGameData
     {
-        public float cookiesChance;
+        public float badCookiesChance;
         public int needCookies;
     }
 }

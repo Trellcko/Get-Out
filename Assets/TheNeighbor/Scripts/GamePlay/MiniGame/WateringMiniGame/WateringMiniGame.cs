@@ -183,6 +183,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         public void ExitGame()
         {
+            _soundController.StopPlayingOtherSound();
             _gloablUI.gameObject.SetActive(true);
             _miniGameUI.gameObject.SetActive(false);
             _camera.enabled = false;

@@ -107,6 +107,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         public void ExitGame()
         {
+            _tvShowData[_questSystem.Day].DialogData.OnHided -= OnHided;
             foreach (ReplicaData replica in _tvShowData[_questSystem.Day].DialogData.ReplicaData)
             {
                 replica.OnStartedToShow -= OnStartedToShowText;
