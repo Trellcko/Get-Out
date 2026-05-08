@@ -70,6 +70,7 @@ namespace Trellcko.Gameplay.MiniGame
         public void FinishGame(bool success)
         {
             Finished?.Invoke(success, this);
+            StopCoroutine(_miniGameCoroutine);
             IsPlaying = false;
         }
 
@@ -120,7 +121,7 @@ namespace Trellcko.Gameplay.MiniGame
                     case 0:
                         _soundController.PlayPlayerSound(PlayerSound.Breathing);
                         break;
-                    case 2:
+                    case 1:
                         _soundController.PlayPlayerSound(PlayerSound.Chuckle);
                         break;
                 }

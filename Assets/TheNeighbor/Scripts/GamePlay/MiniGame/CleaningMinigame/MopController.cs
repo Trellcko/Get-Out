@@ -13,7 +13,9 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private Texture2D _maskTexture;
         [SerializeField] private float _sensitivity;
         [SerializeField] private int _brushSize = 100;
-
+        
+        [SerializeField] private Transform _maxCorner;
+        [SerializeField] private Transform _minCorner;
         public event Action MaskUpdated;
         
         private IInputHandler _inputHandler;
@@ -24,13 +26,8 @@ namespace Trellcko.Gameplay.MiniGame
             _lastMopPosition = _mopPoint.position;
         }
 
-        private Camera _camera;
         private Vector3 _startPosition;
 
-        private void OnDrawGizmos()
-        {
-            Gizmos.DrawWireSphere(_mopPoint.position, _brushSize);
-        }
 
         [Inject]
         private void Construct(IInputHandler inputHandler)
@@ -40,7 +37,6 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void Awake()
         {
-            _camera = Camera.main;
             _startPosition = transform.position;
         }
 
@@ -79,8 +75,13 @@ namespace Trellcko.Gameplay.MiniGame
                 return false;
             
             mouseDelta *= _sensitivity * Time.deltaTime;
-
-            transform.position += mouseDelta;
+            
+            Vector3 newPosition = transform.position + mouseDelta;
+            
+            newPosition.x = Mathf.Clamp(newPosition.x, _minCorner.position.x, _maxCorner.position.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, _minCorner.position.y, _maxCorner.position.y);
+            
+            transform.position = newPosition;
             return true;
         }
 

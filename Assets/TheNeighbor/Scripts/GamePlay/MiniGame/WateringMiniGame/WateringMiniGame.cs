@@ -95,6 +95,7 @@ namespace Trellcko.Gameplay.MiniGame
                      _waterCan.DOLocalRotate(new(0, 90, _wateringAngel), 0.5f)
                         .OnComplete(()=>
                         {
+                            if(!IsPlaying) return;
                             _waterDrops.Play();
                             _soundController.PlayOtherSound(OtherSound.Watering);
                         });
@@ -187,6 +188,7 @@ namespace Trellcko.Gameplay.MiniGame
             _gloablUI.gameObject.SetActive(true);
             _miniGameUI.gameObject.SetActive(false);
             _camera.enabled = false;
+            StopAllCoroutines();
             IsPlaying = false;
         }
     }

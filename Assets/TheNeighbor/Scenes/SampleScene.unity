@@ -3318,8 +3318,8 @@ MonoBehaviour:
       <QuestInteractable>k__BackingField: {fileID: 1600684780}
     - <Description>k__BackingField: Go to bed
       <QuestInteractable>k__BackingField: {fileID: 969703951}
-  _startDay: 1
-  _startQuestIndex: 10
+  _startDay: 0
+  _startQuestIndex: 2
 --- !u!4 &1239929710
 Transform:
   m_ObjectHideFlags: 0
@@ -6602,6 +6602,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3621269797566780836, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4120363145790725537, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
       propertyPath: m_Name
       value: CleaningMiniGame
@@ -7379,50 +7383,6 @@ PrefabInstance:
       propertyPath: _ui
       value: 
       objectReference: {fileID: 131146912}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[1].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[2].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[3].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[4].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[5].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[6].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[7].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[8].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[9].needCookies
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[10].needCookies
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
       propertyPath: _cookiesMiniGameData.Array.data[1].cookiesChance
       value: 0.9

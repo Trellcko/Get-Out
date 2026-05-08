@@ -1399,9 +1399,27 @@ MonoBehaviour:
   _handController: {fileID: 8190470880641126771}
   _cinemachineCamera: {fileID: 2273506346553546235}
   _cookiesMiniGameData:
-  - cookiesChance: 1
+  - badCookiesChance: 0
     needCookies: 10
-  - cookiesChance: 1
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0.05
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
+    needCookies: 10
+  - badCookiesChance: 0
     needCookies: 10
   _ui: {fileID: 0}
   _miniGameUI: {fileID: 6902607134507224955}

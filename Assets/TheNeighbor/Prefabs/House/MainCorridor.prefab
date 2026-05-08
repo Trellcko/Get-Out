@@ -759,6 +759,7 @@ MonoBehaviour:
   <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: f9f1113de9b77284eb02e3291abf8584, type: 2}
   <Rotation>k__BackingField: 180
+  <PercentToFinish>k__BackingField: 0.9
 --- !u!114 &5957074266646377237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2346,6 +2347,7 @@ MonoBehaviour:
   <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: 7fa0f6ea2044f874b951aab03be1dd1b, type: 2}
   <Rotation>k__BackingField: 180
+  <PercentToFinish>k__BackingField: 0
 --- !u!114 &7470758525856000634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4155,6 +4157,7 @@ MonoBehaviour:
   <SpotColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
   <Background>k__BackingField: {fileID: 2100000, guid: 7fa0f6ea2044f874b951aab03be1dd1b, type: 2}
   <Rotation>k__BackingField: 180
+  <PercentToFinish>k__BackingField: 0
 --- !u!114 &4937130485281650962
 MonoBehaviour:
   m_ObjectHideFlags: 0

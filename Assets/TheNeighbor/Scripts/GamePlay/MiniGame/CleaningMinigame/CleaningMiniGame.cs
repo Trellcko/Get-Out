@@ -34,8 +34,7 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action<bool, IMiniGame> Finished;
 
         private const int TextureSize = 256;
-        private const float PercentToFinishGame = 0.9f;
-        private const float AnimationDuration = 2f;
+        private const float AnimationDuration = 1f;
 
         [Inject]
         private void Construct(ICursorController cursorController, PlayerFacade playerFacade)
@@ -72,8 +71,8 @@ namespace Trellcko.Gameplay.MiniGame
             int clearPoints = _coloredPixes.Count(t => _maskTexture.GetPixel(t.x, t.y) == Color.black);
 
             float percent = (float)clearPoints / _coloredPixes.Count;
-            _bar.fillAmount = percent / PercentToFinishGame;
-            if (percent > PercentToFinishGame)
+            _bar.fillAmount = percent / _cleaningMiniGamesParams.PercentToFinish;
+            if (percent > _cleaningMiniGamesParams.PercentToFinish)
             {
                 FinishGame(true);
             }
