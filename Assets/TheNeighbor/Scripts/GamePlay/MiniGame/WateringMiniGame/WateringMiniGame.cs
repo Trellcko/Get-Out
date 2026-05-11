@@ -96,6 +96,7 @@ namespace Trellcko.Gameplay.MiniGame
                         .OnComplete(()=>
                         {
                             if(!IsPlaying) return;
+                            
                             _waterDrops.Play();
                             _soundController.PlayOtherSound(OtherSound.Watering);
                         });

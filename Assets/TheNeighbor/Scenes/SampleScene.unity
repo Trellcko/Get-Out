@@ -6602,13 +6602,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3621269797566780836, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4120363145790725537, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
       propertyPath: m_Name
       value: CleaningMiniGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442787748024114167, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6949,154 +6949,6 @@ PrefabInstance:
       propertyPath: _gloablUI
       value: 
       objectReference: {fileID: 131146912}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[2].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[3].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[4].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[5].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[6].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[7].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[8].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[9].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[10].Speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[2].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[3].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[4].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[5].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[6].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[7].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[8].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[9].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[10].TimeToFill
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[2].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[3].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[4].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[5].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[6].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[7].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[8].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[9].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[10].MinDistance
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[2].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[3].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[4].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[5].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[6].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[7].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[8].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[9].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1117464659828103745, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
-      propertyPath: _wateringMiniGameData.Array.data[10].MinTimeToWait
-      value: 1.9
-      objectReference: {fileID: 0}
     - target: {fileID: 8548944412363754127, guid: 2345ce36f42995d439ed6c618279b5fa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -51.45
@@ -7285,46 +7137,6 @@ PrefabInstance:
       propertyPath: _mainCanvas
       value: 
       objectReference: {fileID: 131146912}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[2].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[3].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[4].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[5].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[6].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[7].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[8].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[9].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6627442093760725149, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
-      propertyPath: _closetMiniGameData.Array.data[10].ClothesCount
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7383,46 +7195,6 @@ PrefabInstance:
       propertyPath: _ui
       value: 
       objectReference: {fileID: 131146912}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[1].cookiesChance
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[2].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[3].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[4].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[5].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[6].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[7].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[8].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[9].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3066612426469918022, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
-      propertyPath: _cookiesMiniGameData.Array.data[10].cookiesChance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3355706145724809817, guid: 7c8f21c8af03f4d40b9c173ae8a2ce76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.838678
@@ -7525,93 +7297,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[1].time
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[2].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[3].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[4].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[5].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[6].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[7].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[8].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[9].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[10].power
-      value: 0.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[2].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[3].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[4].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[5].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[6].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[7].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[8].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[9].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3774152183368955712, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: _data.Array.data[10].fallDownSpeed
-      value: 0.001
-      objectReference: {fileID: 0}
     - target: {fileID: 8238768313227884401, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
       propertyPath: m_Name
       value: MirrorMiniGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 8558794577805721925, guid: ff1d35ae0e970014fb2dbe1408c825f7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
