@@ -1743,7 +1743,7 @@ MonoBehaviour:
   _phone: {fileID: 876507426}
   _dialogData:
     ReplicaData:
-    - Text: I want to ............... a trap
+    - Text: Listen to me .............................. eating
       Audio: {fileID: 8300000, guid: 82c3410a4a0acb948abd455f671f11bb, type: 3}
       Delay: 0.01
 --- !u!1 &673187670
@@ -3318,8 +3318,36 @@ MonoBehaviour:
       <QuestInteractable>k__BackingField: {fileID: 1600684780}
     - <Description>k__BackingField: Go to bed
       <QuestInteractable>k__BackingField: {fileID: 969703951}
-  _startDay: 0
-  _startQuestIndex: 2
+  - <Ambience>k__BackingField: 1
+    <Quests>k__BackingField:
+    - <Description>k__BackingField: Make the bed
+      <QuestInteractable>k__BackingField: {fileID: 1089405755}
+    - <Description>k__BackingField: Watch the TV
+      <QuestInteractable>k__BackingField: {fileID: 1551203347}
+    - <Description>k__BackingField: Look at the mirror
+      <QuestInteractable>k__BackingField: {fileID: 1724040711}
+    - <Description>k__BackingField: Take a water can
+      <QuestInteractable>k__BackingField: {fileID: 448248425}
+    - <Description>k__BackingField: To water the flowers
+      <QuestInteractable>k__BackingField: {fileID: 3827104582650200400}
+    - <Description>k__BackingField: Take a mop
+      <QuestInteractable>k__BackingField: {fileID: 1626632421}
+    - <Description>k__BackingField: Clean up
+      <QuestInteractable>k__BackingField: {fileID: 346861406}
+    - <Description>k__BackingField: Clean up
+      <QuestInteractable>k__BackingField: {fileID: 1051032131}
+    - <Description>k__BackingField: Take the clothes
+      <QuestInteractable>k__BackingField: {fileID: 1626505117}
+    - <Description>k__BackingField: Puth the in the closet
+      <QuestInteractable>k__BackingField: {fileID: 210958023}
+    - <Description>k__BackingField: Take a phone
+      <QuestInteractable>k__BackingField: {fileID: 3827104582650200399}
+    - <Description>k__BackingField: Eat the cookies!
+      <QuestInteractable>k__BackingField: {fileID: 1600684780}
+    - <Description>k__BackingField: Go to bed
+      <QuestInteractable>k__BackingField: {fileID: 969703951}
+  _startDay: 3
+  _startQuestIndex: 0
 --- !u!4 &1239929710
 Transform:
   m_ObjectHideFlags: 0
@@ -6271,8 +6299,6 @@ MonoBehaviour:
     - {fileID: 448248426}
     - {fileID: 787756712}
     - {fileID: 2111758110}
-    - {fileID: 346861401}
-    - {fileID: 1104947698}
     - {fileID: 448248433}
 --- !u!1 &2074311592
 GameObject:
@@ -6734,151 +6760,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TVGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3719012488949723942, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
       propertyPath: _globalUI
       value: 
       objectReference: {fileID: 131146912}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].VisualData.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].VisualData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].VisualData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[3].VisualData.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].VisualData.Array.data[1].Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ec9f17604c95ac044945bca6c1197061, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].VisualData.Array.data[1].Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].VisualData.Array.data[1].Color.r
-      value: 0.38823533
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[3].DialogData.ReplicaData.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.data[0].Text
-      value: Due to ongoing safety concerns, residents are advised to remain indoors
-        until further notice.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.data[1].Text
-      value: Please continue your daily routine and avoid anu travel.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[0].Text
-      value: 'Remember: there is no need to go outside today.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[1].Text
-      value: Everything you need is already here.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[2].Text
-      value: Stay home, relax, and continue your routine.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[0].Text
-      value: If you notice some unusual behaviour, do not engage
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[1].Text
-      value: They may attempt to gain your attention
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[2].Text
-      value: Ignore them
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.data[0].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 9ba2c57b7fe3b81458251a60581b40bd, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.data[0].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.data[1].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 045d9e916e32db64d9e5a25f31618f8e, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[0].DialogData.ReplicaData.Array.data[1].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[0].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 9f64559246557ab4b9177a021798463c, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[0].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[1].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 6e27ea722264f944fb5091b78555ac79, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[1].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[2].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: ab45ec5e5936ee8408ae1c0c0ffc841f, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[1].DialogData.ReplicaData.Array.data[2].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[0].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 82637b20e7bab91469af906f71e038d2, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[0].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[1].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 177e68eff9562554ab76ee9f8e963047, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[1].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[2].Audio
-      value: 
-      objectReference: {fileID: 8300000, guid: 268204d1fd7864f4f807dade6ce6f2ed, type: 3}
-    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: _tvShowData.Array.data[2].DialogData.ReplicaData.Array.data[2].Delay
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8138206566632080200, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
       propertyPath: m_LocalPosition.x
       value: -45.63
@@ -6923,10 +6812,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 330585545}
-    - target: {fileID: 9105079547013657030, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01488
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7137,6 +7022,14 @@ PrefabInstance:
       propertyPath: _mainCanvas
       value: 
       objectReference: {fileID: 131146912}
+    - target: {fileID: 8684702712975649020, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684702712975649020, guid: 7147af7caa4d2c9448f1de87d4712bdd, type: 3}
+      propertyPath: _highlighted
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

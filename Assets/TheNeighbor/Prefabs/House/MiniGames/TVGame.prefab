@@ -51,14 +51,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tvShowData:
   - DialogData:
-      ReplicaData: []
-    VisualData: []
+      ReplicaData:
+      - Text: Due to ongoing safety concerns, residents are advised to remain indoors
+          until further notice.
+        Audio: {fileID: 8300000, guid: 9ba2c57b7fe3b81458251a60581b40bd, type: 3}
+        Delay: 0.5
+      - Text: Please continue your daily routine and avoid anu travel.
+        Audio: {fileID: 8300000, guid: 045d9e916e32db64d9e5a25f31618f8e, type: 3}
+        Delay: 0.5
+    VisualData:
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
-      ReplicaData: []
-    VisualData: []
-  - DialogData:
-      ReplicaData: []
-    VisualData: []
+      ReplicaData:
+      - Text: 'Remember: there is no need to go outside today.'
+        Audio: {fileID: 8300000, guid: 9f64559246557ab4b9177a021798463c, type: 3}
+        Delay: 0.5
+      - Text: Everything you need is already here.
+        Audio: {fileID: 8300000, guid: 6e27ea722264f944fb5091b78555ac79, type: 3}
+        Delay: 0.5
+      - Text: Stay home, relax, and continue your routine.
+        Audio: {fileID: 8300000, guid: ab45ec5e5936ee8408ae1c0c0ffc841f, type: 3}
+        Delay: 0.5
+    VisualData:
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
       ReplicaData:
       - Text: If you notice some unusual behaviour, do not engage
@@ -75,6 +98,29 @@ MonoBehaviour:
       Color: {r: 0, g: 0, b: 0, a: 0}
     - Sprite: {fileID: 21300000, guid: ec9f17604c95ac044945bca6c1197061, type: 3}
       Color: {r: 0.38823533, g: 0, b: 0, a: 1}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+  - DialogData:
+      ReplicaData:
+      - Text: Residents may notice minor irregularities in food texture or appearance.
+        Audio: {fileID: 8300000, guid: 21269d4356210344fa1e233c882ad745, type: 3}
+        Delay: 0.5
+      - Text: This is a normal side effect of current safety measures.
+        Audio: {fileID: 8300000, guid: 184a461f9c94e09459ac4827eebd03b0, type: 3}
+        Delay: 0.5
+      - Text: All food provided inside the home is completely safe to consume.
+        Audio: {fileID: 8300000, guid: 612f9411b48550b4e9006ab7d3bfdd48, type: 3}
+        Delay: 0.5
+      - Text: Please continue your daily routine.
+        Audio: {fileID: 8300000, guid: 5141a30206709b3489c87a66c7264016, type: 3}
+        Delay: 0.5
+    VisualData:
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 1, g: 1, b: 1, a: 0}
+    - Sprite: {fileID: 21300000, guid: 6fdd8d12352171d4383a32c08f072a34, type: 3}
+      Color: {r: 1, g: 1, b: 1, a: 1}
     - Sprite: {fileID: 0}
       Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
@@ -1070,15 +1116,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5817609520336978865, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01266
+      value: -0.0149
       objectReference: {fileID: 0}
     - target: {fileID: 5817609520336978865, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00107
+      value: 0.0011
       objectReference: {fileID: 0}
     - target: {fileID: 5817609520336978865, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00054
+      value: -0.0005
       objectReference: {fileID: 0}
     - target: {fileID: 5879801004556528627, guid: 692613aec158e534987b2a0b3ef2652d, type: 3}
       propertyPath: rmsCount

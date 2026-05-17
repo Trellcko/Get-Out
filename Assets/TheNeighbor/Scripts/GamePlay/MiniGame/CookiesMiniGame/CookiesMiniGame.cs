@@ -149,18 +149,21 @@ namespace Trellcko.Gameplay.MiniGame
         private void OnCookieGot(bool isGood)
         {
             if (isGood)
-                HandleGoodCookie();
+            {
+                _soundController.PlayOtherSound(OtherSound.Eating);
+            }
             else
             {
                 
                 _miniGameBadEffect.PlayCorpseEffect(_volume);
             }
+
+            HandleCookie();
         }
 
-        private void HandleGoodCookie()
+        private void HandleCookie()
         {
             _currentCookies++;
-            _soundController.PlayOtherSound(OtherSound.Eating);
             UpdateText();
             if (_currentCookies >= _cookiesMiniGameData[_questSystem.Day].needCookies)
             {

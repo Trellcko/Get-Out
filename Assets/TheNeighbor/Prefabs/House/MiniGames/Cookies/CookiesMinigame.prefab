@@ -1267,7 +1267,7 @@ MonoBehaviour:
     needCookies: 10
   - badCookiesChance: 0
     needCookies: 10
-  - badCookiesChance: 0.05
+  - badCookiesChance: 0.1
     needCookies: 10
   - badCookiesChance: 0
     needCookies: 10
@@ -1296,10 +1296,10 @@ MonoBehaviour:
   - {fileID: 7713537392896951372, guid: 18194caf175cefc4189d21af209da305, type: 3}
   - {fileID: 7713537392896951372, guid: b2bd79c3117d992449871411a614989c, type: 3}
   _badCookies:
-  - {fileID: 7713537392896951372, guid: e9683e74549149549afa77026b8301f6, type: 3}
-  - {fileID: 7713537392896951372, guid: 2d105f6bceadc3c45a08e2aaba7e5bd5, type: 3}
-  - {fileID: 7713537392896951372, guid: 5fd8912e695820c4ea584ede2c90262c, type: 3}
-  - {fileID: 7713537392896951372, guid: 4ab720c3537cf5643a8243c8b9de7799, type: 3}
+  - {fileID: 7713537392896951372, guid: 7d5f00a3eddd0c24e89c9ab49c050a8b, type: 3}
+  - {fileID: 7713537392896951372, guid: a9c13d5df3987c84a83ecd7c22499b68, type: 3}
+  - {fileID: 7713537392896951372, guid: 9aa653966b4dd5648b2cc958342ec562, type: 3}
+  - {fileID: 7713537392896951372, guid: 75f11161e281ea349a8d7e2cc7bd557f, type: 3}
   _startPoint: {fileID: 784664146378786378}
   _endPoint: {fileID: 9166691761933037293}
 --- !u!1 &7981393906040802772

@@ -9895,6 +9895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <InteractableOutline>k__BackingField: {fileID: 5665108558225517827}
+  _questInteractable: {fileID: 0}
   _light: {fileID: 3230563706019818437}
   _particle: {fileID: 8021559909057674354}
   _redParticle: {fileID: 3620341152020216976}
