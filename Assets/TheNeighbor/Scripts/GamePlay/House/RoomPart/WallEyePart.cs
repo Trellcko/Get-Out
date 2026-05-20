@@ -6,6 +6,9 @@ namespace Trellcko.Gameplay.House
 {
     public class WallEyePart : MonoBehaviour
     {
+        [SerializeField] private float _lookStrength = 0.15f;
+        [SerializeField] private float _yCorrection = 0f;
+        
         [SerializeField] private Transform _center;
         [SerializeField] private float _xRadius;
         [SerializeField] private float _yRadius;
@@ -28,65 +31,54 @@ namespace Trellcko.Gameplay.House
 
         private void LookAtTarget()
         {
-            Vector3 targetPosition = _playerFacade.transform.position;
+            Vector3 targetPosition = _playerFacade.PlayerRotation.transform.position;
+            Vector3 toTarget = targetPosition - _center.position;
 
-            Debug.LogError($"TARGET POSITION: {targetPosition}");
+            float x = Vector3.Dot(toTarget, _center.right);
+            float y = Vector3.Dot(toTarget, _center.up);
 
-            Plane eyePlane = new Plane(_center.forward, _center.position);
+            float distanceForward = Vector3.Dot(toTarget, _center.forward);
 
-            Vector3 projectedTarget =
-                eyePlane.ClosestPointOnPlane(targetPosition);
+            if (Mathf.Abs(distanceForward) < 0.001f)
+                distanceForward = 0.001f;
 
-            Debug.LogError($"PROJECTED TARGET: {projectedTarget}");
-
-            Vector3 fromCenter =
-                projectedTarget - _center.position;
-
-            Debug.LogError($"FROM CENTER: {fromCenter}");
-
-            float x = Vector3.Dot(fromCenter, _center.right);
-            float y = Vector3.Dot(fromCenter, _center.up);
-
-            Debug.LogError($"DOT X: {x}");
-            Debug.LogError($"DOT Y: {y}");
-
-            Vector2 direction = new Vector2(x, y);
-
-            Debug.LogError($"RAW DIRECTION: {direction}");
-
-            if (direction.sqrMagnitude > 0.0001f)
-            {
-                direction.Normalize();
-            }
-            else
-            {
-                direction = Vector2.zero;
-            }
-
-            Debug.LogError($"NORMALIZED DIRECTION: {direction}");
-
-            Vector2 offset = new Vector2(
-                direction.x * _xRadius,
-                direction.y * _yRadius
+            Vector2 perspectiveOffset = new Vector2(
+                x / Mathf.Abs(distanceForward),
+                y / Mathf.Abs(distanceForward)
             );
 
-            Debug.LogError($"OFFSET: {offset}");
+            perspectiveOffset.y += _yCorrection;
+
+            Vector2 offset = new Vector2(
+                perspectiveOffset.x * _lookStrength,
+                perspectiveOffset.y * _lookStrength
+            );
+
+            offset = ClampToEllipse(offset);
 
             Vector3 targetWorldPos =
                 _center.position +
                 _center.right * offset.x +
                 _center.up * offset.y;
 
-            Debug.LogError($"TARGET WORLD POS: {targetWorldPos}");
-            Debug.LogError($"CURRENT POS: {transform.position}");
-
             transform.position = Vector3.Lerp(
                 transform.position,
                 targetWorldPos,
-                Time.deltaTime * _speed
-            );
+                Time.deltaTime * _speed);
         }
+        private Vector2 ClampToEllipse(Vector2 point)
+        {
+            float ellipseValue =
+                (point.x * point.x) / (_xRadius * _xRadius) +
+                (point.y * point.y) / (_yRadius * _yRadius);
 
+            if (ellipseValue <= 1f)
+                return point;
+
+            float scale = 1f / Mathf.Sqrt(ellipseValue);
+
+            return point * scale;
+        }
         private void OnDrawGizmos()
         {
             if (_center == null)
@@ -115,17 +107,7 @@ namespace Trellcko.Gameplay.House
                 previousPoint = currentPoint;
             }
         }
-        private Vector2 ClampToEllipse(Vector2 point)
-        {
-            float value =
-                (point.x * point.x) / (_xRadius * _xRadius) +
-                (point.y * point.y) / (_yRadius * _yRadius);
 
-            if (value <= 1f)
-                return point;
-
-            return point / Mathf.Sqrt(value);
-        }
         private Vector3 GetPoint(float angle)
         {
             float x = Mathf.Cos(angle) * _xRadius;
