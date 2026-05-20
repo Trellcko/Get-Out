@@ -130,6 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e1129f55f17e740bf5f7f4cede74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookStrength: 0.15
+  _yCorrection: 0
   _center: {fileID: 7895055542224260121}
   _xRadius: 0.43
   _yRadius: 0.28
@@ -234,6 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e1129f55f17e740bf5f7f4cede74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookStrength: 0.15
+  _yCorrection: 0
   _center: {fileID: 6551507675848568589}
   _xRadius: 0.35
   _yRadius: 0.2
@@ -432,6 +436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e1129f55f17e740bf5f7f4cede74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookStrength: 0.15
+  _yCorrection: 0
   _center: {fileID: 6759454909349366993}
   _xRadius: 0.25
   _yRadius: 0.15
@@ -536,6 +542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e1129f55f17e740bf5f7f4cede74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookStrength: 0.15
+  _yCorrection: 0
   _center: {fileID: 2503573329141447889}
   _xRadius: 0.41
   _yRadius: 0.2

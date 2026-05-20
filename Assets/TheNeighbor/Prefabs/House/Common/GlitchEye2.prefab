@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e1129f55f17e740bf5f7f4cede74d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lookStrength: 0.15
+  _yCorrection: 0
   _center: {fileID: 9162001489713293398}
   _xRadius: 0.78
   _yRadius: 0.46

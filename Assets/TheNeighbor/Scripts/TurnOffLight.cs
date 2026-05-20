@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Trellcko.Core.Audio;
 using Trellcko.Gameplay;
+using Trellcko.Gameplay.House;
 using Trellcko.Gameplay.MiniGame;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,35 +10,39 @@ using Zenject;
 
 public class TurnOffLight : MonoBehaviour
 {
-    [SerializeField] private TVController _TVController;
-    [SerializeField] private LookAtPlayer _monster;
-    [SerializeField] private Light _light;
-    [SerializeField] private GameObject _player;
-    private Vector3 _playerPosition = new Vector3(0.037f, -1.248f, 0.695f);
-
-    private void Awake()
-    {
-        _TVController.TurnOn();
-    }
-
+    [SerializeField] private Wall[] _walls1;
+    [SerializeField] private Wall[] _allWalls;
+    [SerializeField] private Light[] _lights;
+    
     private void Update()
     {
-        if (Keyboard.current.numpad1Key.wasPressedThisFrame)
+        if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
-            _monster.enabled = true;
+            foreach (Wall wall in _walls1)
+            {
+                wall.ShowGlitchWall();
+            }
         }
 
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
-            _light.enabled = false;
-            _TVController.TurnOff();
+            foreach (Wall wall in _walls1)
+            {
+                wall.HideGlitchWall();
+            }
         }
 
         if (Keyboard.current.digit3Key.wasPressedThisFrame)
         {
-            _light.enabled = true;
-            _monster.transform.parent = _player.transform;
-            _monster.transform.localPosition = _playerPosition;
+            foreach (Wall wall in _allWalls)
+            {
+                wall.ShowGlitchWall();
+            }
+
+            foreach (Light light1 in _lights)
+            {
+                light1.color = Color.red;
+            }
         }
     }
 }

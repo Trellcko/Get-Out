@@ -19,6 +19,7 @@ namespace Trellcko.Gameplay.House
       
       private IQuestSystem _questSystem;
       private DiContainer _container;
+      private GameObject _glitchWallInstance;
 
       [Inject]
       private void Construct(IQuestSystem questSystem, DiContainer container)
@@ -48,10 +49,28 @@ namespace Trellcko.Gameplay.House
          if (HasGlitchWall && _questSystem.Day == _dayToShowGlitch)
          {
             _questSystem.DayStarted -= OnDayStarted;
-            GameObject glitchWall = _container.InstantiatePrefab(_glitchWall, transform.position, transform.rotation, transform);
-           glitchWall.transform.localScale = Vector3.one;
-            _wall.SetActive(false);
+            ShowGlitchWall();
          }
+      }
+
+      public void HideGlitchWall()
+      {
+         _glitchWallInstance?.SetActive(false);
+         _wall.SetActive(true);
+      }
+      
+      public void ShowGlitchWall()
+      {
+         if (!_glitchWallInstance)
+         {
+            _glitchWallInstance = _container.InstantiatePrefab(_glitchWall, transform.position, transform.rotation, transform);
+         }
+         else
+         {
+            _glitchWallInstance.SetActive(true);
+         }
+         _glitchWallInstance.transform.localScale = Vector3.one;
+         _wall.SetActive(false);
       }
    }
 
