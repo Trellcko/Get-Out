@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888380afc233049ce9e618f9f36c8ba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: fbc4419972a8e8143b3a6c9fce3ec285, type: 2}
+  profile: {fileID: 0}
   profileSync: 0
   camerasLayerMask:
     serializedVersion: 2
@@ -828,7 +828,7 @@ MonoBehaviour:
   customPassName: 
   normalsOption: 0
   ignore: 0
-  _highlighted: 1
+  _highlighted: 0
   fadeInDuration: 0
   fadeOutDuration: 0
   flipY: 0

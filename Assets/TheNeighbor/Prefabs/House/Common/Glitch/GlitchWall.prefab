@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933693493126588041}
   - component: {fileID: 1241775550152156859}
+  - component: {fileID: 8815665781035878909}
   m_Layer: 0
   m_Name: GlitchWall
   m_TagString: Untagged
@@ -129,3 +130,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8815665781035878909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4511985867627354051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b114eac82944472ea528e24e66c58592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderers: []

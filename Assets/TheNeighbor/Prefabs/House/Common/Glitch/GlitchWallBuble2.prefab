@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlitchWallBuble2
       objectReference: {fileID: 0}
+    - target: {fileID: 8815665781035878909, guid: bda3eb247587399489c477fae5558fc1, type: 3}
+      propertyPath: _renderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815665781035878909, guid: bda3eb247587399489c477fae5558fc1, type: 3}
+      propertyPath: '_renderers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 7314256920939473096}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

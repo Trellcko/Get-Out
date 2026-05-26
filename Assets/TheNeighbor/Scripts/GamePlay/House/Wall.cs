@@ -9,7 +9,7 @@ namespace Trellcko.Gameplay.House
    public class Wall : MonoBehaviour
    {
       [field: SerializeField] public WallType WallType { get; private set; }
-      [SerializeField] private GameObject _glitchWall;
+      [SerializeField] private GlitchWall _glitchWall;
       [SerializeField] private GameObject _wall;
       [SerializeField] private GameObject[] _disableObjects;
       
@@ -20,7 +20,7 @@ namespace Trellcko.Gameplay.House
       
       private IQuestSystem _questSystem;
       private DiContainer _container;
-      private GameObject _glitchWallInstance;
+      private GlitchWall _glitchWallInstance;
 
       [Inject]
       private void Construct(IQuestSystem questSystem, DiContainer container)
@@ -65,7 +65,7 @@ namespace Trellcko.Gameplay.House
 
       public void HideGlitchWall()
       {
-         _glitchWallInstance?.SetActive(false);
+         _glitchWallInstance?.gameObject.SetActive(false);
          _wall.SetActive(true);
       }
       
@@ -73,15 +73,15 @@ namespace Trellcko.Gameplay.House
       {
          if (!_glitchWallInstance)
          {
-            _glitchWallInstance = _container.InstantiatePrefab(_glitchWall, transform.position, transform.rotation, transform);
+            _glitchWallInstance = _container.InstantiatePrefab(_glitchWall, transform.position, transform.rotation, transform).GetComponent<GlitchWall>();
          }
          else
          {
-            _glitchWallInstance.SetActive(true);
+            _glitchWallInstance.gameObject.SetActive(true);
          }
          _glitchWallInstance.transform.localScale = Vector3.one;
-         uint lightLayer = _wall.GetComponent<MeshRenderer>().renderingLayerMask;
-         _glitchWallInstance.GetComponent<MeshRenderer>().renderingLayerMask = lightLayer;
+         uint lightLayer = _wall.GetComponentInChildren<MeshRenderer>().renderingLayerMask;
+         _glitchWallInstance.SetRendererLayerMask(lightLayer);
          _wall.SetActive(false);
       }
    }

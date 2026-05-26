@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6939274499f4341b18c47fb103cab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _corpseAudioEffect: {fileID: 6053330839062005659}
 --- !u!82 &6053330839062005659
 AudioSource:
   m_ObjectHideFlags: 0
@@ -103,7 +102,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

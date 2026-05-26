@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 5537741485370054979}
   - component: {fileID: 5957074266646377237}
   m_Layer: 6
-  m_Name: SpotDay2
+  m_Name: SpotDay1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1104,6 @@ Transform:
   - {fileID: 612398633247100639}
   - {fileID: 7872127092187750565}
   - {fileID: 7352575210501415022}
-  - {fileID: 1106909939626906827}
   - {fileID: 4634313793487387415}
   - {fileID: 6524957891852514435}
   - {fileID: 6498862319810416254}
@@ -3018,6 +3017,7 @@ Transform:
   - {fileID: 4480234572853849022}
   - {fileID: 2186940410337151710}
   - {fileID: 5645147677023727429}
+  - {fileID: 2102442611505946702}
   m_Father: {fileID: 691260906631608961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5467206841446079153
@@ -5009,6 +5009,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 5311353658863520458, guid: 626f047932d072f49bcb72fc8551b813, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_Name
       value: WallPrefab (13)
@@ -5309,6 +5317,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 1129889185254150014, guid: ff1a079732578e3428b8bc496b8933a5, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_Name
       value: WallPrefab (6)
@@ -5450,6 +5466,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 1129889185254150014, guid: 608a3a0b3a23ddd41b73d5b3e8003c01, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_Name
       value: WallPrefab (5)
@@ -5507,6 +5531,84 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
   m_PrefabInstance: {fileID: 2286386387063288196}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2477392672712653783
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5775404201300195597}
+    m_Modifications:
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.4999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.4999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.689867
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.486249
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.8012495
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313913625478269052, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: m_Name
+      value: SpotDay4_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7672681661847991352, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+      propertyPath: rmsCount
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+--- !u!4 &2102442611505946702 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4561046811732974489, guid: f2a959a7f345bfd4690a185d75661d93, type: 3}
+  m_PrefabInstance: {fileID: 2477392672712653783}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2480927870952346975
 PrefabInstance:
@@ -5582,6 +5684,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 7608655043075370355, guid: 13ceed1fda0ac334aa7d0100ead740a4, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2922138989855373254, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 1
@@ -5762,6 +5872,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7582867130018053892, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 1129889185254150014, guid: 91b9d4f4480f89946a6ef566fd9d1792, type: 3}
+    - target: {fileID: 7582867130018053892, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7937896355069412201, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
       propertyPath: m_Name
       value: WallPrefabForDoor (1)
@@ -5796,6 +5914,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 7608655043075370355, guid: 0597130b97637c94186210a118764304, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _disableObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: '_disableObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2484246838806486155}
     - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_Name
       value: WallPrefab (10)
@@ -6250,76 +6384,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5286280624523435593, guid: 24b80f1796605a94c9c8fd8c30703db3, type: 3}
   m_PrefabInstance: {fileID: 4855998940438853238}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5362421933595791820
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 691260906631608961}
-    m_Modifications:
-    - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_Name
-      value: WallPrefab (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 221.00002
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -24.8625
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
-      objectReference: {fileID: 0}
-    - target: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
---- !u!4 &1106909939626906827 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4987647457655653639, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
-  m_PrefabInstance: {fileID: 5362421933595791820}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5568704925272296408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6328,6 +6392,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 1129889185254150014, guid: d70846c80c2ace4479067ae43f74ed0b, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_Name
       value: WallPrefab (4)
@@ -6562,6 +6634,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7582867130018053892, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 1129889185254150014, guid: d67a288f613190141bd4a8228951b5a7, type: 3}
+    - target: {fileID: 7582867130018053892, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7937896355069412201, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
       propertyPath: m_Name
       value: WallPrefabForDoor
@@ -6647,6 +6727,14 @@ PrefabInstance:
     - target: {fileID: 7209322240421888238, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -71.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582867130018053892, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 972771389247263988, guid: a3857fbfa85bc6a44b5b45b3c5bbe48b, type: 3}
+    - target: {fileID: 7582867130018053892, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7937896355069412201, guid: c322cc7c326b17442aa5bf8abeb03c7e, type: 3}
       propertyPath: m_Name
@@ -6816,6 +6904,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 691260906631608961}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 1129889185254150014, guid: 608a3a0b3a23ddd41b73d5b3e8003c01, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4839751945504121817, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_Name
       value: WallPrefab

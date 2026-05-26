@@ -6,7 +6,8 @@ namespace CastleWarriors.GameLogic.Utils
 {
     public class BetterTimer
     {
-        private float _offset;
+        private float _offsetMin;
+        private float _offsetMax;
         private float _time;
         private bool _loop;
         private readonly bool _playAwake;
@@ -28,11 +29,28 @@ namespace CastleWarriors.GameLogic.Utils
             IsCompleted = true;
         }
 
+        public BetterTimer(Vector2 minMax, bool loop = false, bool playAwake = false)
+        {
+            _time = 0;
+            _offsetMin = minMax.x;
+            _offsetMax = minMax.y;
+            PreviousTime = CurrentValue = UnityRandom.Range(_offsetMin, _offsetMax);
+            _loop = loop;
+            _playAwake = playAwake;
+
+            if (!_playAwake)
+            {
+                IsCompleted = true;
+                PreviousTime = CurrentValue = 0f;
+            }
+        }
+        
         public BetterTimer(float time, float offset = 0f, bool loop = false, bool playAwake = false)
         {
             _time = time;
-            _offset = offset;
-            PreviousTime = CurrentValue = _time + UnityRandom.Range(-_offset, _offset);
+            _offsetMin = -offset;
+            _offsetMax = offset;
+            PreviousTime = CurrentValue = _time + UnityRandom.Range(_offsetMin, _offsetMax);
             _loop = loop;
             _playAwake = playAwake;
 
@@ -72,13 +90,14 @@ namespace CastleWarriors.GameLogic.Utils
 
         public void SetOffset(float offset)
         {
-            _offset = offset;
+            _offsetMin = -offset;
+            _offsetMax = offset;
         }
 
         public void Reset()
         {
             UnPause();
-            CurrentValue = _time + UnityRandom.Range(-_offset, _offset);
+            CurrentValue = _time + UnityRandom.Range(_offsetMin, _offsetMax);
             Playing?.Invoke();
             IsCompleted = false;
         }
@@ -104,10 +123,9 @@ namespace CastleWarriors.GameLogic.Utils
 
                 if (_loop)
                 {
-                    CurrentValue = _time + UnityRandom.Range(-_offset, _offset);
+                    CurrentValue = _time + UnityRandom.Range(_offsetMin, _offsetMax);
                     IsCompleted = false;
                     Playing?.Invoke();
-                    return;
                 }
             }
         }

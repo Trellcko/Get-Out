@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Trellcko.Gameplay.House
 {
-    public class WallEyePart : MonoBehaviour
+    public class WallEyeballController : MonoBehaviour
     {
         [SerializeField] private float _lookStrength = 0.15f;
         [SerializeField] private float _yCorrection = 0f;
