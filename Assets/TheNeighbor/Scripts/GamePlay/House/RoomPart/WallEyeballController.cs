@@ -79,34 +79,6 @@ namespace Trellcko.Gameplay.House
 
             return point * scale;
         }
-        private void OnDrawGizmos()
-        {
-            if (_center == null)
-                return;
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(_center.position, _center.right);
-
-            Gizmos.color = Color.green;
-            Gizmos.DrawRay(_center.position, _center.up);
-
-            Gizmos.color = Color.blue;
-            Gizmos.DrawRay(_center.position, _center.forward);
-            
-            Gizmos.color = Color.green;
-
-            Vector3 previousPoint = GetPoint(0f);
-
-            for (int i = 1; i <= _segments; i++)
-            {
-                float angle = i / (float)_segments * Mathf.PI * 2f;
-                Vector3 currentPoint = GetPoint(angle);
-
-                Gizmos.DrawLine(previousPoint, currentPoint);
-
-                previousPoint = currentPoint;
-            }
-        }
 
         private Vector3 GetPoint(float angle)
         {
