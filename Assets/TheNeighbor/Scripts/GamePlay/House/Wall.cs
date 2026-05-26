@@ -11,6 +11,7 @@ namespace Trellcko.Gameplay.House
       [field: SerializeField] public WallType WallType { get; private set; }
       [SerializeField] private GameObject _glitchWall;
       [SerializeField] private GameObject _wall;
+      [SerializeField] private GameObject[] _disableObjects;
       
       [ShowIf(nameof(HasGlitchWall))]
       [SerializeField] private int _dayToShowGlitch;
@@ -46,10 +47,19 @@ namespace Trellcko.Gameplay.House
 
       private void OnDayStarted()
       {
-         if (HasGlitchWall && _questSystem.Day == _dayToShowGlitch)
+         if (HasGlitchWall && _questSystem.Day >= _dayToShowGlitch)
          {
             _questSystem.DayStarted -= OnDayStarted;
             ShowGlitchWall();
+            DisableObjects();
+         }
+      }
+
+      private void DisableObjects()
+      {
+         foreach (GameObject disableObject in _disableObjects)
+         {
+            disableObject.SetActive(false);
          }
       }
 
@@ -70,6 +80,8 @@ namespace Trellcko.Gameplay.House
             _glitchWallInstance.SetActive(true);
          }
          _glitchWallInstance.transform.localScale = Vector3.one;
+         uint lightLayer = _wall.GetComponent<MeshRenderer>().renderingLayerMask;
+         _glitchWallInstance.GetComponent<MeshRenderer>().renderingLayerMask = lightLayer;
          _wall.SetActive(false);
       }
    }

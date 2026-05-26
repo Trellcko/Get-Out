@@ -191,6 +191,7 @@ namespace Trellcko.Gameplay.MiniGame
             _camera.enabled = false;
             StopAllCoroutines();
             IsPlaying = false;
+            _isBarWaiting = false;
         }
     }
 
