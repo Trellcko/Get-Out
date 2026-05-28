@@ -1426,6 +1426,11 @@ MonoBehaviour:
   _monsterPoint: {fileID: 165103970}
   _questInteractable: {fileID: 0}
   _item: 2
+--- !u!1 &425818434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1044103822854047948, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+  m_PrefabInstance: {fileID: 3827104582650200395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &448248424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4339,14 +4344,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BedRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 7908475027290307933, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8296466035965890858, guid: 4696ff71d9631ae458ffe8cf9a5b9b80, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.47
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5738,6 +5735,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1936519851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8932670731689046103, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+  m_PrefabInstance: {fileID: 3827104582650200395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1936751293
 GameObject:
   m_ObjectHideFlags: 0
@@ -7099,6 +7101,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 178047077485025346, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 691260906631608961, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.945
@@ -7139,10 +7145,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1731029050571962905, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1795910249543119941, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
       propertyPath: m_Name
       value: MainCorridor
       objectReference: {fileID: 0}
+    - target: {fileID: 3849121887828271531, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 5311353658863520458, guid: 676004a44e61b74499955b4b98dfb56e, type: 3}
+    - target: {fileID: 5676897497310432416, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 5311353658863520458, guid: 5105331b6718ec744a1ea3191869954f, type: 3}
+    - target: {fileID: 5676897497310432416, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776455141366157265, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 7608655043075370355, guid: e6edac888a4e407488eacb0f188091a4, type: 3}
+    - target: {fileID: 5776455141366157265, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776455141366157265, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: _disableObjects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776455141366157265, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: '_disableObjects.Array.data[0]'
+      value: 
+      objectReference: {fileID: 425818434}
+    - target: {fileID: 5776455141366157265, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: '_disableObjects.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1936519851}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

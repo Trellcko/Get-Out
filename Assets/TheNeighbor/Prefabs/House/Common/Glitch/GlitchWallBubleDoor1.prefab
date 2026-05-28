@@ -134,6 +134,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1241775550152156859, guid: bda3eb247587399489c477fae5558fc1, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 00fdc798e78ab6d45aabad8c654766b2, type: 3}
+    - target: {fileID: 1241775550152156859, guid: bda3eb247587399489c477fae5558fc1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 00fdc798e78ab6d45aabad8c654766b2, type: 3}
     - target: {fileID: 4511985867627354051, guid: bda3eb247587399489c477fae5558fc1, type: 3}
       propertyPath: m_Name
       value: GlitchWallBubleDoor1
