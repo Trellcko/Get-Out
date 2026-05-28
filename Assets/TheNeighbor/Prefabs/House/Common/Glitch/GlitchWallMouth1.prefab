@@ -455,6 +455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlitchWallMouth1
       objectReference: {fileID: 0}
+    - target: {fileID: 4511985867627354051, guid: bda3eb247587399489c477fae5558fc1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8815665781035878909, guid: bda3eb247587399489c477fae5558fc1, type: 3}
       propertyPath: _renderers.Array.size
       value: 4

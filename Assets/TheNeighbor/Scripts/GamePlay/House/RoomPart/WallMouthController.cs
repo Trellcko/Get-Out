@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Trellcko.Gameplay.House
 {
-    public class MouthController : MonoBehaviour
+    public class WallMouthController : MonoBehaviour
     {
         [SerializeField] private MeshRenderer _renderer;
 

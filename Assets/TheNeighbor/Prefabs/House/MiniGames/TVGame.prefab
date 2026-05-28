@@ -125,16 +125,28 @@ MonoBehaviour:
       Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
       ReplicaData:
-      - Text: If you notice some unusual behaviour, do not engage
-        Audio: {fileID: 8300000, guid: 82637b20e7bab91469af906f71e038d2, type: 3}
-        Delay: 0
-      - Text: They may attempt to gain your attention
-        Audio: {fileID: 8300000, guid: 177e68eff9562554ab76ee9f8e963047, type: 3}
-        Delay: 0
-      - Text: Ignore them
-        Audio: {fileID: 8300000, guid: 268204d1fd7864f4f807dade6ce6f2ed, type: 3}
-        Delay: 0
-    VisualData: []
+      - Text: Some residents may notice eyes, movement, or other changes appearing
+          inside the home.
+        Audio: {fileID: 8300000, guid: 8299ec053dcf77e48968ca48a8e9a512, type: 3}
+        Delay: 0.5
+      - Text: "These features are part of the home\u2019s adaptive safety system."
+        Audio: {fileID: 8300000, guid: 41f414b52f28f3b449d5447c15d20876, type: 3}
+        Delay: 0.5
+      - Text: The home is always watching over you.
+        Audio: {fileID: 8300000, guid: ce163cd717207c246ad82421bd9f0bb2, type: 3}
+        Delay: 0.5
+      - Text: Please remain calm and continue your daily routine.
+        Audio: {fileID: 8300000, guid: 5128069d1381562429f072d8c9e4e04b, type: 3}
+        Delay: 0.5
+    VisualData:
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 21300000, guid: 525d7fcb8c63c304796b63a7e328796b, type: 3}
+      Color: {r: 1, g: 1, b: 1, a: 1}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
       ReplicaData:
       - Text: If you notice some unusual behaviour, do not engage
