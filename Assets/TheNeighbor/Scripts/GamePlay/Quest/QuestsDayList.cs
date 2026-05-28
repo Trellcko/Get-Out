@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Trellcko.Core.Audio;
+using Trellcko.Gameplay.House;
 using UnityEngine;
 
 namespace Trellcko.Gameplay.QuestLogic
@@ -9,6 +10,7 @@ namespace Trellcko.Gameplay.QuestLogic
     public class QuestsDayList
     {
         [field: SerializeField] public Ambience Ambience { get; set; } = Ambience.InDayTime;
+        [field: SerializeField] public LightMode LightMode { get; private set; } = LightMode.Standard;
         [field: SerializeField] public List<Quest> Quests { get; private set; }
         public Quest CurrentQuest => Quests[QuestIndex];
 
