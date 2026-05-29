@@ -16,19 +16,9 @@ namespace Trellcko.Gameplay.QuestLogic
         public int Day { get; private set; }
 
         public bool AreAllQuestsCompleted => Day == _questDays.Count - 1;
-
-        private ISoundController _soundController;
-        private ILightController _lightController;
         public event Action DayCompleted;
         public event Action DayStarted;
         public event Action AllDaysCompleted;
-
-        [Inject]
-        private void Construct(ISoundController soundController, ILightController lightController)
-        {
-            _soundController = soundController;
-            _lightController = lightController;
-        }
         
         private void Awake()
         {
@@ -54,8 +44,6 @@ namespace Trellcko.Gameplay.QuestLogic
 
         private void StartCurrentDay(int fromQuestIndex = 0)
         {
-            _soundController.PlayAmbience(_questDays[Day].Ambience);
-            _lightController.SetMode(_questDays[Day].LightMode);
             _questDays[Day].Init(fromQuestIndex);
             DayStarted?.Invoke();
         }

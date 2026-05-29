@@ -3,5 +3,6 @@
     public interface ILightController
     {
         void SetMode(LightMode mode);
+        public void BlinkInRoom(Room room);
     }
 }

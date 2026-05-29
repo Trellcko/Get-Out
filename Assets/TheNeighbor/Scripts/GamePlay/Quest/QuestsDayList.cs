@@ -11,6 +11,7 @@ namespace Trellcko.Gameplay.QuestLogic
     {
         [field: SerializeField] public Ambience Ambience { get; set; } = Ambience.InDayTime;
         [field: SerializeField] public LightMode LightMode { get; private set; } = LightMode.Standard;
+        [field: SerializeField] public float BlinkChance { get; private set; } = 0f;
         [field: SerializeField] public List<Quest> Quests { get; private set; }
         public Quest CurrentQuest => Quests[QuestIndex];
 

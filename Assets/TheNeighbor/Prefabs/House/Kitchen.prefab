@@ -297,7 +297,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb2e5482ceb637e4180121812dd89b91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _presets: []
+  <RoomType>k__BackingField: 2
+  _questInteractables:
+  - {fileID: 8190691777735040881}
+  - {fileID: 4820460788458736655}
+  - {fileID: 8501257457882848338}
+  - {fileID: 6824817962528285737}
+  - {fileID: 5764180049506445067}
+  _lights:
+  - {fileID: 2070638392010330879}
 --- !u!1 &1254104188990395068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,7 +2900,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 1, g: 0.9949493, b: 0.94905657, a: 1}
+  m_Color: {r: 1, g: 0.99607843, b: 0.9490196, a: 1}
   m_Intensity: 3.1
   m_Range: 10
   m_SpotAngle: 179
@@ -4037,7 +4045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 388137889918153828, guid: 3e5cb94347e9dae4bb3dfc0c90c71acf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.19
+      value: -6.79
       objectReference: {fileID: 0}
     - target: {fileID: 388137889918153828, guid: 3e5cb94347e9dae4bb3dfc0c90c71acf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4083,6 +4091,10 @@ PrefabInstance:
       propertyPath: <ReceiveItem>k__BackingField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6222601950010257005, guid: 3e5cb94347e9dae4bb3dfc0c90c71acf, type: 3}
+      propertyPath: <Spot>k__BackingField
+      value: 
+      objectReference: {fileID: 2800000, guid: 68cebb5c5f7ffd44498bd7f2041e509c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4093,6 +4105,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 388137889918153828, guid: 3e5cb94347e9dae4bb3dfc0c90c71acf, type: 3}
   m_PrefabInstance: {fileID: 2061269018214504827}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5764180049506445067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6009317542395919984, guid: 3e5cb94347e9dae4bb3dfc0c90c71acf, type: 3}
+  m_PrefabInstance: {fileID: 2061269018214504827}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346dcace4e7341b59e9758b40deaaaaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2313676551760210790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4677,6 +4700,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7283721255771954144}
     m_Modifications:
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _glitchWall
+      value: 
+      objectReference: {fileID: 7608655043075370355, guid: e6edac888a4e407488eacb0f188091a4, type: 3}
+    - target: {fileID: 2117277832547206153, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
+      propertyPath: _dayToShowGlitch
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2922138989855373254, guid: 79b29cc737413e04ea847ba6ad2948a7, type: 3}
       propertyPath: m_RenderingLayerMask
       value: 2
