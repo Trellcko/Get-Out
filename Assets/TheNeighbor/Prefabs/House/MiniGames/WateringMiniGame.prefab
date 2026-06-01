@@ -5468,6 +5468,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WallType>k__BackingField: 0
+  _glitchWall: {fileID: 0}
+  _wall: {fileID: 0}
+  _disableObjects: []
+  _dayToShowGlitch: 0
 --- !u!1 &6016941730838752964
 GameObject:
   m_ObjectHideFlags: 0
@@ -5897,6 +5901,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WallType>k__BackingField: 0
+  _glitchWall: {fileID: 0}
+  _wall: {fileID: 0}
+  _disableObjects: []
+  _dayToShowGlitch: 0
 --- !u!1 &7328563112038626770
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,25 +6191,25 @@ MonoBehaviour:
     Speed: 200
     TimeToFill: 5
   - MinDistance: 40
-    MinTimeToWait: 1.9
+    MinTimeToWait: 1.8
     Speed: 200
-    TimeToFill: 5
-  - MinDistance: 40
-    MinTimeToWait: 1.9
+    TimeToFill: 6
+  - MinDistance: 50
+    MinTimeToWait: 1.6
     Speed: 200
-    TimeToFill: 5
-  - MinDistance: 40
-    MinTimeToWait: 1.9
+    TimeToFill: 6.5
+  - MinDistance: 60
+    MinTimeToWait: 1.4
     Speed: 200
-    TimeToFill: 5
-  - MinDistance: 40
-    MinTimeToWait: 1.9
+    TimeToFill: 7
+  - MinDistance: 65
+    MinTimeToWait: 1.2
     Speed: 200
-    TimeToFill: 5
-  - MinDistance: 40
-    MinTimeToWait: 1.9
+    TimeToFill: 8
+  - MinDistance: 67
+    MinTimeToWait: 1.2
     Speed: 200
-    TimeToFill: 5
+    TimeToFill: 8.4
   - MinDistance: 40
     MinTimeToWait: 1.9
     Speed: 200
@@ -6230,9 +6238,12 @@ MonoBehaviour:
   _camera: {fileID: 3584619232193895139}
   _waterCan: {fileID: 6576183587902460177}
   _waterDrops: {fileID: 9116456102861731718}
+  _flower: {fileID: 7627834520241956298}
   _wateringAngel: 30
   _power: 200
   _gravity: 600
+  _redModeColor: {r: 1, g: 0, b: 0, a: 1}
+  _normalModeColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &3122328949772882508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6299,5 +6310,10 @@ PrefabInstance:
 --- !u!4 &5266124006117093232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7080144885942435132, guid: e773621d3bf31ba44abc274a40f5ad13, type: 3}
+  m_PrefabInstance: {fileID: 3122328949772882508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7627834520241956298 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4796121080036751238, guid: e773621d3bf31ba44abc274a40f5ad13, type: 3}
   m_PrefabInstance: {fileID: 3122328949772882508}
   m_PrefabAsset: {fileID: 0}

@@ -5,6 +5,7 @@ using DG.Tweening;
 using TMPro;
 using Trellcko.Core.Audio;
 using Trellcko.Core.Input;
+using Trellcko.Gameplay.House;
 using Trellcko.Gameplay.Interactable;
 using Trellcko.Gameplay.QuestLogic;
 using Unity.Cinemachine;
@@ -29,10 +30,14 @@ namespace Trellcko.Gameplay.MiniGame
 
         [SerializeField] private Transform _waterCan;
         [SerializeField] private ParticleSystem _waterDrops;
-
+        [SerializeField] private MeshRenderer _flower;
+        
         [SerializeField] private float _wateringAngel = 30f;
         [SerializeField] private float _power = 1f;
         [SerializeField] private float _gravity = 0.5f;
+
+        [SerializeField] private Color _redModeColor = Color.red;
+        [SerializeField] private Color _normalModeColor = Color.white;
         
         public bool IsPlaying { get; private set; }
         public MiniGameType MinigameType => MiniGameType.WateringMiniGame;
@@ -65,14 +70,28 @@ namespace Trellcko.Gameplay.MiniGame
         
         public void StartGame(MiniGamesParamsHolder param = null)
         {
+            WateringMiniGameParamsHolder paramHolder = param as WateringMiniGameParamsHolder;
+
+            _flower.material = paramHolder.FlowerMaterial;
+            
             _currentFillTime = 0f;
             _percentText.SetText($"0/100%");
             _gloablUI.gameObject.SetActive(false);
             _miniGameUI.gameObject.SetActive(true);
             _camera.enabled = true;
             IsPlaying = true;
+            UpdateParticleColor();
             _inputHandler.SpaceClicked += OnSpaceClicked;
             GeneratePositionToMove();
+        }
+
+        private void UpdateParticleColor()
+        {
+            ParticleSystem.MainModule module = _waterDrops.main;
+
+            module.startColor = _questSystem.CurrentDayList.LightMode == LightMode.Red
+                ? new ParticleSystem.MinMaxGradient(_redModeColor)
+                : new(_normalModeColor);
         }
 
         private void Update()

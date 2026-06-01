@@ -24,7 +24,7 @@ namespace Trellcko.Gameplay.MiniGame
         private int _currentCorpses;
         private int _currentClothes;
         
-        private MiniGameBadEffect _miniGameBadEffect;
+        private BadEffectPlayer _badEffectPlayer;
         
         private DiContainer _container;
         private ISoundController _soundController;
@@ -38,10 +38,10 @@ namespace Trellcko.Gameplay.MiniGame
         public event Action InteractionFinished;
 
         [Inject]
-        private void Construct(DiContainer container, MiniGameBadEffect miniGameBadEffect, ISoundController soundController)
+        private void Construct(DiContainer container, BadEffectPlayer badEffectPlayer, ISoundController soundController)
         {
             _soundController = soundController;
-            _miniGameBadEffect = miniGameBadEffect;
+            _badEffectPlayer = badEffectPlayer;
             _container = container;
         }
 
@@ -65,7 +65,7 @@ namespace Trellcko.Gameplay.MiniGame
             clothesInstance.UpdateSprite(TakeRandomSprite(out bool isCorpse), isCorpse);
             if (isCorpse)
             {
-                _miniGameBadEffect.PlayCorpseEffect(volume);
+                _badEffectPlayer.PlayThrowingUpEffect(volume);
             }
             else
             {

@@ -49,15 +49,15 @@ namespace Trellcko.Gameplay.MiniGame
         private IQuestSystem _questSystem;
         private Coroutine _spawningCoroutine;
         private ISoundController _soundController;
-        private MiniGameBadEffect _miniGameBadEffect;
+        private BadEffectPlayer _badEffectPlayer;
         public MiniGameType MinigameType => MiniGameType.CookiesMiniGame;
         public event Action<bool, IMiniGame> Finished;
 
         [Inject]
         private void Construct(PlayerFacade playerFacade, ISoundController soundController,
-            MiniGameBadEffect miniGameBadEffect, IQuestSystem questSystem)
+            BadEffectPlayer badEffectPlayer, IQuestSystem questSystem)
         {
-            _miniGameBadEffect = miniGameBadEffect;
+            _badEffectPlayer = badEffectPlayer;
             _soundController = soundController;
             _playerFacade = playerFacade;
             _questSystem = questSystem;
@@ -155,7 +155,7 @@ namespace Trellcko.Gameplay.MiniGame
             else
             {
                 
-                _miniGameBadEffect.PlayCorpseEffect(_volume);
+                _badEffectPlayer.PlayThrowingUpEffect(_volume);
             }
 
             HandleCookie();

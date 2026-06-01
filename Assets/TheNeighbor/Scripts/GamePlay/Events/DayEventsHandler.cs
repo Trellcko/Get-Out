@@ -12,10 +12,12 @@ namespace Trellcko.Gameplay.QuestLogic
         [SerializeField] private List<DayEventsList> _dayEvents;
         
         private IQuestSystem _questSystem;
+        private DiContainer _container;
 
         [Inject]
-        private void Construct(IQuestSystem questSystem)
+        private void Construct(IQuestSystem questSystem, DiContainer container)
         {
+            _container = container;
             _questSystem = questSystem;
         }
 
@@ -37,6 +39,7 @@ namespace Trellcko.Gameplay.QuestLogic
             _questSystem.CurrentDayList.QuestActivated += OnQuestActivated;
             foreach (DayTriggerData dayTriggerData in _dayEvents[_questSystem.Day]._dayTriggersData)
             {
+                _container.Inject(dayTriggerData._baseEvent);
                 dayTriggerData._baseEvent.Init(dayTriggerData._notifier);
             }
         }

@@ -7,9 +7,9 @@ using Zenject;
 
 namespace Trellcko.Gameplay.MiniGame
 {
-    public class MiniGameBadEffect : MonoBehaviour
+    public class BadEffectPlayer : MonoBehaviour
     {
-        private Sequence _corpseEffectSequence;
+        private Sequence _effectSequence;
         private Vignette _vignette;
 
         private ISoundController _soundController;
@@ -19,16 +19,27 @@ namespace Trellcko.Gameplay.MiniGame
         {
             _soundController = soundController;
         }
+
+        public void PlayOuchEffect(Volume volume)
+        {
+            _soundController.PlayOtherSound(OtherSound.Ouch);
+            EffectVisual(volume);
+        }
         
-        public void PlayCorpseEffect(Volume volume)
+        public void PlayThrowingUpEffect(Volume volume)
         {
             _soundController.PlayOtherSound(OtherSound.ThrowingUp);
+            EffectVisual(volume);
+        }
+
+        private void EffectVisual(Volume volume)
+        {
             volume.profile.TryGet(out _vignette);
-            _corpseEffectSequence?.Kill();
+            _effectSequence?.Kill();
             _vignette.color.value = Color.black;
             _vignette.intensity.value = 0.402f;
-            _corpseEffectSequence = DOTween.Sequence();
-            _corpseEffectSequence
+            _effectSequence = DOTween.Sequence();
+            _effectSequence
                 .Append(DOTween.To(
                     () => _vignette.color.value,
                     x => _vignette.color.value = x,
