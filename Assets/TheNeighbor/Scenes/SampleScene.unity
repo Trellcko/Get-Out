@@ -7549,6 +7549,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 131146912}
     - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].VisualData.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].VisualData.Array.data[1].Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 65135e4d96fba0e48a45fd7eb25f90ac, type: 3}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
       propertyPath: _tvShowData.Array.data[3].VisualData.Array.data[2].Color.b
       value: 0.54901963
       objectReference: {fileID: 0}
@@ -7571,6 +7579,75 @@ PrefabInstance:
     - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
       propertyPath: _tvShowData.Array.data[4].VisualData.Array.data[1].Color.r
       value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].VisualData.Array.data[1].Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].VisualData.Array.data[1].Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].VisualData.Array.data[1].Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].VisualData.Array.data[1].Color.r
+      value: 0.554717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[0].Text
+      value: Good morning. Residents may notice unusual materials appearing during
+        routine storage activities.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[1].Text
+      value: They do not belong to a person
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[2].Text
+      value: This is normal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[3].Text
+      value: This is normal...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[0].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: a9c34a30050713e4097eaf77dc990bf5, type: 3}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[0].Delay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[1].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: e656a4a0bd85ec9438b453e8fe6cea92, type: 3}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[1].Delay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[2].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: db3e5c6015a27c0449fa577638070c1c, type: 3}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[2].Delay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[3].Audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 86e9c7454274bf74f9ac10fb07bacf5c, type: 3}
+    - target: {fileID: 5252384313114296198, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
+      propertyPath: _tvShowData.Array.data[5].DialogData.ReplicaData.Array.data[3].Delay
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8138206566632080200, guid: 0dc1ffb8c64226e42b8627de0e1df5be, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7750,6 +7827,14 @@ PrefabInstance:
     - target: {fileID: 1795910249543119941, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
       propertyPath: m_Name
       value: MainCorridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123077810506687753, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200792462016237600, guid: 921a743bcc9e49c47b7e8d66cbf457f8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
