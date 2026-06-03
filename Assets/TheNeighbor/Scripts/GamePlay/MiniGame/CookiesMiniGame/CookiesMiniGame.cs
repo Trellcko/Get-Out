@@ -98,7 +98,7 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void UpdateText()
         {
-            _countText.SetText($"Cookies {_currentCookies}/{_cookiesMiniGameData[_questSystem.Day].needCookies}");
+            _countText.SetText($"Cookies {Mathf.Clamp(_currentCookies, 0, _cookiesMiniGameData[_questSystem.Day].needCookies)}/{_cookiesMiniGameData[_questSystem.Day].needCookies}");
         }
 
         private IEnumerator SpawningCorun()

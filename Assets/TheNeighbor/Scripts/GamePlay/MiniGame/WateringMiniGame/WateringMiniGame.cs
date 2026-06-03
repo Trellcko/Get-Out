@@ -122,7 +122,7 @@ namespace Trellcko.Gameplay.MiniGame
                 }
                 _currentFillTime =
                     Mathf.Clamp(_currentFillTime + Time.deltaTime, 0, _wateringMiniGameData[_questSystem.Day].TimeToFill);
-                _percentText.SetText($"{(100*(_currentFillTime/_wateringMiniGameData[0].TimeToFill)):N0}/100%");
+                _percentText.SetText($"{Mathf.Clamp((100*(_currentFillTime/_wateringMiniGameData[0].TimeToFill)), 0f, 100f):N0}/100%");
                 
                 if(_currentFillTime >= _wateringMiniGameData[0].TimeToFill)
                     FinishGame(true);
