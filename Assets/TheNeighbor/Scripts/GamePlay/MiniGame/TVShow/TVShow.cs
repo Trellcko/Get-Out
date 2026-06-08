@@ -49,18 +49,18 @@ namespace Trellcko.Gameplay.MiniGame
 
             foreach (ReplicaData replica in _tvShowData[_questSystem.Day].DialogData.ReplicaData)
             {
-                replica.OnStartedToShow += OnStartedToShowText;
-                replica.OnShowedText += OnShowedText;
+                replica.OnReplicaStarted += OnReplicaStarted;
+                replica.OnReplicaFinished += OnReplicaFinished;
             }
             _dialogSystem.ShowDialog(_tvShowData[_questSystem.Day].DialogData);
         }
 
-        private void OnShowedText(int obj)
+        private void OnReplicaFinished(int obj)
         {
             _mouth.Stop();
         }
 
-        private void OnStartedToShowText(int index)
+        private void OnReplicaStarted(int index)
         {
             VisualData visualData = _tvShowData[_questSystem.Day].VisualData[index];
             if (visualData.Sprite)
@@ -110,8 +110,8 @@ namespace Trellcko.Gameplay.MiniGame
             _tvShowData[_questSystem.Day].DialogData.OnHided -= OnHided;
             foreach (ReplicaData replica in _tvShowData[_questSystem.Day].DialogData.ReplicaData)
             {
-                replica.OnStartedToShow -= OnStartedToShowText;
-                replica.OnShowedText -= OnShowedText;
+                replica.OnReplicaStarted -= OnReplicaStarted;
+                replica.OnReplicaFinished -= OnReplicaFinished;
             }
             IsPlaying = false;
             _cinemachineCamera.enabled = false;

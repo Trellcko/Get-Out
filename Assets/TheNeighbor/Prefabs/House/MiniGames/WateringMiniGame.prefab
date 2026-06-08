@@ -6193,27 +6193,27 @@ MonoBehaviour:
   - MinDistance: 40
     MinTimeToWait: 1.8
     Speed: 200
-    TimeToFill: 6
-  - MinDistance: 50
-    MinTimeToWait: 1.6
-    Speed: 200
-    TimeToFill: 6.5
-  - MinDistance: 60
-    MinTimeToWait: 1.4
-    Speed: 200
-    TimeToFill: 7
-  - MinDistance: 65
-    MinTimeToWait: 1.2
-    Speed: 200
     TimeToFill: 8
-  - MinDistance: 67
-    MinTimeToWait: 1.2
+  - MinDistance: 50
+    MinTimeToWait: 1.4
+    Speed: 250
+    TimeToFill: 10
+  - MinDistance: 60
+    MinTimeToWait: 1
+    Speed: 250
+    TimeToFill: 12
+  - MinDistance: 65
+    MinTimeToWait: 0.8
+    Speed: 250
+    TimeToFill: 14
+  - MinDistance: 75
+    MinTimeToWait: 0.6
+    Speed: 300
+    TimeToFill: 18
+  - MinDistance: 80
+    MinTimeToWait: 0.5
     Speed: 200
-    TimeToFill: 8.4
-  - MinDistance: 40
-    MinTimeToWait: 1.9
-    Speed: 200
-    TimeToFill: 5
+    TimeToFill: 25
   - MinDistance: 40
     MinTimeToWait: 1.9
     Speed: 200

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Trellcko.Core.Audio;
 using Trellcko.Core.Input;
 using Trellcko.UI;
@@ -42,28 +43,41 @@ namespace Trellcko.Dialog
 
         private void ShowNextReplica()
         {
-            Action showedAction = null;
+            Action replicaFinished = null;
             
             ReplicaData replicaData = _dialogData.ReplicaData[_counter];
             _inputHandler.SpaceClicked -= OnSpaceClicked;
-            showedAction += () =>
+            replicaFinished += () =>
             {
-                replicaData?.OnShowedText?.Invoke(_counter);
+                replicaData?.OnReplicaFinished?.Invoke(_counter);
                 _soundController.StopPlayingOtherSound();
                 SubscribeToSpace();
             };
             float durationPerCharacter = DelayStandart;
-            replicaData.OnStartedToShow?.Invoke(_counter);
+            replicaData.OnReplicaStarted?.Invoke(_counter);
             _counter++;
+            
+            _dialogUI.ShowText(replicaData.Text, durationPerCharacter,
+                replicaData.Delay);
+            
             if (replicaData.Audio)
             {
                 _audioSource.clip = replicaData.Audio;
                 _audioSource.Play();
-                durationPerCharacter = _audioSource.clip.length / replicaData.Text.Length;
+            //    durationPerCharacter = _audioSource.clip.length / replicaData.Text.Length;
+                StartCoroutine(WaitedForFinishingReplica(replicaFinished));
+            }
+            else
+            {
+                replicaFinished?.Invoke();
             }
             
-            _dialogUI.ShowText(replicaData.Text, durationPerCharacter,
-                replicaData.Delay, showedAction);
+        }
+
+        private IEnumerator WaitedForFinishingReplica(Action onFinishing = null)
+        {
+            yield return new WaitWhile(()=>_audioSource.isPlaying);
+            onFinishing?.Invoke();
         }
 
         private void SubscribeToSpace()

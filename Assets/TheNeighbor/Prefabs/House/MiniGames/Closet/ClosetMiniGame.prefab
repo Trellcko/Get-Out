@@ -1762,12 +1762,12 @@ MonoBehaviour:
     ClothesCount: 7
   - CorpseCount: 0
     ClothesCount: 7
-  - CorpseCount: 0
-    ClothesCount: 7
-  - CorpseCount: 0
-    ClothesCount: 7
-  - CorpseCount: 0
-    ClothesCount: 7
+  - CorpseCount: 2
+    ClothesCount: 5
+  - CorpseCount: 4
+    ClothesCount: 3
+  - CorpseCount: 7
+    ClothesCount: 0
   - CorpseCount: 0
     ClothesCount: 7
   - CorpseCount: 0

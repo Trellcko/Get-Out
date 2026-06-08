@@ -21,7 +21,6 @@ namespace Trellcko.Gameplay.MiniGame
         [SerializeField] private GameObject _UI;
         [SerializeField] private CinemachineCamera _camera;
         [SerializeField] private MeshRenderer _playerMeshRenderer;
-        [SerializeField] private Material[] _playerMaterials;
         public bool IsPlaying { get; private set; }
 
         private IQuestSystem _questSystem;
@@ -58,8 +57,8 @@ namespace Trellcko.Gameplay.MiniGame
             _camera.enabled = true;
             
             _inputHandler.SpaceClicked += OnSpaceClicked;
-            
-            _playerMeshRenderer.sharedMaterial = _playerMaterials[0];
+
+            _playerMeshRenderer.sharedMaterial = _data[_questSystem.Day].Normal;
             
             if(_miniGameCoroutine != null)
                 StopCoroutine(_miniGameCoroutine);
@@ -110,9 +109,9 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void UpdatePlayerMaterials()
         {
-            int index = Mathf.FloorToInt((_slider.fillAmount*100) / (100f / _playerMaterials.Length));
-            index = Mathf.Clamp(index, 0,  _playerMaterials.Length - 1);
-            _playerMeshRenderer.sharedMaterial = _playerMaterials[index];
+            int index = Mathf.FloorToInt((_slider.fillAmount*100) / (100f / 2));
+            index = Mathf.Clamp(index, 0,  1);
+            _playerMeshRenderer.sharedMaterial = index == 0? _data[_questSystem.Day].Normal : _data[_questSystem.Day].Happy;
             if (_lastIndex != index)
             {
                 _lastIndex = index;
@@ -122,7 +121,7 @@ namespace Trellcko.Gameplay.MiniGame
                         _soundController.PlayPlayerSound(PlayerSound.Breathing);
                         break;
                     case 1:
-                        _soundController.PlayPlayerSound(PlayerSound.Chuckle);
+                        _soundController.PlayPlayerSound(_data[_questSystem.Day].Laugh);
                         break;
                 }
             }

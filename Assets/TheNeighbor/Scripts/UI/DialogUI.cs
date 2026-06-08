@@ -9,7 +9,7 @@ namespace Trellcko.UI
     {
         [SerializeField] private GameObject _content;
         [SerializeField] private TextMeshProUGUI _text;
-
+        
         private Coroutine _typeCorun;
 
         private Action _onShowed;
@@ -30,7 +30,13 @@ namespace Trellcko.UI
                 StopCoroutine(_typeCorun);
 
             _onShowed = showed;
-            _typeCorun = StartCoroutine(TypeText(text, delayPerCharacter, delay));
+            TypeText(text);
+        }
+
+        private void TypeText(string text)
+        {
+            _text.SetText(text);
+            _onShowed?.Invoke();
         }
 
         private IEnumerator TypeText(string text, float delayPerCharacter, float delay)

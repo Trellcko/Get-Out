@@ -2772,6 +2772,7 @@ GameObject:
   - component: {fileID: 8140371169573105566}
   - component: {fileID: 6775980353337685303}
   - component: {fileID: 4485505012350480333}
+  - component: {fileID: 6468704307082831631}
   m_Layer: 6
   m_Name: FillCan
   m_TagString: Untagged
@@ -2909,6 +2910,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6468704307082831631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588319636543708496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f1302cd3b2a47440ac93965594053d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questInteractable: {fileID: 6775980353337685303}
+  _volume: {fileID: 0}
 --- !u!1 &6197736845237700969
 GameObject:
   m_ObjectHideFlags: 0

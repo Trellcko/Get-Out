@@ -120,7 +120,7 @@ MonoBehaviour:
     - Sprite: {fileID: 0}
       Color: {r: 1, g: 1, b: 1, a: 0}
     - Sprite: {fileID: 21300000, guid: 6fdd8d12352171d4383a32c08f072a34, type: 3}
-      Color: {r: 1, g: 1, b: 1, a: 1}
+      Color: {r: 0.5803922, g: 0.5764706, b: 0.54901963, a: 1}
     - Sprite: {fileID: 0}
       Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
@@ -142,35 +142,60 @@ MonoBehaviour:
     - Sprite: {fileID: 0}
       Color: {r: 0, g: 0, b: 0, a: 0}
     - Sprite: {fileID: 21300000, guid: 525d7fcb8c63c304796b63a7e328796b, type: 3}
-      Color: {r: 1, g: 1, b: 1, a: 1}
+      Color: {r: 0.5803922, g: 0.5764706, b: 0.54901963, a: 1}
     - Sprite: {fileID: 0}
       Color: {r: 0, g: 0, b: 0, a: 0}
     - Sprite: {fileID: 0}
       Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
       ReplicaData:
-      - Text: If you notice some unusual behaviour, do not engage
-        Audio: {fileID: 8300000, guid: 82637b20e7bab91469af906f71e038d2, type: 3}
-        Delay: 0
-      - Text: They may attempt to gain your attention
-        Audio: {fileID: 8300000, guid: 177e68eff9562554ab76ee9f8e963047, type: 3}
-        Delay: 0
-      - Text: Ignore them
-        Audio: {fileID: 8300000, guid: 268204d1fd7864f4f807dade6ce6f2ed, type: 3}
-        Delay: 0
-    VisualData: []
+      - Text: Good morning. Residents may notice unusual materials appearing during
+          routine storage activities.
+        Audio: {fileID: 8300000, guid: a9c34a30050713e4097eaf77dc990bf5, type: 3}
+        Delay: 0.5
+      - Text: They do not belong to a person
+        Audio: {fileID: 8300000, guid: e656a4a0bd85ec9438b453e8fe6cea92, type: 3}
+        Delay: 0.5
+      - Text: This is normal
+        Audio: {fileID: 8300000, guid: db3e5c6015a27c0449fa577638070c1c, type: 3}
+        Delay: 0.5
+      - Text: This is normal...
+        Audio: {fileID: 8300000, guid: 86e9c7454274bf74f9ac10fb07bacf5c, type: 3}
+        Delay: 0.5
+    VisualData:
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 21300000, guid: 65135e4d96fba0e48a45fd7eb25f90ac, type: 3}
+      Color: {r: 0.554717, g: 0, b: 0, a: 1}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
       ReplicaData:
-      - Text: If you notice some unusual behaviour, do not engage
-        Audio: {fileID: 8300000, guid: 82637b20e7bab91469af906f71e038d2, type: 3}
-        Delay: 0
-      - Text: They may attempt to gain your attention
-        Audio: {fileID: 8300000, guid: 177e68eff9562554ab76ee9f8e963047, type: 3}
-        Delay: 0
-      - Text: Ignore them
-        Audio: {fileID: 8300000, guid: 268204d1fd7864f4f807dade6ce6f2ed, type: 3}
-        Delay: 0
-    VisualData: []
+      - Text: Stay here
+        Audio: {fileID: 8300000, guid: c736c97f40dd0b74192c7fc533cf7e2d, type: 3}
+        Delay: 0.5
+      - Text: There is nothing for you outside
+        Audio: {fileID: 8300000, guid: 8a41cdeeb81e42145a2288df93c67474, type: 3}
+        Delay: 0.5
+      - Text: Please stay
+        Audio: {fileID: 8300000, guid: 19252c924fb40a74c9c96576497e6517, type: 3}
+        Delay: 0.5
+      - Text: You are safe here
+        Audio: {fileID: 8300000, guid: 99d6e321e0628944fb7f228876986607, type: 3}
+        Delay: 0.5
+    VisualData:
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
+    - Sprite: {fileID: 0}
+      Color: {r: 0, g: 0, b: 0, a: 0}
   - DialogData:
       ReplicaData:
       - Text: If you notice some unusual behaviour, do not engage

@@ -1,4 +1,6 @@
 ﻿using System;
+using Trellcko.Core.Audio;
+using UnityEngine;
 
 namespace Trellcko.Gameplay.MiniGame
 {
@@ -7,5 +9,8 @@ namespace Trellcko.Gameplay.MiniGame
     {
         public float power;
         public float fallDownSpeed;
+        public Material Normal;
+        public Material Happy;
+        public PlayerSound Laugh = PlayerSound.Chuckle;
     }
 }

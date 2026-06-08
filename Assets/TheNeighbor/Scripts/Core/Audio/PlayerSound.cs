@@ -6,5 +6,6 @@
         Chuckle,
         Breathing,
         Crying,
+        CrazyLaugh,
     }
 }

@@ -1273,9 +1273,9 @@ MonoBehaviour:
     needCookies: 10
   - badCookiesChance: 0.4
     needCookies: 10
-  - badCookiesChance: 0
+  - badCookiesChance: 0.7
     needCookies: 10
-  - badCookiesChance: 0
+  - badCookiesChance: 1
     needCookies: 10
   - badCookiesChance: 0
     needCookies: 10

@@ -1186,33 +1186,63 @@ MonoBehaviour:
   _data:
   - power: 0.08
     fallDownSpeed: 0.001
+    Normal: {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
+    Happy: {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
+    Laugh: 1
+  - power: 0.08
+    fallDownSpeed: 0.0011
+    Normal: {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
+    Happy: {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
+    Laugh: 1
+  - power: 0.08
+    fallDownSpeed: 0.0012
+    Normal: {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
+    Happy: {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
+    Laugh: 1
+  - power: 0.08
+    fallDownSpeed: 0.0013
+    Normal: {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
+    Happy: {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
+    Laugh: 1
+  - power: 0.08
+    fallDownSpeed: 0.0014
+    Normal: {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
+    Happy: {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
+    Laugh: 1
+  - power: 0.08
+    fallDownSpeed: 0.0015
+    Normal: {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
+    Happy: {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
+    Laugh: 1
+  - power: 0.08
+    fallDownSpeed: 0.0016
+    Normal: {fileID: 2100000, guid: d54bddbb784c8fa42a1d15ec270d1a81, type: 2}
+    Happy: {fileID: 2100000, guid: 9e199a6d45d2b7a43a0a741376ea1cfb, type: 2}
+    Laugh: 4
   - power: 0.08
     fallDownSpeed: 0.001
+    Normal: {fileID: 0}
+    Happy: {fileID: 0}
+    Laugh: 1
   - power: 0.08
     fallDownSpeed: 0.001
+    Normal: {fileID: 0}
+    Happy: {fileID: 0}
+    Laugh: 1
   - power: 0.08
     fallDownSpeed: 0.001
+    Normal: {fileID: 0}
+    Happy: {fileID: 0}
+    Laugh: 1
   - power: 0.08
     fallDownSpeed: 0.001
-  - power: 0.08
-    fallDownSpeed: 0.001
-  - power: 0.08
-    fallDownSpeed: 0.001
-  - power: 0.08
-    fallDownSpeed: 0.001
-  - power: 0.08
-    fallDownSpeed: 0.001
-  - power: 0.08
-    fallDownSpeed: 0.001
-  - power: 0.08
-    fallDownSpeed: 0.001
+    Normal: {fileID: 0}
+    Happy: {fileID: 0}
+    Laugh: 1
   _slider: {fileID: 6062218051444112935}
   _UI: {fileID: 3216615380187335835}
   _camera: {fileID: 8347734737792297176}
   _playerMeshRenderer: {fileID: 4976149020338516288}
-  _playerMaterials:
-  - {fileID: 2100000, guid: e6829d756c44ff544bbc189dfe21fde1, type: 2}
-  - {fileID: 2100000, guid: dcf582429e3017147a6e77cc5daa4f22, type: 2}
 --- !u!1 &8274763072815979913
 GameObject:
   m_ObjectHideFlags: 0

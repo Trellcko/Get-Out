@@ -10,7 +10,7 @@ namespace Trellcko.Dialog
         public string Text;
         public AudioClip Audio;
         public float Delay;
-        public Action<int> OnStartedToShow;
-        public Action<int> OnShowedText;
+        public Action<int> OnReplicaStarted;
+        public Action<int> OnReplicaFinished;
     }
 }
