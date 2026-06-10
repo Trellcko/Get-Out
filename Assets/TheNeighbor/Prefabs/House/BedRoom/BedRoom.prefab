@@ -115,6 +115,10 @@ MonoBehaviour:
   - {fileID: 1982196014474586637}
   - {fileID: 623840987087515345}
   - {fileID: 6864059409002435076}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   _lights:
   - {fileID: 5565261420186537012}
   - {fileID: 8691303042732167232}

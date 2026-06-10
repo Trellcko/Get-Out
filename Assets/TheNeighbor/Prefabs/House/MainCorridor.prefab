@@ -1133,6 +1133,8 @@ MonoBehaviour:
   <RoomType>k__BackingField: 0
   _questInteractables:
   - {fileID: 1251503179074944782}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1526385127997157551}
   - {fileID: 2078312595660961575}
   - {fileID: 2693406223928828612}
