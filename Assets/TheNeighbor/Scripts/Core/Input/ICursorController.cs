@@ -4,5 +4,6 @@
     {
         void LockCursor();
         void UnlockCursor();
+        void ShowCursor();
     }
 }

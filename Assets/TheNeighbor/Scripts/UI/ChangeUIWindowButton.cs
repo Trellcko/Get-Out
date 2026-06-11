@@ -29,8 +29,8 @@ namespace Trellcko.UI
 
         private void ChangeState()
         {
-            _close.gameObject.SetActive(false);
-            _open.gameObject.SetActive(true);
+            _close?.gameObject.SetActive(false);
+            _open?.gameObject.SetActive(true);
         }
     }
 }

@@ -14,5 +14,10 @@ namespace Trellcko.Core.Input
         {
             Cursor.lockState = CursorLockMode.None;
         }
+
+        public void ShowCursor()
+        {
+            Cursor.visible = true;
+        }
     }
 }

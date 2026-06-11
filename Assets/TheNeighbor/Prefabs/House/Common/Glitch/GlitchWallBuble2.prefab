@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 00fdc798e78ab6d45aabad8c654766b2, type: 3}
+    - target: {fileID: 1241775550152156859, guid: bda3eb247587399489c477fae5558fc1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5372811691498686261, guid: 86a792cb98be2004081c69d34f0ecea3, type: 2}
     - target: {fileID: 4511985867627354051, guid: bda3eb247587399489c477fae5558fc1, type: 3}
       propertyPath: m_Name
       value: GlitchWallBuble2

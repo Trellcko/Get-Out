@@ -7,15 +7,17 @@ namespace Trellcko.Core.Input
     public class InputHandler : IInputHandler, IDisposable
     {
         private readonly InputSystemActions _actions = new();
+        private float _intensity = 1f;
 
         public Vector2 GetMoveVector() => _actions.Player.Move.ReadValue<Vector2>();
-        public Vector2 GetMouseDelta() => _actions.Player.Rotation.ReadValue<Vector2>();
+        public Vector2 GetMouseDelta() => _actions.Player.Rotation.ReadValue<Vector2>() * _intensity;
         public Vector2 GetMousePosition() => Mouse.current.position.ReadValue();
 
         public event Action<Vector2> Moved;
         public event Action MovedCanceled;
         public event Action Sprint;
         public event Action SprintCanceled;
+        public event Action EscapePressed;
         public event Action<Vector2> MouseMoved;
         public event Action Interacted;
         public event Action SpaceClicked;
@@ -30,6 +32,7 @@ namespace Trellcko.Core.Input
             _actions.Player.Sprint.performed += OnSprintPerformed;
             _actions.Player.Sprint.canceled += OnSprintCanceled;
             _actions.Player.Space.performed += OnSpacePerformed;
+            _actions.Player.MainMenu.performed += OnPerformed;
         }
 
         public void Dispose()
@@ -41,6 +44,17 @@ namespace Trellcko.Core.Input
             _actions.Player.Sprint.performed -= OnSprintPerformed;
             _actions.Player.Sprint.canceled -= OnSprintCanceled;
             _actions.Player.Space.performed -= OnSpacePerformed;
+            _actions.Player.MainMenu.performed -= OnPerformed;
+        }
+
+        public void SetMouseIntensity(float intensity)
+        {
+            _intensity = intensity;
+        }
+
+        private void OnPerformed(InputAction.CallbackContext obj)
+        {
+            EscapePressed?.Invoke();
         }
 
         private void OnSpacePerformed(InputAction.CallbackContext obj)
