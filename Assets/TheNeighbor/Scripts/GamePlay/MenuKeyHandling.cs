@@ -2,6 +2,7 @@ using System;
 using Trellcko.Core.Input;
 using Trellcko.Gameplay.Player;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Trellcko.Gameplay
@@ -9,7 +10,8 @@ namespace Trellcko.Gameplay
     public class MenuKeyHandling : MonoBehaviour
     {
         [SerializeField] private GameObject _mainMenu;
-
+        [SerializeField] private Button _resumeButton;
+        
         private bool IsMainMenuActive => _mainMenu.activeSelf;
         
         private IInputHandler _inputHandler;
@@ -28,11 +30,18 @@ namespace Trellcko.Gameplay
         private void OnEnable()
         {
             _inputHandler.EscapePressed += OnEscapePressed;
+            _resumeButton.onClick.AddListener(OnResumePressed);
         }
 
         private void OnDisable()
         {
             _inputHandler.EscapePressed -= OnEscapePressed;
+            _resumeButton.onClick.RemoveListener(OnResumePressed);
+        }
+
+        private void OnResumePressed()
+        {
+            OnEscapePressed();
         }
 
         private void OnEscapePressed()
