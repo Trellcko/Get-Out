@@ -17,6 +17,7 @@ namespace Trellcko.Gameplay.Interactable
         public event Action InteractionStarted;
 
         private ISoundController _soundController;
+        private Ambience _lastAmbience;
 
         public event Action InteractionFinished;
 
@@ -33,12 +34,13 @@ namespace Trellcko.Gameplay.Interactable
             if (_soundController.IsAmbiencPlaying)
             {
                 _audioSource.clip = _getClip;
+                _lastAmbience = _soundController.CurrentAmbience;
                 _soundController.StopPlayingAmbience();
             }
             else
             {
                 _audioSource.clip = _putClip;
-                _soundController.PlayAmbience(_soundController.CurrentAmbience);
+                _soundController.PlayAmbience(_lastAmbience);
             }
 
             _audioSource.Play();
