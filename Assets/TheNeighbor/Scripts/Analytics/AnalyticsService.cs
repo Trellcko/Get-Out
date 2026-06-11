@@ -12,8 +12,6 @@ namespace Trellcko.Analytics
         
         public void SendDayStartedEvent(int day)
         {
-            Debug.Log("SendDayStartedEvent");
-            
             GameAnalytics.NewProgressionEvent(
                 GAProgressionStatus.Start,
                 $"Day_{day}"
@@ -23,8 +21,6 @@ namespace Trellcko.Analytics
 
         public void SendDayFinishedEvent(int day)
         {
-            
-            Debug.Log("SendDayFinishedEvent");
             GameAnalytics.NewProgressionEvent(
                 GAProgressionStatus.Complete,
                 $"Day_{day}"
@@ -33,7 +29,6 @@ namespace Trellcko.Analytics
 
         public void SendQuestStartedEvent(int day, int quest)
         {
-            Debug.Log("SendQuestStartedEvent");
             GameAnalytics.NewProgressionEvent(
                 GAProgressionStatus.Start,
                 $"Day_{day}",
@@ -43,7 +38,6 @@ namespace Trellcko.Analytics
 
         public void SendQuestCompleted(int day, int quest)
         {
-            Debug.Log("SendQuestFinishedEvent");
             GameAnalytics.NewProgressionEvent(
                 GAProgressionStatus.Complete,
                 $"Day_{day}",

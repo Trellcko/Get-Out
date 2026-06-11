@@ -44,7 +44,7 @@ namespace Trellcko.Dialog
         private void ShowNextReplica()
         {
             Action replicaFinished = null;
-            
+            _dialogUI.SetStateForTip(false);
             ReplicaData replicaData = _dialogData.ReplicaData[_counter];
             _inputHandler.SpaceClicked -= OnSpaceClicked;
             replicaFinished += () =>
@@ -78,6 +78,7 @@ namespace Trellcko.Dialog
         {
             yield return new WaitWhile(()=>_audioSource.isPlaying);
             onFinishing?.Invoke();
+            _dialogUI.SetStateForTip(true);
         }
 
         private void SubscribeToSpace()

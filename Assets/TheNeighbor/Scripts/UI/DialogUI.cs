@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Trellcko.UI
 {
@@ -9,6 +10,7 @@ namespace Trellcko.UI
     {
         [SerializeField] private GameObject _content;
         [SerializeField] private TextMeshProUGUI _text;
+        [SerializeField] private Image _tip;
         
         private Coroutine _typeCorun;
 
@@ -17,6 +19,11 @@ namespace Trellcko.UI
         public void Activate()
         {
             _content.SetActive(true);
+        }
+
+        public void SetStateForTip(bool state)
+        {
+            _tip.enabled = state;
         }
 
         public void Deactivate()
@@ -28,7 +35,6 @@ namespace Trellcko.UI
         {
             if (_typeCorun != null)
                 StopCoroutine(_typeCorun);
-
             _onShowed = showed;
             TypeText(text);
         }
