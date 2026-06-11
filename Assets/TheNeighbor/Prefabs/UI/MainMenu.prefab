@@ -486,7 +486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
+  m_AnchoredPosition: {x: 50, y: 160.9}
   m_SizeDelta: {x: 37.7, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4561227068576159036
@@ -2188,7 +2188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
+  m_AnchoredPosition: {x: 50, y: 160.9}
   m_SizeDelta: {x: 37.7, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8428888337410803999
@@ -2666,7 +2666,7 @@ MonoBehaviour:
   _music: {fileID: 3544604900970285179}
   _sound: {fileID: 255778464115963021}
   _mouseIntensity: {fileID: 1668065893801126230}
-  _minMaxValue: {x: -20, y: 20}
+  _minMaxValue: {x: -20, y: 10}
   _intensityRange: {x: 0.1, y: 10}
 --- !u!1 &8777819729675555092
 GameObject:
@@ -2889,7 +2889,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 515360584588881000, guid: 0943e37366fcafa40811f69ba38ae5ca, type: 3}
       propertyPath: m_FillAmount
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 794914402050314641, guid: 0943e37366fcafa40811f69ba38ae5ca, type: 3}
       propertyPath: m_Name
@@ -3036,7 +3036,7 @@ MonoBehaviour:
   sliderArea: {fileID: 7413777549714931159}
   handle: {fileID: 7413315853674203556}
   fillImage: {fileID: 312382675389694131}
-  <Value>k__BackingField: 0.5
+  <Value>k__BackingField: 0.75
 --- !u!224 &7413777549714931159 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7318389789478654220, guid: 0943e37366fcafa40811f69ba38ae5ca, type: 3}
@@ -3052,7 +3052,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 515360584588881000, guid: 0943e37366fcafa40811f69ba38ae5ca, type: 3}
       propertyPath: m_FillAmount
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 794914402050314641, guid: 0943e37366fcafa40811f69ba38ae5ca, type: 3}
       propertyPath: m_Name
@@ -3199,7 +3199,7 @@ MonoBehaviour:
   sliderArea: {fileID: 4903375981673331531}
   handle: {fileID: 8377861991101111139}
   fillImage: {fileID: 2790687489013237295}
-  <Value>k__BackingField: 0.5
+  <Value>k__BackingField: 0.75
 --- !u!224 &4903375981673331531 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7318389789478654220, guid: 0943e37366fcafa40811f69ba38ae5ca, type: 3}

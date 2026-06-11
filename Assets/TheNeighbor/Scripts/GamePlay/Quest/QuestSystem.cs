@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Trellcko.Analytics;
 using Trellcko.Core.Audio;
 using Trellcko.Gameplay.House;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Trellcko.Gameplay.QuestLogic
         [SerializeField] private List<QuestsDayList> _questDays;
         [SerializeField] private int _startDay;
         [SerializeField] private int _startQuestIndex;
+        private AnalyticsService _analyticsService;
         public QuestsDayList CurrentDayList => _questDays[Day];
         public int Day { get; private set; }
 
@@ -19,6 +21,12 @@ namespace Trellcko.Gameplay.QuestLogic
         public event Action DayCompleted;
         public event Action DayStarted;
         public event Action AllDaysCompleted;
+
+        [Inject]
+        private void Construct(AnalyticsService analyticsService)
+        {
+            _analyticsService = analyticsService;
+        }
         
         private void Awake()
         {
@@ -44,13 +52,15 @@ namespace Trellcko.Gameplay.QuestLogic
 
         private void StartCurrentDay(int fromQuestIndex = 0)
         {
-            _questDays[Day].Init(fromQuestIndex);
+            _questDays[Day].Init(_analyticsService, Day, fromQuestIndex);
+            _analyticsService.SendDayStartedEvent(Day);
             DayStarted?.Invoke();
         }
 
         private void OnAllQuestsInDayCompleted()
         {
             _questDays[Day].AllQuestsCompleted -= OnAllQuestsInDayCompleted;
+            _analyticsService.SendDayFinishedEvent(Day);
             DayCompleted?.Invoke();
             if (AreAllQuestsCompleted)
             {
