@@ -16,13 +16,13 @@ namespace Trellcko.Gameplay.MiniGame
     {
         [SerializeField] private CinemachineCamera _cinemachineCamera;
         [SerializeField] private MopController _mopController;
-        [SerializeField] private Texture2D _maskTexture;
         [SerializeField] private Material _minigameSpotMaterial;
         [SerializeField] private MeshRenderer _backroundRenderer;
         [SerializeField] private Image _bar;
         [SerializeField] private GameObject _ui;
         [SerializeField] private GameObject _globalUI;
 
+        private Texture2D _maskTexture;
         public MiniGameType MinigameType => MiniGameType.CleaningMiniGame;
         public bool IsPlaying { get; private set; }
 
@@ -41,6 +41,17 @@ namespace Trellcko.Gameplay.MiniGame
         {
             _playerFacade = playerFacade;
             _cursorController = cursorController;
+        }
+        
+        private void Awake()
+        {
+            _maskTexture = new(TextureSize, TextureSize, TextureFormat.RGBA32, false)
+            {
+                filterMode = FilterMode.Bilinear,
+                wrapMode = TextureWrapMode.Clamp
+            };
+            _minigameSpotMaterial.SetTexture("_Mask", _maskTexture);
+            _mopController.SetTexture(_maskTexture);
         }
 
         public void StartGame(MiniGamesParamsHolder param = null)
@@ -68,34 +79,40 @@ namespace Trellcko.Gameplay.MiniGame
 
         private void OnMaskUpdated()
         {
-            int clearPoints = _coloredPixes.Count(t => _maskTexture.GetPixel(t.x, t.y) == Color.black);
+            Color32[] maskPixels = _maskTexture.GetPixels32();
+            
+            int clearPoints = _coloredPixes.Select(pixel => pixel.y * TextureSize + pixel.x).Count(index => maskPixels[index].r == 0 && maskPixels[index].g == 0 && maskPixels[index].b == 0);
 
             float percent = (float)clearPoints / _coloredPixes.Count;
             _bar.fillAmount = percent / _cleaningMiniGamesParams.PercentToFinish;
+
             if (percent > _cleaningMiniGamesParams.PercentToFinish)
-            {
                 FinishGame(true);
-            }
         }
 
         private void InitTexture()
         {
-            Color[] fill = new Color[TextureSize * TextureSize];
+            var fill = new Color32[TextureSize * TextureSize];
             _coloredPixes.Clear();
 
             for (int i = 0; i < fill.Length; i++)
                 fill[i] = Color.white;
 
-            _maskTexture.SetPixels(fill);
+            _maskTexture.SetPixels32(fill);
 
-            for (int x = 0; x < TextureSize; x++)
+            var spot = _cleaningMiniGamesParams.Spot;
+            var pixels = spot.GetPixels32();
+
+            for (int i = 0; i < pixels.Length; i++)
             {
-                for (int y = 0; y < TextureSize; y++)
+                if (pixels[i].a > 0)
                 {
-                    if (((Texture2D)_minigameSpotMaterial.mainTexture).GetPixel(x, y) != Color.clear)
-                        _coloredPixes.Add(new(x, y));
+                    int x = i % spot.width;
+                    int y = i / spot.width;
+                    _coloredPixes.Add(new Vector2Int(x, y));
                 }
             }
+
             _maskTexture.Apply();
         }
 

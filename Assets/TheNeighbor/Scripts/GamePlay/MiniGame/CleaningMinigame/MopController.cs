@@ -10,14 +10,14 @@ namespace Trellcko.Gameplay.MiniGame
         private const float Step = 0.0390f; // half brush Size / 256
         [SerializeField] private MeshRenderer _target;
         [SerializeField] private Transform _mopPoint;
-        [SerializeField] private Texture2D _maskTexture;
         [SerializeField] private float _sensitivity;
         [SerializeField] private int _brushSize = 100;
-        
+
         [SerializeField] private Transform _maxCorner;
         [SerializeField] private Transform _minCorner;
         public event Action MaskUpdated;
-        
+
+        private Texture2D _maskTexture;
         private IInputHandler _inputHandler;
         private Vector3 _lastMopPosition;
 
@@ -54,6 +54,11 @@ namespace Trellcko.Gameplay.MiniGame
                 MaskUpdated?.Invoke();
                 _lastMopPosition = _mopPoint.position;
             }
+        }
+
+        public void SetTexture(Texture2D texture)
+        {
+            _maskTexture = texture;
         }
 
         private void PaintLine(Vector3 lastMopPosition, Vector3 mopPointPosition)

@@ -4357,7 +4357,7 @@ MonoBehaviour:
     - <Description>k__BackingField: Go to bed
       <QuestInteractable>k__BackingField: {fileID: 969703951}
   _startDay: 0
-  _startQuestIndex: 0
+  _startQuestIndex: 7
 --- !u!4 &1239929710
 Transform:
   m_ObjectHideFlags: 0
@@ -8188,6 +8188,10 @@ PrefabInstance:
     - target: {fileID: 4120363145790725537, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
       propertyPath: m_Name
       value: CleaningMiniGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780611066913247607, guid: 93a64eb9a4e64cf49940ef68664cc87c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.47
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
