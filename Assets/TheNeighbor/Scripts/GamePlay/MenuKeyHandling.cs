@@ -13,7 +13,10 @@ namespace Trellcko.Gameplay
         [SerializeField] private Button _resumeButton;
         
         private bool IsMainMenuActive => _mainMenu.activeSelf;
-        
+
+        private bool _wasPlayerActive;
+        private bool _wasCursorLocked;
+
         private IInputHandler _inputHandler;
         private PlayerFacade _playerFacade;
         private ICursorController _cursorController;
@@ -46,17 +49,29 @@ namespace Trellcko.Gameplay
 
         private void OnEscapePressed()
         {
-            _playerFacade.Interactable.IsEnabled = IsMainMenuActive;
-            _playerFacade.PlayerMovement.IsEnabled = IsMainMenuActive;
-            _playerFacade.PlayerRotation.IsEnabled = IsMainMenuActive;
             if (!IsMainMenuActive)
             {
+                _wasPlayerActive = _playerFacade.PlayerMovement.IsEnabled;
+                
+                _playerFacade.Interactable.IsEnabled = IsMainMenuActive;
+                _playerFacade.PlayerMovement.IsEnabled = IsMainMenuActive;
+                _playerFacade.PlayerRotation.IsEnabled = IsMainMenuActive;
+                
+                _wasCursorLocked = _cursorController.CursorLocked;
+                
                 _cursorController.UnlockCursor();
                 _cursorController.ShowCursor();
             }
             else
             {
-                _cursorController.LockCursor();
+                if(_wasCursorLocked)
+                    _cursorController.LockCursor();
+                else
+                    _cursorController.HideCursor();
+                
+                _playerFacade.Interactable.IsEnabled = _wasPlayerActive;
+                _playerFacade.PlayerMovement.IsEnabled = _wasPlayerActive;
+                _playerFacade.PlayerRotation.IsEnabled = _wasPlayerActive;
             }
 
             _mainMenu.SetActive(!IsMainMenuActive);

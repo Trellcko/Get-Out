@@ -5,5 +5,7 @@
         void LockCursor();
         void UnlockCursor();
         void ShowCursor();
+        void HideCursor();
+        bool CursorLocked { get; }
     }
 }

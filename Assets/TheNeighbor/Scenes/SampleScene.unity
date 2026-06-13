@@ -4357,7 +4357,7 @@ MonoBehaviour:
     - <Description>k__BackingField: Go to bed
       <QuestInteractable>k__BackingField: {fileID: 969703951}
   _startDay: 0
-  _startQuestIndex: 7
+  _startQuestIndex: 0
 --- !u!4 &1239929710
 Transform:
   m_ObjectHideFlags: 0

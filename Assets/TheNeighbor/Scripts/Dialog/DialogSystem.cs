@@ -69,6 +69,7 @@ namespace Trellcko.Dialog
             }
             else
             {
+                _dialogUI.SetStateForTip(true);
                 replicaFinished?.Invoke();
             }
             

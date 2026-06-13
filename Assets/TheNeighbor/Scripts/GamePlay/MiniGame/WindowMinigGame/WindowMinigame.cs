@@ -103,7 +103,7 @@ namespace Trellcko.Gameplay.MiniGame
             {
                 _slider.fillAmount -= _data[_questSystem.Day].fallDownSpeed;
                 UpdatePlayerMaterials();
-                yield return null;
+                yield return new WaitForSeconds(Time.fixedDeltaTime);
             }
         }
 

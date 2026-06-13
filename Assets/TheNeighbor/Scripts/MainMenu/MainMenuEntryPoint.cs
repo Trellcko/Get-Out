@@ -20,6 +20,10 @@ namespace Trellcko.MainMenu
         {
             _soundController.PlayAmbience(Ambience.MainMenu);
             _door.PlayKnockingSound(true);
+
+#if UNITY_WEBGL
+            Application.targetFrameRate = 60;
+#endif
         }
     }
 }
